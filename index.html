@@ -1024,6 +1024,7 @@ function escaparHtml(texto) {
         .replace(/"/g, "&quot;");
 }
 function fmtBr(v, casas = 2) {
+    if (v === null || v === undefined || v === "") return "—";
     const num = Number(v);
     if (!Number.isFinite(num)) return "—";
     return new Intl.NumberFormat("pt-BR", {
@@ -1032,11 +1033,13 @@ function fmtBr(v, casas = 2) {
     }).format(num);
 }
 function fmtInt(v) {
+    if (v === null || v === undefined || v === "") return "—";
     const num = Number(v);
     if (!Number.isFinite(num)) return "—";
     return NF_INT.format(num);
 }
 function fmtBrFlex(v) {
+    if (v === null || v === undefined || v === "") return "—";
     const num = Number(v);
     if (!Number.isFinite(num)) return "—";
     return NF_FLEX.format(num);
@@ -1104,17 +1107,21 @@ function formatarFaixaAnos(anos) {
     return anos[0] === anos[anos.length - 1] ? String(anos[0]) : `${anos[0]}–${anos[anos.length - 1]}`;
 }
 function calcConvocadosPorVaga(r) {
-    const oficial = Number(r.convocados_por_vaga);
-    if (Number.isFinite(oficial)) return oficial;
-    const vagas = Number(r.vagas || 0);
-    if (vagas <= 0) return 0;
-    return Number(r.convocados_2fase || 0) / vagas;
+    const oficial = numeroCampoOuNull(r?.convocados_por_vaga);
+    if (oficial !== null) return oficial;
+    const vagas = numeroCampoOuNull(r?.vagas);
+    const convocados = numeroCampoOuNull(r?.convocados_2fase);
+    if (vagas === null || convocados === null || vagas <= 0) return null;
+    return convocados / vagas;
 }
 function calcPresentes(r) {
-    if (!("inscritos" in r)) return null;
-    return Math.max(0, Number(r.inscritos || 0) - Number(r.ausentes || 0));
+    const inscritos = numeroCampoOuNull(r?.inscritos);
+    const ausentes = numeroCampoOuNull(r?.ausentes);
+    if (inscritos === null || ausentes === null) return null;
+    return Math.max(0, inscritos - ausentes);
 }
 function numeroCampoOuNull(valor) {
+    if (valor === null || valor === undefined || valor === "") return null;
     const num = Number(valor);
     return Number.isFinite(num) ? num : null;
 }
@@ -1127,8 +1134,7 @@ function somarCampoOpcional(registros, campo) {
 function obterRegistrosBaseAgregados(registrosAno) {
     const dadosAno = registrosAno.map(([, r]) => r);
     const sinteticos = dadosAno.filter(r => r?.registro_sintetico && r?.carreira_oficial);
-    const campi = new Set(sinteticos.map(r => r?.campus).filter(Boolean));
-    if (!sinteticos.length || campi.size <= 1) return [];
+    if (!sinteticos.length) return [];
 
     const ano = String(registrosAno[0]?.[0] ?? "");
     const registrosOriginais = Array.isArray(DADOS[ano]) ? DADOS[ano] : [];
@@ -1150,6 +1156,11 @@ function obterRegistrosBaseAgregados(registrosAno) {
         usados.add(chave);
     }
     return encontrados;
+}
+function todosSinteticosComEscopo(registros, campo, valor) {
+    return !!registros.length
+        && registros.every(r => r?.registro_sintetico)
+        && registros.every(r => (r?.[campo] || "") === valor);
 }
 function formatarTooltipNumero(context) {
     const label = context.dataset?.label ? `${context.dataset.label}: ` : "";
@@ -1480,8 +1491,9 @@ function agregarRegistrosAno(registrosAno) {
     if (!dadosAno.length) return null;
 
     const registrosBase = obterRegistrosBaseAgregados(registrosAno);
-    const fonteCompleta = registrosBase.length ? registrosBase : dadosAno;
-    const completos = fonteCompleta.filter(r => "vagas" in r);
+    const usarBaseParaNotasEConvocados = todosSinteticosComEscopo(dadosAno, "escopo_nota", "carreira") && !!registrosBase.length;
+    const usarBaseParaAusentes = !!dadosAno.some(r => r?.registro_sintetico) && !!registrosBase.length;
+    const completos = dadosAno.filter(r => "vagas" in r);
     if (!completos.length) {
         const pontosMin = dadosAno.map(r => r.pontos_minimo).filter(v => v !== null && v !== undefined);
         const pontosMax = dadosAno.map(r => r.pontos_maximo).filter(v => v !== null && v !== undefined);
@@ -1503,9 +1515,26 @@ function agregarRegistrosAno(registrosAno) {
     const pontosMin = completos.map(r => r.pontos_minimo).filter(v => v !== null && v !== undefined);
     const pontosMax = completos.map(r => r.pontos_maximo).filter(v => v !== null && v !== undefined);
     const vagasTotais = completos.reduce((acc, r) => acc + Number(r.vagas || 0), 0);
-    const convocadosTotais = somarCampoOpcional(completos, "convocados_2fase");
     const inscritosTotais = somarCampoOpcional(completos, "inscritos");
-    const ausentesTotais = somarCampoOpcional(completos, "ausentes");
+    const convocadosTotais = usarBaseParaNotasEConvocados
+        ? somarCampoOpcional(registrosBase, "convocados_2fase")
+        : somarCampoOpcional(completos, "convocados_2fase");
+    const ausentesTotais = usarBaseParaAusentes
+        ? (somarCampoOpcional(completos, "ausentes") ?? somarCampoOpcional(registrosBase, "ausentes"))
+        : somarCampoOpcional(completos, "ausentes");
+    const vagasBaseTotais = somarCampoOpcional(registrosBase, "vagas");
+    const relacoesOficiais = (usarBaseParaNotasEConvocados ? registrosBase : completos)
+        .map(r => numeroCampoOuNull(r?.convocados_por_vaga))
+        .filter(v => v !== null);
+    const convPorVaga = usarBaseParaNotasEConvocados
+        ? (vagasBaseTotais > 0 && Number.isFinite(convocadosTotais)
+            ? convocadosTotais / vagasBaseTotais
+            : (relacoesOficiais.length ? relacoesOficiais[0] : null))
+        : (vagasTotais > 0 && Number.isFinite(convocadosTotais)
+            ? convocadosTotais / vagasTotais
+            : (relacoesOficiais.length ? relacoesOficiais[0] : null));
+    const pontosMinBase = registrosBase.map(r => r.pontos_minimo).filter(v => v !== null && v !== undefined);
+    const pontosMaxBase = registrosBase.map(r => r.pontos_maximo).filter(v => v !== null && v !== undefined);
 
     return {
         ...completos[0],
@@ -1514,9 +1543,13 @@ function agregarRegistrosAno(registrosAno) {
         inscritos: inscritosTotais,
         ausentes: ausentesTotais,
         convocados_2fase: convocadosTotais,
-        convocados_por_vaga: vagasTotais > 0 && Number.isFinite(convocadosTotais) ? convocadosTotais / vagasTotais : null,
-        pontos_minimo: pontosMin.length ? Math.min(...pontosMin) : null,
-        pontos_maximo: pontosMax.length ? Math.max(...pontosMax) : null,
+        convocados_por_vaga: convPorVaga,
+        pontos_minimo: usarBaseParaNotasEConvocados
+            ? (pontosMinBase.length ? Math.min(...pontosMinBase) : null)
+            : (pontosMin.length ? Math.min(...pontosMin) : null),
+        pontos_maximo: usarBaseParaNotasEConvocados
+            ? (pontosMaxBase.length ? Math.max(...pontosMaxBase) : null)
+            : (pontosMax.length ? Math.max(...pontosMax) : null),
         registros_agregados: dadosAno.length
     };
 }
@@ -1849,7 +1882,7 @@ function coletarObservacoesEscopo(registros) {
                     ? "inscritos localizados por campus nesta série;"
                     : "inscritos localizados indisponíveis nesta visualização;",
                 info.escopoNota === "carreira" && info.carreiraOficial
-                    ? `nota mínima, nota máxima, convocados para a 2ª fase e conv./vaga no escopo da carreira oficial <strong>${escaparHtml(info.carreiraOficial)}</strong>.`
+                    ? `ausentes, nota mínima, nota máxima, convocados para a 2ª fase e conv./vaga no escopo da carreira oficial <strong>${escaparHtml(info.carreiraOficial)}</strong>.`
                     : "demais indicadores no escopo do curso."
             ];
             return partes.join(" ");
