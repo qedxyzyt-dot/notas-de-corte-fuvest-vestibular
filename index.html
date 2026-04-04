@@ -181,7 +181,7 @@ header p {
     padding: 1.2rem 1.5rem;
     margin-bottom: 1.5rem;
     display: grid;
-    grid-template-columns: minmax(6.75rem, 0.58fr) minmax(6.75rem, 0.58fr) minmax(20rem, 2.45fr) minmax(9.5rem, 0.9fr) minmax(10.5rem, 1fr);
+    grid-template-columns: minmax(5.4rem, 0.42fr) minmax(5.4rem, 0.42fr) minmax(22rem, 2.9fr) minmax(10rem, 0.95fr) minmax(11rem, 1.05fr);
     gap: 1rem;
     align-items: end;
     box-shadow: var(--sombra-card);
@@ -192,7 +192,12 @@ header p {
 .filtro-grupo { position: relative; display: flex; flex-direction: column; gap: 0.3rem; min-width: 0; z-index: 1; }
 .filtro-grupo:focus-within { z-index: 35; }
 .filtro-grupo--curso { min-width: 0; }
-.filtro-grupo--ano { min-width: 6.75rem; }
+.filtro-grupo--ano { min-width: 5.4rem; }
+.filtro-grupo--ano select {
+    padding-left: 0.66rem;
+    padding-right: 0.52rem;
+    font-variant-numeric: tabular-nums;
+}
 .filtro-grupo label {
     font-family: var(--fonte-display);
     font-size: 0.78rem;
