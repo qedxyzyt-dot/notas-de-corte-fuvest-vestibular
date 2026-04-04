@@ -1920,15 +1920,22 @@ function buildChartVI(anos, dados) {
                     barPercentage: 0.88
                 },
                 {
+                    type: "line",
                     label: "Inscritos",
                     data: insc,
                     yAxisID: "yInsc",
-                    backgroundColor: "rgba(192,57,43,0.68)",
+                    backgroundColor: "rgba(192,57,43,0.16)",
                     borderColor: "#c0392b",
-                    borderWidth: 1,
-                    borderRadius: 3,
-                    categoryPercentage: 0.72,
-                    barPercentage: 0.88
+                    borderWidth: 2.5,
+                    pointRadius: 4.5,
+                    pointHoverRadius: 5.5,
+                    pointBackgroundColor: "#c0392b",
+                    pointBorderColor: "#f8fbff",
+                    pointBorderWidth: 1.2,
+                    pointStyle: "circle",
+                    tension: 0.26,
+                    fill: false,
+                    order: 0
                 }
             ]
         },
