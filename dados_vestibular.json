@@ -20266,6 +20266,18 @@
       "pontos_minimo": 32
     },
     {
+      "codigo": "140",
+      "curso": "Ciências da Informação e da Documentação − Ribeirão Preto",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 2,
+      "inscritos": 4,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
+    },
+    {
       "codigo": "145",
       "curso": "Ciências Sociais",
       "modalidade": "Ampla Concorrência",
@@ -20290,6 +20302,18 @@
       "pontos_minimo": 40
     },
     {
+      "codigo": "145",
+      "curso": "Ciências Sociais",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 0,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
+    },
+    {
       "codigo": "150",
       "curso": "Curso Superior do Audiovisual",
       "modalidade": "Ampla Concorrência",
@@ -20312,6 +20336,18 @@
       "convocados_por_vaga": 4.0,
       "pontos_maximo": 62,
       "pontos_minimo": 52
+    },
+    {
+      "codigo": "150",
+      "curso": "Curso Superior do Audiovisual",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 0,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
     },
     {
       "codigo": "155",
@@ -20372,6 +20408,18 @@
       "convocados_por_vaga": 4.02,
       "pontos_maximo": 80,
       "pontos_minimo": 49
+    },
+    {
+      "codigo": "160",
+      "curso": "Direito",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 0,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
     },
     {
       "codigo": "165",
@@ -20506,6 +20554,18 @@
       "pontos_minimo": 38
     },
     {
+      "codigo": "190",
+      "curso": "Filosofia",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 0,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
+    },
+    {
       "codigo": "195",
       "curso": "Geografia",
       "modalidade": "Ampla Concorrência",
@@ -20525,9 +20585,9 @@
       "inscritos": 0,
       "ausentes": 0,
       "convocados_2fase": 0,
-      "convocados_por_vaga": 3.24,
-      "pontos_maximo": 47,
-      "pontos_minimo": 28
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
     },
     {
       "codigo": "195",
@@ -20672,6 +20732,18 @@
       "convocados_por_vaga": 4.41,
       "pontos_maximo": 67,
       "pontos_minimo": 42
+    },
+    {
+      "codigo": "215",
+      "curso": "História",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 0,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
     },
     {
       "codigo": "220",
@@ -20950,6 +21022,18 @@
       "pontos_minimo": 35
     },
     {
+      "codigo": "255",
+      "curso": "Pedagogia",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 0,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
+    },
+    {
       "codigo": "260",
       "curso": "Pedagogia − Ribeirão Preto",
       "modalidade": "Ampla Concorrência",
@@ -21226,6 +21310,18 @@
       "pontos_minimo": 42
     },
     {
+      "codigo": "400",
+      "curso": "Bacharelado em Biotecnologia − USP Leste, SP",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 0,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
+    },
+    {
       "codigo": "401",
       "curso": "Ciências Biológicas",
       "modalidade": "Ampla Concorrência",
@@ -21356,6 +21452,18 @@
       "convocados_por_vaga": 4.5,
       "pontos_maximo": 67,
       "pontos_minimo": 46
+    },
+    {
+      "codigo": "415",
+      "curso": "Ciências Biomédicas",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 0,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
     },
     {
       "codigo": "416",
@@ -21784,6 +21892,18 @@
       "pontos_minimo": 42
     },
     {
+      "codigo": "470",
+      "curso": "Fisioterapia",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 0,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
+    },
+    {
       "codigo": "475",
       "curso": "Fisioterapia − Ribeirão Preto",
       "modalidade": "Ampla Concorrência",
@@ -21968,7 +22088,7 @@
       "curso": "Medicina",
       "modalidade": "Ampla Concorrência",
       "vagas": 105,
-      "inscritos": 3000,
+      "inscritos": 11320,
       "ausentes": 840,
       "convocados_2fase": 427,
       "convocados_por_vaga": 4.07,
@@ -22672,6 +22792,18 @@
       "pontos_minimo": 27
     },
     {
+      "codigo": "705",
+      "curso": "Ciências da Natureza − USP Leste, SP",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 0,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
+    },
+    {
       "codigo": "710",
       "curso": "Computação",
       "modalidade": "Ampla Concorrência",
@@ -22946,6 +23078,18 @@
       "convocados_por_vaga": 1.67,
       "pontos_maximo": 48,
       "pontos_minimo": 27
+    },
+    {
+      "codigo": "745",
+      "curso": "Engenharia de Biossistemas − Pirassununga",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 6,
+      "inscritos": 1,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
     },
     {
       "codigo": "750",
@@ -23338,6 +23482,18 @@
       "pontos_minimo": 37
     },
     {
+      "codigo": "800",
+      "curso": "Geologia",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 0,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
+    },
+    {
       "codigo": "805",
       "curso": "Informática Biomédica − Ribeirão Preto",
       "modalidade": "Ampla Concorrência",
@@ -23432,6 +23588,18 @@
       "convocados_por_vaga": 2.25,
       "pontos_maximo": 50,
       "pontos_minimo": 27
+    },
+    {
+      "codigo": "820",
+      "curso": "Licenciatura em Geociências e Educação Ambiental",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 0,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
     },
     {
       "codigo": "825",
@@ -24117,6 +24285,18 @@
       "pontos_minimo": 56
     },
     {
+      "codigo": "150",
+      "curso": "Curso Superior do Audiovisual",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 0,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
+    },
+    {
       "codigo": "155",
       "curso": "Design",
       "modalidade": "Ampla Concorrência",
@@ -24352,9 +24532,9 @@
       "inscritos": 0,
       "ausentes": 0,
       "convocados_2fase": 0,
-      "convocados_por_vaga": 2.15,
-      "pontos_maximo": 65,
-      "pontos_minimo": 27
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
     },
     {
       "codigo": "195",
@@ -25077,6 +25257,18 @@
       "pontos_minimo": 44
     },
     {
+      "codigo": "400",
+      "curso": "Bacharelado em Biotecnologia − USP Leste, SP",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 0,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
+    },
+    {
       "codigo": "401",
       "curso": "Ciências Biológicas",
       "modalidade": "Ampla Concorrência",
@@ -25171,6 +25363,18 @@
       "convocados_por_vaga": 4.0,
       "pontos_maximo": 67,
       "pontos_minimo": 44
+    },
+    {
+      "codigo": "410",
+      "curso": "Ciências Biológicas − Ribeirão Preto",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 0,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
     },
     {
       "codigo": "415",
@@ -25831,7 +26035,7 @@
       "curso": "Medicina",
       "modalidade": "Ampla Concorrência",
       "vagas": 67,
-      "inscritos": 3485,
+      "inscritos": 11031,
       "ausentes": 835,
       "convocados_2fase": 303,
       "convocados_por_vaga": 4.52,
@@ -26283,6 +26487,18 @@
       "pontos_minimo": 49
     },
     {
+      "codigo": "555",
+      "curso": "Psicologia − Ribeirão Preto",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 0,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
+    },
+    {
       "codigo": "560",
       "curso": "Saúde Pública",
       "modalidade": "Ampla Concorrência",
@@ -26521,6 +26737,18 @@
       "convocados_por_vaga": 2.56,
       "pontos_maximo": 52,
       "pontos_minimo": 27
+    },
+    {
+      "codigo": "705",
+      "curso": "Ciências da Natureza − USP Leste, SP",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 0,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
     },
     {
       "codigo": "710",
@@ -27201,6 +27429,18 @@
       "pontos_minimo": 29
     },
     {
+      "codigo": "800",
+      "curso": "Geologia",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 0,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
+    },
+    {
       "codigo": "805",
       "curso": "Informática Biomédica − Ribeirão Preto",
       "modalidade": "Ampla Concorrência",
@@ -27295,6 +27535,18 @@
       "convocados_por_vaga": 1.33,
       "pontos_maximo": 54,
       "pontos_minimo": 28
+    },
+    {
+      "codigo": "820",
+      "curso": "Licenciatura em Geociências e Educação Ambiental",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 0,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
     },
     {
       "codigo": "825",
@@ -29060,6 +29312,18 @@
       "pontos_minimo": 44
     },
     {
+      "codigo": "410",
+      "curso": "Ciências Biológicas − Ribeirão Preto",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 0,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
+    },
+    {
       "codigo": "415",
       "curso": "Ciências Biomédicas",
       "modalidade": "Ampla Concorrência",
@@ -29082,6 +29346,18 @@
       "convocados_por_vaga": 4.38,
       "pontos_maximo": 76,
       "pontos_minimo": 53
+    },
+    {
+      "codigo": "415",
+      "curso": "Ciências Biomédicas",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 0,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
     },
     {
       "codigo": "416",
@@ -29706,8 +29982,8 @@
       "curso": "Medicina",
       "modalidade": "Ampla Concorrência",
       "vagas": 58,
-      "inscritos": 4779,
-      "ausentes": 768,
+      "inscritos": 12226,
+      "ausentes": 1425,
       "convocados_2fase": 237,
       "convocados_por_vaga": 4.09,
       "pontos_maximo": 90,
@@ -30158,6 +30434,18 @@
       "pontos_minimo": 56
     },
     {
+      "codigo": "555",
+      "curso": "Psicologia − Ribeirão Preto",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 0,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
+    },
+    {
       "codigo": "560",
       "curso": "Saúde Pública",
       "modalidade": "Ampla Concorrência",
@@ -30252,6 +30540,18 @@
       "convocados_por_vaga": 4.0,
       "pontos_maximo": 52,
       "pontos_minimo": 28
+    },
+    {
+      "codigo": "570",
+      "curso": "Terapia Ocupacional − Ribeirão Preto",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 1,
+      "inscritos": 2,
+      "ausentes": 2,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
     },
     {
       "codigo": "575",
@@ -31115,6 +31415,18 @@
       "pontos_minimo": 27
     },
     {
+      "codigo": "800",
+      "curso": "Geologia",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 0,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
+    },
+    {
       "codigo": "805",
       "curso": "Informática Biomédica − Ribeirão Preto",
       "modalidade": "Ampla Concorrência",
@@ -31209,6 +31521,18 @@
       "convocados_por_vaga": 0.88,
       "pontos_maximo": 56,
       "pontos_minimo": 30
+    },
+    {
+      "codigo": "820",
+      "curso": "Licenciatura em Geociências e Educação Ambiental",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 0,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
     },
     {
       "codigo": "825",
@@ -32074,6 +32398,18 @@
       "pontos_minimo": 47
     },
     {
+      "codigo": "185",
+      "curso": "Editoração (São Paulo)",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 0,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
+    },
+    {
       "codigo": "190",
       "curso": "Filosofia (São Paulo)",
       "modalidade": "Ampla Concorrência",
@@ -32312,6 +32648,18 @@
       "convocados_por_vaga": 4.0,
       "pontos_maximo": 71,
       "pontos_minimo": 56
+    },
+    {
+      "codigo": "220",
+      "curso": "Jornalismo (São Paulo)",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 0,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
     },
     {
       "codigo": "225",
@@ -32948,6 +33296,18 @@
       "convocados_por_vaga": 4.0,
       "pontos_maximo": 68,
       "pontos_minimo": 43
+    },
+    {
+      "codigo": "410",
+      "curso": "Ciências Biológicas (Ribeirão Preto)",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 0,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
     },
     {
       "codigo": "415",
@@ -33602,8 +33962,8 @@
       "curso": "Medicina (São Paulo)",
       "modalidade": "Ampla Concorrência",
       "vagas": 58,
-      "inscritos": 3554,
-      "ausentes": 643,
+      "inscritos": 10460,
+      "ausentes": 1407,
       "convocados_2fase": 266,
       "convocados_por_vaga": 4.59,
       "pontos_maximo": 88,
@@ -33874,6 +34234,18 @@
       "pontos_minimo": 37
     },
     {
+      "codigo": "530",
+      "curso": "Obstetrícia − USP Leste (São Paulo)",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 0,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
+    },
+    {
       "codigo": "535",
       "curso": "Odontologia (São Paulo)",
       "modalidade": "Ampla Concorrência",
@@ -34040,6 +34412,18 @@
       "convocados_por_vaga": 4.63,
       "pontos_maximo": 78,
       "pontos_minimo": 56
+    },
+    {
+      "codigo": "555",
+      "curso": "Psicologia (Ribeirão Preto)",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 0,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
     },
     {
       "codigo": "560",
@@ -34570,6 +34954,18 @@
       "pontos_minimo": 38
     },
     {
+      "codigo": "745",
+      "curso": "Engenharia de Biossistemas (Pirassununga)",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 9,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
+    },
+    {
       "codigo": "750",
       "curso": "Engenharia de Materiais (Lorena)",
       "modalidade": "Ampla Concorrência",
@@ -34999,6 +35395,18 @@
       "pontos_minimo": 27
     },
     {
+      "codigo": "800",
+      "curso": "Geologia (São Paulo)",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 0,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
+    },
+    {
       "codigo": "805",
       "curso": "Informática Biomédica (Ribeirão Preto)",
       "modalidade": "Ampla Concorrência",
@@ -35093,6 +35501,18 @@
       "convocados_por_vaga": 1.63,
       "pontos_maximo": 59,
       "pontos_minimo": 32
+    },
+    {
+      "codigo": "820",
+      "curso": "Licenciatura em Geociências e Educação Ambiental (São Paulo)",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 0,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
     },
     {
       "codigo": "825",
@@ -35965,8 +36385,8 @@
       "inscritos": 0,
       "ausentes": 0,
       "convocados_2fase": 0,
-      "convocados_por_vaga": 3.37,
-      "pontos_maximo": 82,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
       "pontos_minimo": null
     },
     {
@@ -36217,8 +36637,8 @@
       "inscritos": 0,
       "ausentes": 0,
       "convocados_2fase": 0,
-      "convocados_por_vaga": 1.44,
-      "pontos_maximo": 75,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
       "pontos_minimo": null
     },
     {
@@ -36757,7 +37177,7 @@
       "inscritos": 22,
       "ausentes": 5,
       "convocados_2fase": 12,
-      "convocados_por_vaga": 4.3,
+      "convocados_por_vaga": null,
       "pontos_maximo": 54,
       "pontos_minimo": 37
     },
@@ -36865,8 +37285,8 @@
       "inscritos": 0,
       "ausentes": 0,
       "convocados_2fase": 0,
-      "convocados_por_vaga": 4.25,
-      "pontos_maximo": 80,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
       "pontos_minimo": null
     },
     {
@@ -37523,7 +37943,7 @@
       "modalidade": "Ampla Concorrência",
       "vagas": 58,
       "inscritos": 9646,
-      "ausentes": 548,
+      "ausentes": 1431,
       "convocados_2fase": 227,
       "convocados_por_vaga": 3.91,
       "pontos_maximo": 88,
@@ -37981,8 +38401,8 @@
       "inscritos": 0,
       "ausentes": 0,
       "convocados_2fase": 0,
-      "convocados_por_vaga": 2.46,
-      "pontos_maximo": 70,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
       "pontos_minimo": null
     },
     {
@@ -38955,6 +39375,18 @@
       "pontos_minimo": 30
     },
     {
+      "codigo": "800",
+      "curso": "Geologia (São Paulo)",
+      "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+      "vagas": 0,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
+      "pontos_minimo": null
+    },
+    {
       "codigo": "805",
       "curso": "Informática Biomédica (Ribeirão Preto)",
       "modalidade": "Ampla Concorrência",
@@ -39058,8 +39490,8 @@
       "inscritos": 0,
       "ausentes": 0,
       "convocados_2fase": 0,
-      "convocados_por_vaga": 2.24,
-      "pontos_maximo": 81,
+      "convocados_por_vaga": null,
+      "pontos_maximo": null,
       "pontos_minimo": null
     },
     {
@@ -41307,7 +41739,7 @@
       "curso": "Medicina (São Paulo Quadrilátero)",
       "modalidade": "Ampla Concorrência",
       "vagas": 77,
-      "inscritos": 3485,
+      "inscritos": 10076,
       "ausentes": 817,
       "convocados_2fase": 336,
       "convocados_por_vaga": 4.36,
@@ -43211,7 +43643,7 @@
       "curso": "Medicina",
       "modalidade": "Ampla Concorrência",
       "vagas": 147,
-      "inscritos": 4912,
+      "inscritos": 16703,
       "ausentes": 991,
       "convocados_2fase": 586,
       "convocados_por_vaga": 3.99,
@@ -46174,8 +46606,8 @@
       "curso": "Medicina",
       "modalidade": "Ampla Concorrência",
       "vagas": 147,
-      "inscritos": 4686,
-      "ausentes": 584,
+      "inscritos": 15711,
+      "ausentes": 1117,
       "convocados_2fase": 605,
       "convocados_por_vaga": 4.12,
       "pontos_maximo": 88,
