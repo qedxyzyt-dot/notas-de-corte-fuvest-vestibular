@@ -181,7 +181,7 @@ header p {
     padding: 1.2rem 1.5rem;
     margin-bottom: 1.5rem;
     display: grid;
-    grid-template-columns: minmax(0, 1.75fr) minmax(12.5rem, 0.9fr) minmax(12.5rem, 0.9fr);
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 1rem;
     align-items: end;
     box-shadow: var(--sombra-card);
@@ -191,7 +191,8 @@ header p {
 }
 .filtro-grupo { position: relative; display: flex; flex-direction: column; gap: 0.3rem; min-width: 0; z-index: 1; }
 .filtro-grupo:focus-within { z-index: 35; }
-.filtro-grupo--curso { min-width: 20rem; }
+.filtro-grupo--curso { grid-column: span 3; min-width: 20rem; }
+.filtro-grupo--ano { min-width: 9rem; }
 .filtro-grupo label {
     font-family: var(--fonte-display);
     font-size: 0.78rem;
@@ -259,7 +260,7 @@ header p {
     z-index: 80;
     width: 100%;
     min-width: 100%;
-    max-height: 18rem;
+    max-height: 22rem;
     overflow-y: auto;
     background: var(--menu-bg);
     border: 1px solid var(--borda);
@@ -283,6 +284,25 @@ header p {
     cursor: pointer;
     white-space: normal;
 }
+.sugestao-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 0.18rem;
+}
+.sugestao-titulo {
+    font-family: var(--fonte-display);
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--texto);
+}
+.sugestao-meta {
+    font-size: 0.78rem;
+    color: var(--texto-sec);
+}
+.sugestao-meta--fraca {
+    font-size: 0.74rem;
+    opacity: 0.88;
+}
 .sugestao-btn + .sugestao-btn, .combo-select__option + .combo-select__option {
     border-top: 1px solid #eef1f4;
 }
@@ -302,6 +322,13 @@ header p {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
+}
+.filtros-nota {
+    grid-column: 1 / -1;
+    margin-top: -0.15rem;
+    color: var(--texto-sec);
+    font-size: 0.9rem;
+    line-height: 1.45;
 }
 /* Cartões */
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
@@ -604,12 +631,14 @@ footer a { color: var(--usp-azul); }
         padding: 1.2rem;
     }
     .filtros {
-        grid-template-columns: minmax(0, 1.3fr) repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         padding: 1.05rem 1.1rem;
     }
     .filtro-grupo--curso {
         min-width: 0;
+        grid-column: 1 / -1;
     }
+    .filtros-nota { font-size: 0.86rem; }
     .combo-select__menu {
         width: 100%;
         min-width: 100%;
@@ -648,6 +677,9 @@ footer a { color: var(--usp-azul); }
         gap: 0.85rem;
         padding: 1rem;
     }
+    .filtro-grupo--curso {
+        grid-column: auto;
+    }
     .cards { grid-template-columns: 1fr 1fr; }
     .filtro-grupo label {
         font-size: 0.74rem;
@@ -661,6 +693,16 @@ footer a { color: var(--usp-azul); }
         min-width: 100%;
         max-height: 14rem;
         border-radius: 14px;
+    }
+    .sugestao-titulo {
+        font-size: 0.88rem;
+    }
+    .sugestao-meta {
+        font-size: 0.76rem;
+    }
+    .filtros-nota {
+        font-size: 0.84rem;
+        margin-top: -0.05rem;
     }
     table {
         min-width: 39rem;
@@ -753,9 +795,17 @@ footer a { color: var(--usp-azul); }
 <div class="container">
     <!-- Filtros -->
     <div class="filtros">
+        <div class="filtro-grupo filtro-grupo--ano">
+            <label for="sel-ano-inicio">Ano inicial</label>
+            <select id="sel-ano-inicio"><option value="">Carregando...</option></select>
+        </div>
+        <div class="filtro-grupo filtro-grupo--ano">
+            <label for="sel-ano-fim">Ano final</label>
+            <select id="sel-ano-fim"><option value="">Carregando...</option></select>
+        </div>
         <div class="filtro-grupo filtro-grupo--curso">
             <label for="busca">Carreira ou Curso</label>
-            <input type="text" id="busca" placeholder="Digite a carreira, curso ou campus desejado..." autocomplete="off">
+            <input type="text" id="busca" placeholder="Defina o período e depois digite a carreira ou o curso desejado..." autocomplete="off">
             <div id="busca-sugestoes" class="lista-sugestoes" hidden></div>
         </div>
         <div class="filtro-grupo">
@@ -766,11 +816,12 @@ footer a { color: var(--usp-azul); }
             <label for="sel-per">Modalidade</label>
             <select id="sel-per"><option value="__all__">Todas as modalidades</option></select>
         </div>
+        <p class="filtros-nota">O recorte por anos afeta as sugestões de carreira ou curso, os gráficos, a tabela e a leitura das mudanças históricas de nomenclatura.</p>
     </div>
 
     <!-- Dashboard -->
     <div id="dashboard" class="vazio">
-        <p>Digite ao menos duas letras da carreira ou do curso desejado para visualizar o histórico oficial da FUVEST.</p>
+        <p>Escolha primeiro o período de análise e depois digite ao menos duas letras da carreira ou do curso desejado para visualizar o histórico oficial da FUVEST.</p>
     </div>
 </div>
 </main>
@@ -778,7 +829,7 @@ footer a { color: var(--usp-azul); }
 <footer>
     <div class="footer-autor">Projeto independente criado e mantido por <strong>QED</strong></div>
     <div class="footer-nota">Dados extraídos dos relatórios oficiais da FUVEST — anos recentes incluem modalidade de concorrência; parte da série histórica antiga não traz todas as colunas.</div>
-    <a href="https://github.com/qedxyzyt-dot/notas-de-corte-transferencia-usp" target="_blank" rel="noopener">github.com/qedxyzyt-dot/notas-de-corte-transferencia-usp</a>
+    <a href="https://github.com/qedxyzyt-dot/notas-de-corte-fuvest-vestibular" target="_blank" rel="noopener">github.com/qedxyzyt-dot/notas-de-corte-fuvest-vestibular</a>
 </footer>
 
 <script>
@@ -786,8 +837,19 @@ footer a { color: var(--usp-azul); }
 // Dados e estado global
 // ==========================================================================
 let DADOS = {};
-let ESTADO = { cursoSelecionado: "", resultados: [], atribs: new Map(), filtrados: [], breakdowns: {} };
+let ESTADO = {
+    grupoSelecionado: null,
+    sugestaoSelecionadaId: null,
+    termoDigitado: "",
+    resultados: [],
+    atribs: new Map(),
+    filtrados: [],
+    breakdowns: {},
+    catalogoCompleto: [],
+    catalogoAtual: []
+};
 let LISTA_CURSOS = [];
+let ANOS_DISPONIVEIS = [];
 
 const LOC_CONHECIDAS = [
     "São Paulo Quadrilátero", "São Paulo Leste",
@@ -803,8 +865,60 @@ const PERIODOS = ["Integral", "Diurno", "Noturno", "Matutino", "Vespertino"];
 const GRAUS = ["Bacharelado", "Licenciatura", "Bacharelado e Licenciatura", "Licenciatura e Bacharelado"];
 const SEP_RE = /\s*[-\u2212\u2013\u2014]\s*/;
 const STOPWORDS_BUSCA = new Set(["a", "as", "da", "das", "de", "do", "dos", "e", "em", "na", "nas", "no", "nos", "o", "os"]);
+const STOPWORDS_TITULO = new Set(["a", "as", "da", "das", "de", "do", "dos", "e", "em", "na", "nas", "no", "nos", "o", "os", "para", "por"]);
+const TOKENS_GENERICOS_RELACAO = new Set(["curso", "engenharia", "sao", "paulo", "ribeirao", "preto", "usp"]);
 const LOC_PADRAO_IMPLICITA = null;
 const ROTULO_LOC_NAO_INFORMADO = "Campus não explicitado no relatório";
+const CORRECOES_EXATAS_NOME = new Map([
+    [chaveCanonicaNome("ENGENHARIA NA ESCOLA POLITECNICA, COMPUTACAO E MATEMATICA APLICADA"), "Engenharia na Escola Politécnica, Computação e Matemática Aplicada"],
+    [chaveCanonicaNome("Engenharia ,Computacao e Matematica"), "Engenharia, Computação e Matemática"],
+    [chaveCanonicaNome("Engenharia, Computacao e Matem. Aplicada"), "Engenharia, Computação e Matem. Aplicada"],
+    [chaveCanonicaNome("FISICA/METEOROLOGIA/GEOFISICA/ESTATISTICA/MATEMATICA"), "Física / Meteorologia / Geofísica / Estatística / Matemática"],
+    [chaveCanonicaNome("LICENCIATURA EM MATEMATICA/FISICA"), "Licenciatura em Matemática / Física"]
+]);
+const SUBSTITUICOES_NOME = [
+    [/\bAdministracao\b/gi, "Administração"],
+    [/\bAgronomica\b/gi, "Agronômica"],
+    [/\bAeronautica\b/gi, "Aeronáutica"],
+    [/\bBioquimica\b/gi, "Bioquímica"],
+    [/\bBiologicas\b/gi, "Biológicas"],
+    [/\bBiologica\b/gi, "Biológica"],
+    [/\bCiencia\b/gi, "Ciência"],
+    [/\bCiencias\b/gi, "Ciências"],
+    [/\bComputacao\b/gi, "Computação"],
+    [/\bDocumentacao\b/gi, "Documentação"],
+    [/\bEconomica\b/gi, "Econômica"],
+    [/\bEconomicas\b/gi, "Econômicas"],
+    [/\bEducacao\b/gi, "Educação"],
+    [/\bEstatistica\b/gi, "Estatística"],
+    [/\bFisica\b/gi, "Física"],
+    [/\bGeofisica\b/gi, "Geofísica"],
+    [/\bInformacao\b/gi, "Informação"],
+    [/\bMatematica\b/gi, "Matemática"],
+    [/\bOftalmica\b/gi, "Oftálmica"],
+    [/\bPolitecnica\b/gi, "Politécnica"],
+    [/\bPolitica\b/gi, "Política"],
+    [/\bPoliticas\b/gi, "Políticas"],
+    [/\bPublica\b/gi, "Pública"],
+    [/\bPublicas\b/gi, "Públicas"],
+    [/\bQuimica\b/gi, "Química"],
+    [/\bRelacoes\b/gi, "Relações"],
+    [/\bRibeirao\b/gi, "Ribeirão"],
+    [/\bSao\b/gi, "São"],
+    [/\bTecnologica\b/gi, "Tecnológica"]
+];
+const ACRONIMOS_NOME = [
+    [/\bEsalq\b/g, "ESALQ"],
+    [/\bFau\b/g, "FAU"],
+    [/\bFfclrp\b/g, "FFCLRP"],
+    [/\bFzea\b/g, "FZEA"],
+    [/\bPm\b/g, "PM"],
+    [/\bSp\b/g, "SP"],
+    [/\bUnifesp\b/g, "UNIFESP"],
+    [/\bUsp\b/g, "USP"]
+];
+const NF_INT = new Intl.NumberFormat("pt-BR", { maximumFractionDigits: 0 });
+const NF_FLEX = new Intl.NumberFormat("pt-BR", { minimumFractionDigits: 0, maximumFractionDigits: 2 });
 const PDFS_OFICIAIS = {
     "2000": "assets/pdfs/vestibular/fuvest_2000_corte.pdf",
     "2001": "assets/pdfs/vestibular/fuvest_2001_corte.pdf",
@@ -841,23 +955,113 @@ const PDFS_OFICIAIS = {
 function normalizar(t) {
     return t.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 }
+function chaveCanonicaNome(texto) {
+    return normalizar(texto).replace(/[^a-z0-9]+/g, " ").trim();
+}
+function normalizarTokenBusca(token) {
+    if (token.length > 4 && token.endsWith("s")) return token.slice(0, -1);
+    return token;
+}
 function tokenizarBusca(texto) {
     return normalizar(texto)
         .replace(/[^a-z0-9]+/g, " ")
         .trim()
         .split(/\s+/)
+        .map(normalizarTokenBusca)
         .filter(tok => tok.length >= 2 && !STOPWORDS_BUSCA.has(tok));
 }
 function chaveBuscaTexto(texto) {
     return tokenizarBusca(texto).join(" ");
 }
+function pluralizar(total, singular, plural) {
+    return `${total} ${total === 1 ? singular : plural}`;
+}
+function escaparHtml(texto) {
+    return String(texto)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+}
 function fmtBr(v, casas = 2) {
-    return v.toFixed(casas).replace(".", ",");
+    const num = Number(v);
+    if (!Number.isFinite(num)) return "—";
+    return new Intl.NumberFormat("pt-BR", {
+        minimumFractionDigits: casas,
+        maximumFractionDigits: casas
+    }).format(num);
+}
+function fmtInt(v) {
+    const num = Number(v);
+    if (!Number.isFinite(num)) return "—";
+    return NF_INT.format(num);
 }
 function fmtBrFlex(v) {
     const num = Number(v);
-    if (!Number.isFinite(num)) return String(v);
-    return Number.isInteger(num) ? String(num) : fmtBr(num);
+    if (!Number.isFinite(num)) return "—";
+    return NF_FLEX.format(num);
+}
+function parecerCaixaAlta(texto) {
+    const letras = texto.match(/\p{L}/gu) || [];
+    return letras.length >= 6 && letras.every(ch => ch === ch.toUpperCase());
+}
+function aplicarTitleCasePt(texto) {
+    let res = texto.toLowerCase().replace(/(^|[\s/;,(])(\p{L})/gu, (_, prefixo, letra) => prefixo + letra.toUpperCase());
+    res = res.replace(/\b(A|As|Da|Das|De|Do|Dos|E|Em|Na|Nas|No|Nos|O|Os|Para|Por)\b/g, termo => termo.toLowerCase());
+    return res.charAt(0).toUpperCase() + res.slice(1);
+}
+function formatarNomeOficial(nome) {
+    let res = String(nome || "")
+        .replace(/\s+/g, " ")
+        .replace(/\s*,\s*/g, ", ")
+        .replace(/\s*;\s*/g, "; ")
+        .replace(/\s*\/\s*/g, " / ")
+        .replace(/\s*[−-]\s*/g, " − ")
+        .trim();
+    if (!res) return "";
+
+    const exato = CORRECOES_EXATAS_NOME.get(chaveCanonicaNome(res));
+    if (exato) return exato;
+
+    if (parecerCaixaAlta(res)) {
+        res = aplicarTitleCasePt(res);
+    }
+
+    for (const [pattern, value] of SUBSTITUICOES_NOME) {
+        res = res.replace(pattern, value);
+    }
+    for (const [pattern, value] of ACRONIMOS_NOME) {
+        res = res.replace(pattern, value);
+    }
+
+    res = res.replace(/\bOficial da Pm\b/g, "Oficial da PM");
+    res = res.replace(/\bOficial da Policia\b/g, "Oficial da Polícia");
+    res = res.replace(/\s+/g, " ").trim();
+
+    return CORRECOES_EXATAS_NOME.get(chaveCanonicaNome(res)) || res;
+}
+function resumirIntervalosAnos(anos) {
+    const lista = [...new Set(anos.map(Number))].sort((a, b) => a - b);
+    if (!lista.length) return "";
+    const blocos = [];
+    let inicio = lista[0];
+    let fim = lista[0];
+    for (let i = 1; i < lista.length; i += 1) {
+        const atual = lista[i];
+        if (atual === fim + 1) {
+            fim = atual;
+            continue;
+        }
+        blocos.push(inicio === fim ? `${inicio}` : `${inicio}–${fim}`);
+        inicio = atual;
+        fim = atual;
+    }
+    blocos.push(inicio === fim ? `${inicio}` : `${inicio}–${fim}`);
+    return blocos.join(", ");
+}
+function formatarFaixaAnos(anos) {
+    if (!anos.length) return "";
+    return anos[0] === anos[anos.length - 1] ? String(anos[0]) : `${anos[0]}–${anos[anos.length - 1]}`;
 }
 function calcConvocadosPorVaga(r) {
     const oficial = Number(r.convocados_por_vaga);
@@ -873,7 +1077,7 @@ function calcPresentes(r) {
 function formatarTooltipNumero(context) {
     const label = context.dataset?.label ? `${context.dataset.label}: ` : "";
     const valor = Number(context.raw ?? context.parsed?.y ?? context.parsed);
-    return label + fmtBr(valor);
+    return label + fmtBrFlex(valor);
 }
 function lerVarCss(nome, fallback = "") {
     const valor = getComputedStyle(document.documentElement).getPropertyValue(nome).trim();
@@ -945,7 +1149,7 @@ function opcoesChartBase({ yTitle = "", beginAtZero = false, showLegend = true, 
 }
 function renderLinkPdfAno(ano) {
     const href = PDFS_OFICIAIS[String(ano)];
-    if (!href) return "â€”";
+    if (!href) return "—";
     const titulo = `Abrir listagem oficial da FUVEST de ${ano}`;
     return `<a class="pdf-link" href="${href}" target="_blank" rel="noopener" title="${titulo}" aria-label="${titulo}">
         <svg class="pdf-link__icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
@@ -1039,6 +1243,8 @@ function ehFragmentoInvalidoBase(seg) {
 function limparRotuloBase(rotulo) {
     let res = rotulo.replace(/\s+/g, " ").trim().replace(/\.+$/g, "");
     res = res.replace(/\*/g, "").trim();
+    res = res.replace(/\s*,\s*/g, ", ");
+    res = res.replace(/\s*;\s*/g, "; ");
     res = res.replace(/\bÊnfase:\s*/i, "Ênfase em ");
     res = res.replace(/^(?:Bacharelado\s*e\s*Licenciatura\s*em\s*|Licenciatura\s*e\s*Bacharelado\s*em\s*|Bacharelado\s*em\s*|Licenciatura\s*em\s*|Curso\s+de\s+Graduação\s+em\s*)/i, "");
     res = res.replace(/\s*[—\-\u2013\u2014\u2212]\s*(?:Bacharelado|Licenciatura|Bacharelado\s+e\s+Licenciatura|Licenciatura\s+e\s+Bacharelado)\s*$/i, "");
@@ -1076,7 +1282,7 @@ function extrairRotuloBusca(nome) {
         .filter(Boolean)
         .join(" — ");
 
-    return limparRotuloBase(rotulo);
+    return formatarNomeOficial(limparRotuloBase(rotulo));
 }
 
 function ordenarBases(nomes) {
@@ -1128,7 +1334,7 @@ function extrairBase(nome) {
         .join(" — ");
 
     const limpa = limparRotuloBase(base);
-    return ehFragmentoInvalidoBase(limpa) ? "" : limpa;
+    return ehFragmentoInvalidoBase(limpa) ? "" : formatarNomeOficial(limpa);
 }
 
 // ---------- Inferência de atributos ----------
@@ -1160,15 +1366,8 @@ function inferirAtributos(resultados) {
 }
 
 // ---------- Busca e consolidação ----------
-function buscarCursosPorRotulo(dados, rotuloBusca) {
-    const tn = normalizar(rotuloBusca);
-    const res = [];
-    for (const ano of Object.keys(dados).sort()) {
-        for (const r of dados[ano]) {
-            if (normalizar(extrairRotuloBusca(r.curso)) === tn) res.push([ano, r]);
-        }
-    }
-    return res;
+function buscarCursosPorGrupo(grupo) {
+    return [...(grupo?.registros || [])].sort(([a], [b]) => Number(a) - Number(b));
 }
 function agregarRegistrosAno(registrosAno) {
     const dadosAno = registrosAno.map(([, r]) => r);
@@ -1247,33 +1446,172 @@ function fecharSugestoesBusca() {
     document.getElementById("busca-sugestoes").hidden = true;
 }
 
-function ordenarSugestoesBusca(sugestoes, termoNorm) {
-    return [...sugestoes].sort((a, b) => {
-        const tokens = tokenizarBusca(termoNorm);
-        const aNorm = normalizar(a);
-        const bNorm = normalizar(b);
-        const aKey = chaveBuscaTexto(a);
-        const bKey = chaveBuscaTexto(b);
-        const termoKey = chaveBuscaTexto(termoNorm);
+function coletarNomesOficiais(registros) {
+    const mapa = new Map();
+    for (const [ano, r] of registros) {
+        const nome = formatarNomeOficial(r.curso);
+        const existente = mapa.get(nome) || { nome, anos: new Set(), truncado: !!r.curso_truncado };
+        existente.anos.add(Number(ano));
+        existente.truncado = existente.truncado && !!r.curso_truncado;
+        mapa.set(nome, existente);
+    }
+    return [...mapa.values()]
+        .map(info => {
+            const anos = [...info.anos].sort((a, b) => a - b);
+            return { ...info, anos, anosTexto: resumirIntervalosAnos(anos) };
+        })
+        .sort((a, b) => a.anos[0] - b.anos[0] || a.nome.localeCompare(b.nome, "pt-BR", { sensitivity: "base" }));
+}
+function escolherTituloGrupo(rotuloBusca, nomesOficiais) {
+    if (!nomesOficiais.length) return rotuloBusca;
+    if (nomesOficiais.length === 1) return nomesOficiais[0].nome;
+    const exato = nomesOficiais.find(info => chaveCanonicaNome(info.nome) === chaveCanonicaNome(rotuloBusca));
+    return exato ? exato.nome : rotuloBusca;
+}
+function formatarMetaGrupo(grupo) {
+    const partes = [
+        formatarFaixaAnos(grupo.anos),
+        pluralizar(grupo.anos.length, "ano", "anos"),
+        pluralizar(grupo.nomesOficiais.length, "rótulo oficial", "rótulos oficiais")
+    ];
+    return partes.filter(Boolean).join(" • ");
+}
+function formatarResumoVariacoes(grupo) {
+    if (!grupo.nomesOficiais.length) return "";
+    const resumo = grupo.nomesOficiais
+        .slice(0, 2)
+        .map(info => `${info.nome} (${info.anosTexto})`);
+    if (grupo.nomesOficiais.length > 2) resumo.push("…");
+    return resumo.join("; ");
+}
+function detectarFamiliaHistorica(rotuloBusca, nomesOficiais) {
+    const corpus = chaveCanonicaNome([rotuloBusca, ...nomesOficiais.map(info => info.nome)].join(" "));
+    const rotuloCanonico = chaveCanonicaNome(rotuloBusca);
+    if (
+        corpus.includes("engenharia na escola politecnica") ||
+        (corpus.includes("engenharia") && corpus.includes("computacao") && (corpus.includes("matematica") || corpus.includes("matem"))) ||
+        rotuloCanonico === "engenharias"
+    ) {
+        return "engenharias-poli";
+    }
+    return null;
+}
+function construirCatalogoBusca(dados, anoInicio = null, anoFim = null) {
+    const grupos = new Map();
 
-        const aExato = aKey === termoKey ? 0 : 1;
-        const bExato = bKey === termoKey ? 0 : 1;
+    for (const [ano, registros] of Object.entries(dados)) {
+        const anoNum = Number(ano);
+        if ((anoInicio !== null && anoNum < anoInicio) || (anoFim !== null && anoNum > anoFim)) {
+            continue;
+        }
+
+        for (const r of registros) {
+            const rotuloBusca = extrairRotuloBusca(r.curso);
+            if (!rotuloBusca || rotuloBusca.length < 2) continue;
+
+            const id = chaveCanonicaNome(rotuloBusca);
+            const grupo = grupos.get(id) || {
+                id,
+                rotuloBusca,
+                registros: [],
+                anos: new Set(),
+                nomesMap: new Map(),
+                campi: new Set(),
+                modalidades: new Set()
+            };
+
+            grupo.registros.push([ano, r]);
+            grupo.anos.add(anoNum);
+
+            const nomeOficial = formatarNomeOficial(r.curso);
+            const nomeInfo = grupo.nomesMap.get(nomeOficial) || { nome: nomeOficial, anos: new Set(), truncado: !!r.curso_truncado };
+            nomeInfo.anos.add(anoNum);
+            nomeInfo.truncado = nomeInfo.truncado && !!r.curso_truncado;
+            grupo.nomesMap.set(nomeOficial, nomeInfo);
+
+            const loc = extrairLoc(r.curso);
+            if (loc) grupo.campi.add(loc);
+            if (r.modalidade) grupo.modalidades.add(r.modalidade);
+
+            grupos.set(id, grupo);
+        }
+    }
+
+    return [...grupos.values()]
+        .map(grupo => {
+            const anos = [...grupo.anos].sort((a, b) => a - b);
+            const nomesOficiais = [...grupo.nomesMap.values()]
+                .map(info => {
+                    const anosNome = [...info.anos].sort((a, b) => a - b);
+                    return { ...info, anos: anosNome, anosTexto: resumirIntervalosAnos(anosNome) };
+                })
+                .sort((a, b) => a.anos[0] - b.anos[0] || a.nome.localeCompare(b.nome, "pt-BR", { sensitivity: "base" }));
+
+            const titulo = escolherTituloGrupo(grupo.rotuloBusca, nomesOficiais);
+            const corpusKey = chaveCanonicaNome([titulo, grupo.rotuloBusca, ...nomesOficiais.map(info => info.nome)].join(" "));
+            const tokensTitulo = tokenizarBusca(titulo);
+            const tokensBusca = new Set(tokenizarBusca([grupo.rotuloBusca, ...nomesOficiais.map(info => info.nome)].join(" ")));
+            const tokensRelacionamento = new Set([...tokensBusca].filter(token => !TOKENS_GENERICOS_RELACAO.has(token)));
+
+            return {
+                id: grupo.id,
+                titulo,
+                rotuloBusca: grupo.rotuloBusca,
+                anos,
+                anoInicio: anos[0],
+                anoFim: anos[anos.length - 1],
+                nomesOficiais,
+                registros: grupo.registros.sort(([a], [b]) => Number(a) - Number(b)),
+                campi: [...grupo.campi].sort((a, b) => a.localeCompare(b, "pt-BR", { sensitivity: "base" })),
+                modalidades: [...grupo.modalidades].sort((a, b) => a.localeCompare(b, "pt-BR", { sensitivity: "base" })),
+                meta: "",
+                resumoVariacoes: "",
+                corpusKey,
+                familiaHistoricaId: detectarFamiliaHistorica(grupo.rotuloBusca, nomesOficiais),
+                tokenPrincipal: tokensTitulo[0] || "",
+                tokensBusca,
+                tokensRelacionamento
+            };
+        })
+        .map(grupo => ({
+            ...grupo,
+            meta: formatarMetaGrupo(grupo),
+            resumoVariacoes: formatarResumoVariacoes(grupo)
+        }))
+        .sort((a, b) => a.titulo.localeCompare(b.titulo, "pt-BR", { sensitivity: "base" }));
+}
+function ordenarSugestoesBusca(sugestoes, termoNorm) {
+    const termoCanonico = chaveCanonicaNome(termoNorm);
+    const termoKey = chaveBuscaTexto(termoNorm);
+    const tokens = tokenizarBusca(termoNorm);
+    return [...sugestoes].sort((a, b) => {
+        const avaliar = item => {
+            const tituloCanonico = chaveCanonicaNome(item.titulo);
+            const rotuloKey = chaveBuscaTexto(item.rotuloBusca);
+            const nomesCanonicos = item.nomesOficiais.map(info => chaveCanonicaNome(info.nome));
+            return {
+                exato: tituloCanonico === termoCanonico || rotuloKey === termoKey || nomesCanonicos.includes(termoCanonico) ? 0 : 1,
+                inicio: tituloCanonico.startsWith(termoCanonico) || nomesCanonicos.some(nome => nome.startsWith(termoCanonico)) ? 0 : 1,
+                frase: termoKey && item.corpusKey.includes(termoKey) ? 0 : 1,
+                pos: tokens.reduce((acc, token) => acc + Math.max(item.corpusKey.indexOf(token), 0), 0)
+            };
+        };
+        const avalA = avaliar(a);
+        const avalB = avaliar(b);
+
+        const aExato = avalA.exato;
+        const bExato = avalB.exato;
         if (aExato !== bExato) return aExato - bExato;
 
-        const aFrase = termoKey && aKey.includes(termoKey) ? 0 : 1;
-        const bFrase = termoKey && bKey.includes(termoKey) ? 0 : 1;
-        if (aFrase !== bFrase) return aFrase - bFrase;
+        if (avalA.inicio !== avalB.inicio) return avalA.inicio - avalB.inicio;
 
-        const aInicio = tokens.length && aNorm.startsWith(tokens[0]) ? 0 : 1;
-        const bInicio = tokens.length && bNorm.startsWith(tokens[0]) ? 0 : 1;
-        if (aInicio !== bInicio) return aInicio - bInicio;
+        if (avalA.frase !== avalB.frase) return avalA.frase - avalB.frase;
 
-        const aPos = tokens.reduce((acc, token) => acc + Math.max(aNorm.indexOf(token), 0), 0);
-        const bPos = tokens.reduce((acc, token) => acc + Math.max(bNorm.indexOf(token), 0), 0);
-        if (aPos !== bPos) return aPos - bPos;
+        if (avalA.pos !== avalB.pos) return avalA.pos - avalB.pos;
 
-        if (a.length !== b.length) return a.length - b.length;
-        return a.localeCompare(b, "pt-BR", { sensitivity: "base" });
+        if (a.anoFim !== b.anoFim) return b.anoFim - a.anoFim;
+        if (a.nomesOficiais.length !== b.nomesOficiais.length) return a.nomesOficiais.length - b.nomesOficiais.length;
+        return a.titulo.localeCompare(b.titulo, "pt-BR", { sensitivity: "base" });
     });
 }
 
@@ -1282,23 +1620,34 @@ function obterSugestoesBusca(termo = "") {
     if (termoLimpo.length < 2) return [];
     const tokens = tokenizarBusca(termoLimpo);
     if (!tokens.length) return [];
-    const sugestoes = LISTA_CURSOS.filter(nome => {
-        const nomeNorm = normalizar(nome);
-        return tokens.every(token => nomeNorm.includes(token));
+    const sugestoes = LISTA_CURSOS.filter(grupo => {
+        return tokens.every(token => grupo.corpusKey.includes(token));
     });
-    return ordenarSugestoesBusca(sugestoes, termoLimpo);
+    return ordenarSugestoesBusca(sugestoes, termoLimpo).slice(0, 12);
 }
 
+function obterGrupoSelecionadoAtual() {
+    return ESTADO.sugestaoSelecionadaId ? LISTA_CURSOS.find(grupo => grupo.id === ESTADO.sugestaoSelecionadaId) || null : null;
+}
 function resolverBuscaCurso(termo = "") {
     const termoLimpo = termo.trim();
     if (termoLimpo.length < 2) return { status: "vazio", sugestoes: [] };
 
+    const selecionado = obterGrupoSelecionadoAtual();
+    if (selecionado && chaveCanonicaNome(termoLimpo) === chaveCanonicaNome(selecionado.titulo)) {
+        return { status: "ok", grupo: selecionado, sugestoes: [selecionado] };
+    }
+
+    const termoCanonico = chaveCanonicaNome(termoLimpo);
     const termoChave = chaveBuscaTexto(termoLimpo);
-    const cursoExato = LISTA_CURSOS.find(nome => chaveBuscaTexto(nome) === termoChave);
-    if (cursoExato) return { status: "ok", curso: cursoExato, sugestoes: [cursoExato] };
+    const gruposExatos = LISTA_CURSOS.filter(grupo => {
+        if (grupo.id === termoCanonico || chaveBuscaTexto(grupo.titulo) === termoChave) return true;
+        return grupo.nomesOficiais.some(info => chaveCanonicaNome(info.nome) === termoCanonico);
+    });
+    if (gruposExatos.length === 1) return { status: "ok", grupo: gruposExatos[0], sugestoes: gruposExatos };
 
     const sugestoes = obterSugestoesBusca(termoLimpo);
-    if (sugestoes.length === 1) return { status: "ok", curso: sugestoes[0], sugestoes };
+    if (sugestoes.length === 1) return { status: "ok", grupo: sugestoes[0], sugestoes };
     if (!sugestoes.length) return { status: "nenhum", sugestoes: [] };
     return { status: "refinar", sugestoes };
 }
@@ -1319,15 +1668,21 @@ function renderizarSugestoesBusca(termo = "") {
     }
 
     painel.innerHTML = "";
-    for (const nome of sugestoes) {
+    for (const grupo of sugestoes) {
         const btn = document.createElement("button");
         btn.type = "button";
         btn.className = "sugestao-btn";
-        btn.textContent = nome;
-        btn.title = nome;
+        btn.innerHTML = `
+            <span class="sugestao-titulo">${escaparHtml(grupo.titulo)}</span>
+            <span class="sugestao-meta">${escaparHtml(grupo.meta)}</span>
+            ${grupo.resumoVariacoes ? `<span class="sugestao-meta sugestao-meta--fraca">${escaparHtml(grupo.resumoVariacoes)}</span>` : ""}
+        `;
+        btn.title = [grupo.titulo, grupo.meta, grupo.resumoVariacoes].filter(Boolean).join(" • ");
         btn.addEventListener("mousedown", e => e.preventDefault());
         btn.addEventListener("click", () => {
-            input.value = nome;
+            ESTADO.sugestaoSelecionadaId = grupo.id;
+            ESTADO.termoDigitado = grupo.titulo;
+            input.value = grupo.titulo;
             fecharSugestoesBusca();
             atualizarFiltros();
             input.focus();
@@ -1352,17 +1707,92 @@ function mostrarEstadoDashboard(html) {
     container.innerHTML = html;
 }
 
-function renderDashboard(nomeCurso, dados, filtroTexto, breakdowns) {
+function calcularDistanciaEntreGrupos(grupoA, grupoB) {
+    if (grupoA.anoFim < grupoB.anoInicio) return grupoB.anoInicio - grupoA.anoFim;
+    if (grupoB.anoFim < grupoA.anoInicio) return grupoA.anoInicio - grupoB.anoFim;
+    return 0;
+}
+function contarInterseccaoSets(setA, setB) {
+    let total = 0;
+    for (const item of setA) {
+        if (setB.has(item)) total += 1;
+    }
+    return total;
+}
+function obterGruposRelacionados(grupoSelecionado) {
+    if (!grupoSelecionado || !ESTADO.catalogoCompleto.length) return [];
+
+    const base = ESTADO.catalogoCompleto.find(grupo => grupo.id === grupoSelecionado.id) || grupoSelecionado;
+
+    if (base.familiaHistoricaId) {
+        return ESTADO.catalogoCompleto
+            .filter(grupo => grupo.familiaHistoricaId === base.familiaHistoricaId)
+            .sort((a, b) => a.anoInicio - b.anoInicio || a.titulo.localeCompare(b.titulo, "pt-BR", { sensitivity: "base" }));
+    }
+
+    return ESTADO.catalogoCompleto
+        .filter(grupo => {
+            if (grupo.id === base.id) return true;
+            const distancia = calcularDistanciaEntreGrupos(base, grupo);
+            if (distancia <= 0 || distancia > 4) return false;
+            const interseccao = contarInterseccaoSets(base.tokensRelacionamento, grupo.tokensRelacionamento);
+            const mesmaRaiz = base.tokenPrincipal && base.tokenPrincipal === grupo.tokenPrincipal;
+            return interseccao >= 2 || (interseccao >= 1 && mesmaRaiz);
+        })
+        .sort((a, b) => a.anoInicio - b.anoInicio || a.titulo.localeCompare(b.titulo, "pt-BR", { sensitivity: "base" }));
+}
+function renderBlocoLista(titulo, itens) {
+    if (!itens.length) return "";
+    return `<div class="insights"><h3>${escaparHtml(titulo)}</h3><ul>${itens.map(item => `<li>${item}</li>`).join("")}</ul></div>`;
+}
+function renderCardsResumo(dados, nomesOficiais) {
+    const anos = Object.keys(dados).map(Number).sort((a, b) => a - b);
+    const notasMin = Object.values(dados).map(r => r.pontos_minimo).filter(v => v !== null && v !== undefined);
+    const relacoes = Object.values(dados).map(calcConvocadosPorVaga).filter(v => Number.isFinite(v) && v > 0);
+    const mediaRel = relacoes.length ? relacoes.reduce((acc, valor) => acc + valor, 0) / relacoes.length : null;
+    const cards = [
+        { valor: fmtInt(anos.length), rotulo: "Anos no recorte" },
+        { valor: fmtInt(nomesOficiais.length), rotulo: "Rótulos oficiais no período" },
+        { valor: notasMin.length ? fmtInt(Math.max(...notasMin)) : "—", rotulo: "Maior nota mínima" },
+        { valor: mediaRel !== null ? fmtBrFlex(mediaRel) : "—", rotulo: "Média de conv./vaga" }
+    ];
+    return `<div class="cards">${cards.map(card => `<div class="card"><div class="valor">${card.valor}</div><div class="rotulo">${escaparHtml(card.rotulo)}</div></div>`).join("")}</div>`;
+}
+function renderDashboard(grupoSelecionado, dados, contexto = {}) {
     destruirCharts();
     const container = document.getElementById("dashboard");
     container.classList.remove("vazio");
 
+    const { filtroLinhas = [], breakdowns = {}, registrosFiltrados = [] } = contexto;
+    const nomeCurso = grupoSelecionado?.titulo || "Carreira selecionada";
     const anos = Object.keys(dados).map(Number).sort((a,b) => a - b);
     const temCompleto = Object.values(dados).some(r => "vagas" in r);
+    const nomesOficiais = coletarNomesOficiais(registrosFiltrados);
+    const relacionados = obterGruposRelacionados(grupoSelecionado);
     let html = "";
 
-    if (filtroTexto) {
-        html += `<div class="insights"><h3>Filtro aplicado</h3><ul><li>${filtroTexto}</li></ul></div>`;
+    if (filtroLinhas.length) {
+        html += renderBlocoLista("Recorte aplicado", filtroLinhas.map(item => escaparHtml(item)));
+    }
+
+    html += renderCardsResumo(dados, nomesOficiais);
+
+    html += renderBlocoLista(
+        "Nomenclaturas oficiais encontradas no período",
+        nomesOficiais.map(info => {
+            const notaTruncamento = info.truncado ? " Texto extraído com truncamento." : "";
+            return `<strong>${escaparHtml(info.nome)}</strong>: ${escaparHtml(info.anosTexto)}.${notaTruncamento}`;
+        })
+    );
+
+    if (relacionados.length > 1) {
+        html += renderBlocoLista(
+            "Mudanças históricas relacionadas na série completa",
+            relacionados.map(grupo => {
+                const statusAtual = grupoSelecionado && grupo.id === grupoSelecionado.id ? " Recorte atual." : "";
+                return `<strong>${escaparHtml(grupo.titulo)}</strong>: ${escaparHtml(resumirIntervalosAnos(grupo.anos))}.${statusAtual}`;
+            })
+        );
     }
 
     html += `<div class="tabela-container"><table>
@@ -1373,7 +1803,7 @@ function renderDashboard(nomeCurso, dados, filtroTexto, breakdowns) {
         const mn = r.pontos_minimo ?? "—";
         const mx = r.pontos_maximo ?? "—";
         const rel = Number.isFinite(calcConvocadosPorVaga(r)) && calcConvocadosPorVaga(r) > 0 ? fmtBr(calcConvocadosPorVaga(r)) : "—";
-        html += `<tr><td>${ano}</td><td>${r.vagas ?? "—"}</td><td>${r.inscritos ?? "—"}</td><td>${r.ausentes ?? "—"}</td><td>${r.convocados_2fase ?? "—"}</td><td>${rel}</td><td>${mn}</td><td>${mx}</td><td class="col-edital">${linkPdf}</td></tr>`;
+        html += `<tr><td>${ano}</td><td>${fmtInt(r.vagas)}</td><td>${fmtInt(r.inscritos)}</td><td>${fmtInt(r.ausentes)}</td><td>${fmtInt(r.convocados_2fase)}</td><td>${rel}</td><td>${mn === "—" ? "—" : fmtInt(mn)}</td><td>${mx === "—" ? "—" : fmtInt(mx)}</td><td class="col-edital">${linkPdf}</td></tr>`;
     }
     html += `</tbody></table></div>`;
 
@@ -1387,7 +1817,7 @@ function renderDashboard(nomeCurso, dados, filtroTexto, breakdowns) {
     }
     html += `</div>`;
 
-    const insights = gerarInsights(nomeCurso, dados);
+    const insights = gerarInsights(grupoSelecionado, dados, { nomesOficiais, relacionados });
     if (insights.length > 0) {
         html += `<div class="insights"><h3>Análise dos dados</h3><ul>${insights.map(i => `<li>${i}</li>`).join("")}</ul></div>`;
     }
@@ -1428,7 +1858,7 @@ function buildChartNotas(anos, dados) {
                 { label: "Nota máxima (convocado)", data: notasMax, borderColor: "#27ae60", backgroundColor: "rgba(39,174,96,0.1)", pointRadius: 5, pointBackgroundColor: "#27ae60", pointStyle: "rectRot", tension: 0.2, fill: false }
             ]
         },
-        options: opcoesChartBase({ yTitle: "Pontos" })
+        options: opcoesChartBase({ yTitle: "Pontos", yTickCallback: value => fmtInt(value) })
     });
 }
 function buildChartConc(anos, dados) {
@@ -1464,15 +1894,28 @@ function buildChartVI(anos, dados) {
                 { label: "Inscritos", data: insc, backgroundColor: "rgba(192,57,43,0.6)", borderColor: "#c0392b", borderWidth: 1 }
             ]
         },
-        options: opcoesChartBase({ yTitle: "Quantidade", beginAtZero: true })
+        options: opcoesChartBase({ yTitle: "Quantidade", beginAtZero: true, yTickCallback: value => fmtInt(value) })
     });
 }
 
 // ---------- Insights ----------
-function gerarInsights(nome, dados) {
+function gerarInsights(grupoSelecionado, dados, contexto = {}) {
     const anos = Object.keys(dados).map(Number).sort((a,b) => a - b);
     const ins = [];
     const notasMin = {}, notasMax = {}, relacoes = {}, vagasD = {}, inscD = {}, convocadosD = {};
+    const nomesOficiais = contexto.nomesOficiais || [];
+    const relacionados = contexto.relacionados || [];
+
+    if (grupoSelecionado && /engenharia na escola politecnica|engenharias/.test(normalizar(grupoSelecionado.titulo))) {
+        ins.push(`Nos anos em que a FUVEST usa rótulos como <b>${escaparHtml(grupoSelecionado.titulo)}</b>, o relatório trata a carreira como ingresso amplo em engenharia, e não como uma habilitação específica.`);
+    }
+    if (nomesOficiais.length > 1) {
+        ins.push(`O recorte selecionado já contém <b>${fmtInt(nomesOficiais.length)}</b> nomenclaturas oficiais distintas para a mesma busca, o que ajuda a visualizar mudanças de apresentação ao longo do tempo.`);
+    }
+    if (relacionados.length > 1) {
+        ins.push(`Há <b>${fmtInt(relacionados.length)}</b> grupos historicamente relacionados na série completa. Use o bloco de mudanças históricas para separar melhor cada fase da nomenclatura oficial.`);
+    }
+
     for (const ano of anos) {
         const r = dados[ano];
         const mn = r.pontos_minimo ?? null;
@@ -1508,17 +1951,17 @@ function gerarInsights(nome, dados) {
         const tv = Object.values(vagasD).reduce((a,b) => a+b, 0);
         const ti = Object.values(inscD).reduce((a,b) => a+b, 0);
         const ua = vAnos.at(-1);
-        ins.push(`Total histórico: <b>${tv}</b> vagas e <b>${ti}</b> inscrições. Em ${ua}: ${vagasD[ua]} vagas para ${inscD[ua]} inscritos.`);
+        ins.push(`Total histórico: <b>${fmtInt(tv)}</b> vagas e <b>${fmtInt(ti)}</b> inscrições. Em ${ua}: ${fmtInt(vagasD[ua])} vagas para ${fmtInt(inscD[ua])} inscritos.`);
     }
     const xAnos = Object.keys(notasMax).map(Number);
     if (xAnos.length) {
         const ra = xAnos.reduce((a,b) => notasMax[a] > notasMax[b] ? a : b);
-        ins.push(`Maior nota registrada: <b>${notasMax[ra]}</b> pontos em ${ra}.`);
+        ins.push(`Maior nota registrada: <b>${fmtInt(notasMax[ra])}</b> pontos em ${ra}.`);
     }
     const cAnos = Object.keys(convocadosD).map(Number);
     if (cAnos.length) {
         const ra = cAnos.reduce((a,b) => convocadosD[a] > convocadosD[b] ? a : b);
-        ins.push(`Maior volume de convocados para a 2ª fase: <b>${convocadosD[ra]}</b> em ${ra}.`);
+        ins.push(`Maior volume de convocados para a 2ª fase: <b>${fmtInt(convocadosD[ra])}</b> em ${ra}.`);
     }
     if (Object.values(dados).some(r => (r.registros_agregados || 0) > 1)) {
         ins.push(`Quando não há filtro por modalidade, os anos com cotas são agregados a partir das modalidades oficiais da FUVEST.`);
@@ -1552,7 +1995,7 @@ function renderBreakdown(categoria, nomeCurso, subcats) {
         }
         const mc = cList.length ? cList.reduce((a,b)=>a+b,0)/cList.length : 0;
         const nAnos = Object.keys(cons).length;
-        html += `<tr><td style="text-align:left;font-weight:600">${subNome}</td><td>${nAnos}</td><td>${tv}</td><td>${ti}</td><td>${cList.length ? fmtBr(mc) : "—"}</td><td>${nmins.length ? Math.min(...nmins) : "—"}</td><td>${nmaxs.length ? Math.max(...nmaxs) : "—"}</td></tr>`;
+        html += `<tr><td style="text-align:left;font-weight:600">${subNome}</td><td>${fmtInt(nAnos)}</td><td>${fmtInt(tv)}</td><td>${fmtInt(ti)}</td><td>${cList.length ? fmtBrFlex(mc) : "—"}</td><td>${nmins.length ? fmtInt(Math.min(...nmins)) : "—"}</td><td>${nmaxs.length ? fmtInt(Math.max(...nmaxs)) : "—"}</td></tr>`;
         subDados[subNome] = { cons, mc: cList.length ? mc : null, tv, ti };
     }
     html += `</tbody></table></div>`;
@@ -1605,7 +2048,7 @@ function renderBreakdown(categoria, nomeCurso, subcats) {
             charts[`${bdId}-notas`] = new Chart(ctxN, {
                 type: "line",
                 data: { labels: anos, datasets },
-                options: opcoesChartBase({ yTitle: "Pontos" })
+                options: opcoesChartBase({ yTitle: "Pontos", yTickCallback: value => fmtInt(value) })
             });
         }
     });
@@ -1622,46 +2065,100 @@ function resetFiltrosSecundarios() {
     atualizarTituloSelect(document.getElementById("sel-loc"));
     atualizarTituloSelect(document.getElementById("sel-per"));
 }
+function obterIntervaloSelecionado() {
+    const inicioEl = document.getElementById("sel-ano-inicio");
+    const fimEl = document.getElementById("sel-ano-fim");
+    const primeiroAno = ANOS_DISPONIVEIS[0] || 2000;
+    const ultimoAno = ANOS_DISPONIVEIS[ANOS_DISPONIVEIS.length - 1] || primeiroAno;
+    const anoInicio = Number(inicioEl.value || primeiroAno);
+    const anoFim = Number(fimEl.value || ultimoAno);
+    return {
+        anoInicio: Math.min(anoInicio, anoFim),
+        anoFim: Math.max(anoInicio, anoFim)
+    };
+}
+function preencherSelectsAnos() {
+    const opcoes = ANOS_DISPONIVEIS.map(ano => ({ value: String(ano), label: String(ano) }));
+    preencherSelect(document.getElementById("sel-ano-inicio"), opcoes, String(ANOS_DISPONIVEIS[0]));
+    preencherSelect(document.getElementById("sel-ano-fim"), opcoes, String(ANOS_DISPONIVEIS[ANOS_DISPONIVEIS.length - 1]));
+    atualizarTituloSelect(document.getElementById("sel-ano-inicio"));
+    atualizarTituloSelect(document.getElementById("sel-ano-fim"));
+}
+function sincronizarIntervalo(origem = "inicio") {
+    const inicioEl = document.getElementById("sel-ano-inicio");
+    const fimEl = document.getElementById("sel-ano-fim");
+    if (!inicioEl.value || !fimEl.value) return;
+    if (Number(inicioEl.value) > Number(fimEl.value)) {
+        if (origem === "inicio") fimEl.value = inicioEl.value;
+        else inicioEl.value = fimEl.value;
+    }
+    atualizarTituloSelect(inicioEl);
+    atualizarTituloSelect(fimEl);
+}
+function reconstruirCatalogoAtual() {
+    const { anoInicio, anoFim } = obterIntervaloSelecionado();
+    LISTA_CURSOS = construirCatalogoBusca(DADOS, anoInicio, anoFim);
+    ESTADO.catalogoAtual = LISTA_CURSOS;
+
+    const grupoAtual = ESTADO.sugestaoSelecionadaId ? LISTA_CURSOS.find(grupo => grupo.id === ESTADO.sugestaoSelecionadaId) || null : null;
+    if (!grupoAtual) {
+        ESTADO.sugestaoSelecionadaId = null;
+        ESTADO.grupoSelecionado = null;
+    } else {
+        ESTADO.grupoSelecionado = grupoAtual;
+    }
+
+    return { anoInicio, anoFim };
+}
+function limparEstadoBusca(html) {
+    ESTADO.grupoSelecionado = null;
+    ESTADO.sugestaoSelecionadaId = null;
+    ESTADO.resultados = [];
+    ESTADO.atribs = new Map();
+    ESTADO.filtrados = [];
+    if (html) mostrarEstadoDashboard(html);
+    destruirCharts();
+    resetFiltrosSecundarios();
+}
+function montarLinhasFiltro(selLoc, selPer) {
+    const { anoInicio, anoFim } = obterIntervaloSelecionado();
+    const linhas = [`Período: ${anoInicio}–${anoFim}`];
+    if (ESTADO.grupoSelecionado) linhas.push(`Busca: ${ESTADO.grupoSelecionado.titulo}`);
+    if (selLoc !== "__all__") linhas.push(`Campus: ${selLoc}`);
+    if (selPer !== "__all__") linhas.push(`Modalidade: ${selPer}`);
+    return linhas;
+}
 
 function atualizarFiltros() {
     const termo = document.getElementById("busca").value.trim();
+    ESTADO.termoDigitado = termo;
+    const { anoInicio, anoFim } = reconstruirCatalogoAtual();
+
+    if (!LISTA_CURSOS.length) {
+        limparEstadoBusca(`<p>Não há carreiras ou cursos disponíveis no recorte ${anoInicio}–${anoFim}.</p>`);
+        return;
+    }
+
     if (termo.length < 2) {
-        ESTADO.cursoSelecionado = "";
-        ESTADO.resultados = [];
-        ESTADO.atribs = new Map();
-        ESTADO.filtrados = [];
-        mostrarEstadoDashboard(`<p>Digite ao menos duas letras da carreira ou do curso desejado para visualizar os dados.</p>`);
-        destruirCharts();
-        resetFiltrosSecundarios();
+        limparEstadoBusca(`<p>Escolha o período e digite ao menos duas letras da carreira ou do curso desejado para visualizar os dados oficiais da FUVEST.</p>`);
         return;
     }
 
     const resolucao = resolverBuscaCurso(termo);
     if (resolucao.status === "nenhum") {
-        ESTADO.cursoSelecionado = "";
-        ESTADO.resultados = [];
-        ESTADO.atribs = new Map();
-        ESTADO.filtrados = [];
-        const termoSafe = termo.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
-        mostrarEstadoDashboard(`<p>Nenhuma carreira encontrada para "${termoSafe}".</p>`);
-        destruirCharts();
-        resetFiltrosSecundarios();
+        const termoSafe = escaparHtml(termo);
+        limparEstadoBusca(`<p>Nenhuma carreira ou curso encontrado para "${termoSafe}" no período ${anoInicio}–${anoFim}.</p>`);
         return;
     }
 
     if (resolucao.status === "refinar") {
-        ESTADO.cursoSelecionado = "";
-        ESTADO.resultados = [];
-        ESTADO.atribs = new Map();
-        ESTADO.filtrados = [];
-        mostrarEstadoDashboard(`<p>Refine a busca ou escolha uma sugestão da lista para selecionar uma única carreira.</p>`);
-        destruirCharts();
-        resetFiltrosSecundarios();
+        limparEstadoBusca(`<p>Refine a busca ou escolha uma sugestão da lista para selecionar uma única carreira ou curso dentro do recorte ${anoInicio}–${anoFim}.</p>`);
         return;
     }
 
-    ESTADO.cursoSelecionado = resolucao.curso;
-    ESTADO.resultados = buscarCursosPorRotulo(DADOS, resolucao.curso);
+    ESTADO.grupoSelecionado = resolucao.grupo;
+    ESTADO.sugestaoSelecionadaId = resolucao.grupo.id;
+    ESTADO.resultados = buscarCursosPorGrupo(resolucao.grupo);
     ESTADO.atribs = inferirAtributos(ESTADO.resultados);
     aplicarFiltrosEDashboard();
 }
@@ -1722,16 +2219,6 @@ function aplicarFiltrosEDashboard() {
 
     const dados = consolidar(filtrados);
 
-    const nomeCurso = ESTADO.cursoSelecionado || (() => {
-        const nomes = new Set(filtrados.map(([, r]) => extrairRotuloBusca(r.curso)).filter(Boolean));
-        return nomes.size <= 2 ? [...nomes].join(" / ") : [...nomes][0];
-    })();
-
-    const partes = [];
-    if (selLoc.value !== "__all__") partes.push("Campus: " + selLoc.value);
-    if (selPer.value !== "__all__") partes.push("Modalidade: " + selPer.value);
-    const filtroTexto = partes.join(" | ");
-
     const breakdowns = {};
     if (selLoc.value === "__all__" && Object.keys(locsSet).length > 1) {
         const bd = {};
@@ -1750,7 +2237,11 @@ function aplicarFiltrosEDashboard() {
         if (Object.keys(bd).length > 1) breakdowns["Modalidade"] = bd;
     }
 
-    renderDashboard(nomeCurso, dados, filtroTexto, breakdowns);
+    renderDashboard(ESTADO.grupoSelecionado, dados, {
+        filtroLinhas: montarLinhasFiltro(selLoc.value, selPer.value),
+        breakdowns,
+        registrosFiltrados: filtrados
+    });
 }
 
 // ==========================================================================
@@ -1758,6 +2249,12 @@ function aplicarFiltrosEDashboard() {
 // ==========================================================================
 let debounceTimer;
 document.getElementById("busca").addEventListener("input", () => {
+    const valor = document.getElementById("busca").value;
+    const grupoAtual = obterGrupoSelecionadoAtual();
+    if (grupoAtual && chaveCanonicaNome(valor) !== chaveCanonicaNome(grupoAtual.titulo)) {
+        ESTADO.sugestaoSelecionadaId = null;
+        ESTADO.grupoSelecionado = null;
+    }
     renderizarSugestoesBusca(document.getElementById("busca").value);
     clearTimeout(debounceTimer);
     debounceTimer = setTimeout(atualizarFiltros, 400);
@@ -1778,6 +2275,16 @@ document.getElementById("sel-loc").addEventListener("change", () => {
 document.getElementById("sel-per").addEventListener("change", () => {
     atualizarTituloSelect(document.getElementById("sel-per"));
     aplicarFiltrosEDashboard();
+});
+document.getElementById("sel-ano-inicio").addEventListener("change", () => {
+    sincronizarIntervalo("inicio");
+    renderizarSugestoesBusca(document.getElementById("busca").value);
+    atualizarFiltros();
+});
+document.getElementById("sel-ano-fim").addEventListener("change", () => {
+    sincronizarIntervalo("fim");
+    renderizarSugestoesBusca(document.getElementById("busca").value);
+    atualizarFiltros();
 });
 document.addEventListener("click", e => {
     if (!document.getElementById("busca").closest(".filtro-grupo").contains(e.target)) fecharSugestoesBusca();
@@ -1801,20 +2308,10 @@ fetch("dados_vestibular.json")
     .then(r => r.json())
     .then(d => {
         DADOS = d;
-        const basesMap = new Map();
-        for (const regs of Object.values(d)) {
-            for (const r of regs) {
-                const base = extrairRotuloBusca(r.curso);
-                if (!base || base.length < 3) continue;
-                const chave = chaveBuscaTexto(base) || normalizar(base);
-                const preferencia = r.curso_truncado ? 1 : 0;
-                const existente = basesMap.get(chave);
-                if (!existente || preferencia < existente.preferencia || (preferencia === existente.preferencia && base.length < existente.base.length)) {
-                    basesMap.set(chave, { base, preferencia });
-                }
-            }
-        }
-        LISTA_CURSOS = ordenarBases([...basesMap.values()].map(item => item.base));
+        ANOS_DISPONIVEIS = Object.keys(d).map(Number).sort((a, b) => a - b);
+        preencherSelectsAnos();
+        ESTADO.catalogoCompleto = construirCatalogoBusca(DADOS);
+        reconstruirCatalogoAtual();
         atualizarTituloSelect(document.getElementById("sel-loc"));
         atualizarTituloSelect(document.getElementById("sel-per"));
         const hash = decodeURIComponent(location.hash.slice(1));

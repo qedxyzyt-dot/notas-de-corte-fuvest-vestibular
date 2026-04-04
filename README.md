@@ -1,41 +1,38 @@
 # Notas de Corte FUVEST Vestibular
 
-Site publico com o historico oficial das notas de corte da 1a fase do vestibular tradicional da FUVEST.
+Site público com o histórico oficial das notas de corte da 1ª fase do vestibular tradicional da FUVEST.
 
 ## Site online
 
 - https://qedxyzyt-dot.github.io/notas-de-corte-fuvest-vestibular/
 
-## O que voce encontra aqui
+## O que você encontra aqui
 
-- Serie historica de 2000 a 2026
-- Busca por curso, campus e modalidade
-- Graficos de evolucao das notas de corte
-- Vagas, inscritos, ausentes e convocados para a 2a fase
-- Consulta dos PDFs oficiais usados como referencia
+- Série histórica de 2000 a 2026
+- Busca por carreira ou curso com recorte de período
+- Filtros por campus e modalidade
+- Gráficos de evolução das notas de corte e da demanda
+- Tabela histórica com link direto para os PDFs oficiais
+- Resumo das nomenclaturas oficiais e das mudanças históricas relacionadas
 
 ## Fonte dos dados
 
-Os dados apresentados neste site foram extraidos dos relatorios oficiais da propria FUVEST. O objetivo do projeto e facilitar a consulta publica sem alterar o conteudo oficial publicado pela banca.
+Os dados exibidos neste site foram extraídos dos relatórios oficiais da própria FUVEST. Em caso de divergência, o PDF oficial do respectivo ano deve ser considerado a referência final.
 
-## Estrutura do repositorio
+## Publicação no GitHub Pages
 
-- `index.html`: aplicacao estatica principal
-- `dados_vestibular.json`: base consolidada do dashboard
-- `assets/`: estilos, scripts, imagens e PDFs utilizados pelo site
-
-## Publicacao no GitHub Pages
-
-Este repositorio foi preparado para publicacao direta no GitHub Pages a partir da raiz do projeto.
+Este repositório foi preparado para publicação direta a partir da raiz do projeto.
 
 1. Use a branch `main`.
 2. Em `Settings > Pages`, selecione `Deploy from a branch`.
 3. Escolha a pasta `/(root)`.
 
-## Atualizacao do conteudo
+## Arquivos principais
 
-Este repositorio contem o export pronto para publicacao. Quando houver novas correcoes de OCR, ajustes visuais ou atualizacoes de dados, basta substituir os arquivos publicados por uma nova versao exportada e fazer commit novamente.
+- `index.html`
+- `dados_vestibular.json`
+- `assets/`
 
-## Observacao
+## Atualização do conteúdo
 
-Em caso de divergencia, a referencia final deve ser sempre o PDF oficial da FUVEST correspondente ao ano consultado.
+As futuras correções de OCR, ajustes visuais ou atualizações de dados devem ser exportadas novamente a partir do repositório-fonte deste projeto.
