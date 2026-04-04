@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Notas de Corte">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#03305d"/>
+      <stop offset="100%" stop-color="#004A8D"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#bg)"/>
+  <path d="M16 46V18" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+  <path d="M16 46H48" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+  <path d="M23 41V31" stroke="#7fd1ff" stroke-width="5" stroke-linecap="round"/>
+  <path d="M32 41V24" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+  <path d="M41 41V20" stroke="#9be283" stroke-width="5" stroke-linecap="round"/>
+</svg>

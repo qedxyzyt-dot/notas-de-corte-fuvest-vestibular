@@ -1,0 +1,1832 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="QED">
+<meta name="google-site-verification" content="KQ3a32wY_67GdD8UxHcwbbYePICPwT_QgkzUNq-2KMw">
+<meta name="description" content="Dashboard com histórico de notas mínimas e máximas, vagas, inscritos, ausentes e convocados para a 2ª fase da FUVEST, com base nos relatórios oficiais de 2000 a 2026.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://qedxyzyt-dot.github.io/notas-de-corte-fuvest-vestibular/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Notas de Corte — Vestibular Tradicional FUVEST">
+<meta property="og:title" content="Notas de Corte — Vestibular Tradicional FUVEST">
+<meta property="og:description" content="Consulte o histórico oficial da FUVEST com notas mínimas e máximas, vagas, inscritos, ausentes e convocados para a 2ª fase.">
+<meta property="og:url" content="https://qedxyzyt-dot.github.io/notas-de-corte-fuvest-vestibular/">
+<meta property="og:image" content="https://qedxyzyt-dot.github.io/notas-de-corte-fuvest-vestibular/assets/favicon.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Notas de Corte — Vestibular Tradicional FUVEST">
+<meta name="twitter:description" content="Dashboard com histórico oficial do vestibular tradicional da FUVEST, de 2000 a 2026.">
+<title>Notas de Corte — Vestibular Tradicional FUVEST</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Notas de Corte — Vestibular Tradicional FUVEST",
+  "url": "https://qedxyzyt-dot.github.io/notas-de-corte-fuvest-vestibular/",
+  "description": "Dashboard com histórico oficial do vestibular tradicional da FUVEST, incluindo vagas, inscritos, ausentes, convocados para a 2ª fase e notas mínimas e máximas.",
+  "author": {
+    "@type": "Person",
+    "name": "QED"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "QED"
+  },
+  "inLanguage": "pt-BR"
+}
+</script>
+<style>
+:root {
+    color-scheme: light;
+    --usp-azul: #004A8D;
+    --usp-azul-profundo: #03305d;
+    --usp-azul-claro: #e8f0fa;
+    --bg-top: #f5f8fc;
+    --bg: #f3f6fa;
+    --bg-aurora: rgba(0, 74, 141, 0.08);
+    --card: #ffffff;
+    --surface-panel: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 251, 255, 0.97) 48%, rgba(237, 244, 252, 0.94) 100%);
+    --surface-emphasis: linear-gradient(180deg, rgba(239, 246, 255, 0.98) 0%, rgba(229, 239, 251, 0.96) 58%, rgba(220, 233, 247, 0.93) 100%);
+    --borda: #dde1e6;
+    --borda-suave: #eef1f4;
+    --texto: #142033;
+    --texto-sec: #5d6878;
+    --vermelho: #c0392b;
+    --verde: #27ae60;
+    --laranja: #e67e22;
+    --sombra-card: 0 18px 38px rgba(13, 31, 55, 0.08);
+    --sombra-flutuante: 0 14px 32px rgba(15, 23, 42, 0.14);
+    --header-sheen: rgba(255,255,255,0.08);
+    --header-bg-start: #03305d;
+    --header-bg-end: #004A8D;
+    --header-shadow: 0 16px 32px rgba(3, 48, 93, 0.18);
+    --topbar-text: #ffffff;
+    --topbar-bg: rgba(255, 255, 255, 0.07);
+    --topbar-border: rgba(255, 255, 255, 0.18);
+    --topbar-bg-hover: rgba(255, 255, 255, 0.14);
+    --topbar-shadow: 0 10px 22px rgba(3, 48, 93, 0.14);
+    --input-bg: #ffffff;
+    --input-bg-2: #eef4fb;
+    --menu-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(242, 248, 255, 0.97));
+    --hover: #e8f0fa;
+    --table-head-bg: var(--usp-azul);
+    --table-border: #eef1f4;
+    --footer-border: rgba(0, 74, 141, 0.12);
+    --subtle-button-bg: linear-gradient(180deg, #f8fbff, #edf5ff);
+    --subtle-button-bg-hover: #e7f1fd;
+    --subtle-button-border: rgba(0, 74, 141, 0.18);
+    --subtle-button-border-hover: rgba(0, 74, 141, 0.28);
+    --chart-text: #5d6878;
+    --chart-grid: rgba(20, 32, 51, 0.1);
+    --chart-tooltip-bg: rgba(17, 28, 45, 0.92);
+    --chart-tooltip-border: rgba(0, 74, 141, 0.22);
+    --chart-tooltip-text: #f8fbff;
+    --fonte-ui: "Source Sans 3", sans-serif;
+    --fonte-display: "Manrope", sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--fonte-ui);
+    background:
+        radial-gradient(circle at top, var(--bg-aurora), transparent 28rem),
+        linear-gradient(180deg, var(--bg-top) 0%, var(--bg) 100%);
+    color: var(--texto);
+    line-height: 1.5;
+}
+header {
+    background:
+        linear-gradient(135deg, var(--header-sheen), transparent 42%),
+        linear-gradient(135deg, var(--header-bg-start), var(--header-bg-end));
+    color: #fff;
+    padding: 1.6rem 2rem 1.7rem;
+    text-align: center;
+    box-shadow: var(--header-shadow);
+}
+header h1 {
+    font-family: var(--fonte-display);
+    font-size: 1.7rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+header p {
+    font-size: 0.98rem;
+    opacity: 0.82;
+    margin-top: 0.4rem;
+    font-weight: 500;
+}
+
+.topbar-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    padding: 0.45rem 0.8rem;
+    border: 1px solid var(--topbar-border);
+    border-radius: 999px;
+    color: var(--topbar-text);
+    text-decoration: none;
+    font-family: var(--fonte-display);
+    font-size: 0.88rem;
+    font-weight: 600;
+    background: var(--topbar-bg);
+    backdrop-filter: blur(6px);
+    box-shadow: var(--topbar-shadow);
+    transition: background 0.2s ease, border-color 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+.topbar-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.85rem;
+}
+.topbar-link:hover,
+.topbar-link:focus {
+    background: var(--topbar-bg-hover);
+    border-color: var(--topbar-border);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.16);
+    transform: translateY(-1px);
+    opacity: 1;
+    outline: none;
+}
+.topbar-link::before {
+    content: "";
+    width: 0.62rem;
+    height: 0.62rem;
+    margin-top: -0.02rem;
+    border-top: 1.8px solid currentColor;
+    border-right: 1.8px solid currentColor;
+    transform: rotate(45deg);
+}
+
+.page-main { flex: 1 0 auto; width: 100%; }
+.container { max-width: 1180px; width: 100%; margin: 0 auto; padding: 1.5rem; }
+#dashboard { position: relative; z-index: 1; }
+
+/* Filtros */
+.filtros {
+    background: var(--surface-panel);
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 1.5rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1.75fr) minmax(12.5rem, 0.9fr) minmax(12.5rem, 0.9fr);
+    gap: 1rem;
+    align-items: end;
+    box-shadow: var(--sombra-card);
+    position: relative;
+    z-index: 20;
+    overflow: visible;
+}
+.filtro-grupo { position: relative; display: flex; flex-direction: column; gap: 0.3rem; min-width: 0; z-index: 1; }
+.filtro-grupo:focus-within { z-index: 35; }
+.filtro-grupo--curso { min-width: 20rem; }
+.filtro-grupo label {
+    font-family: var(--fonte-display);
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--usp-azul);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+.filtro-grupo input, .filtro-grupo select, .combo-select__trigger {
+    padding: 0.72rem 0.9rem;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    font-size: 1rem;
+    background: linear-gradient(180deg, var(--input-bg), var(--input-bg-2));
+    width: 100%;
+    overflow: visible;
+    color: var(--texto);
+    line-height: 1.4;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+.filtro-grupo select option {
+    overflow: visible;
+    white-space: normal;
+}
+.combo-select { width: 100%; }
+.combo-select__trigger {
+    position: relative;
+    cursor: pointer;
+    text-align: left;
+    padding-right: 2.1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.combo-select__trigger::after {
+    content: "";
+    position: absolute;
+    right: 0.8rem;
+    top: 50%;
+    transform: translateY(-30%);
+    width: 0;
+    height: 0;
+    border-left: 0.32rem solid transparent;
+    border-right: 0.32rem solid transparent;
+    border-top: 0.42rem solid var(--texto-sec);
+    pointer-events: none;
+}
+.combo-select.is-open .combo-select__trigger::after {
+    transform: translateY(-65%) rotate(180deg);
+}
+.combo-select__trigger:disabled {
+    background: #f4f6f8;
+    color: #7a7a7a;
+    cursor: not-allowed;
+}
+.filtro-grupo input:focus, .filtro-grupo select:focus, .combo-select__trigger:focus {
+    outline: none;
+    border-color: var(--usp-azul);
+    box-shadow: 0 0 0 4px rgba(0,74,141,0.12);
+}
+.lista-sugestoes, .combo-select__menu {
+    position: absolute;
+    top: calc(100% + 0.35rem);
+    left: 0;
+    z-index: 80;
+    width: 100%;
+    min-width: 100%;
+    max-height: 18rem;
+    overflow-y: auto;
+    background: var(--menu-bg);
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    box-shadow: var(--sombra-flutuante);
+}
+.combo-select__menu {
+    width: min(44rem, calc(100vw - 3rem));
+}
+.lista-sugestoes[hidden], .combo-select__menu[hidden] { display: none; }
+.sugestao-btn, .combo-select__option {
+    display: block;
+    width: 100%;
+    border: 0;
+    background: transparent;
+    padding: 0.7rem 0.85rem;
+    text-align: left;
+    font-size: 0.88rem;
+    line-height: 1.35;
+    color: var(--texto);
+    cursor: pointer;
+    white-space: normal;
+}
+.sugestao-btn + .sugestao-btn, .combo-select__option + .combo-select__option {
+    border-top: 1px solid #eef1f4;
+}
+.sugestao-btn:hover, .sugestao-btn:focus,
+.combo-select__option:hover, .combo-select__option:focus,
+.combo-select__option.is-active {
+    background: var(--usp-azul-claro);
+    outline: none;
+}
+.visually-hidden-control {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+/* Cartões */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+.card {
+    background: var(--surface-panel);
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    padding: 1rem 1.2rem;
+    text-align: center;
+    box-shadow: var(--sombra-card);
+}
+.card .valor {
+    font-family: var(--fonte-display);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--usp-azul);
+    letter-spacing: -0.03em;
+}
+.card .rotulo {
+    font-family: var(--fonte-display);
+    font-size: 0.76rem;
+    color: var(--texto-sec);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-top: 0.2rem;
+}
+
+/* Tabela */
+.tabela-container {
+    background: var(--surface-panel);
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--sombra-card);
+}
+table { width: 100%; min-width: 52rem; border-collapse: collapse; font-size: 0.88rem; }
+thead { background: var(--table-head-bg); color: #fff; }
+th {
+    padding: 0.78rem 0.8rem;
+    text-align: center;
+    font-family: var(--fonte-display);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
+}
+td { padding: 0.65rem 0.8rem; text-align: center; border-bottom: 1px solid var(--table-border); }
+tbody tr:hover { background: var(--hover); }
+.col-edital { width: 1%; white-space: nowrap; }
+.pdf-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.34rem;
+    padding: 0.34rem 0.62rem;
+    border: 1px solid var(--subtle-button-border);
+    border-radius: 999px;
+    background: var(--subtle-button-bg);
+    color: var(--usp-azul);
+    text-decoration: none;
+    font-family: var(--fonte-display);
+    font-size: 0.73rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    transition: background 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+.pdf-link:hover,
+.pdf-link:focus {
+    background: var(--subtle-button-bg-hover);
+    border-color: var(--subtle-button-border-hover);
+    box-shadow: 0 8px 18px rgba(0, 74, 141, 0.12);
+    transform: translateY(-1px);
+    outline: none;
+}
+.pdf-link__icon {
+    width: 0.82rem;
+    height: 0.82rem;
+    flex: 0 0 auto;
+}
+
+/* Gráficos */
+.graficos { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 1.5rem; }
+.grafico-card {
+    background: var(--surface-panel);
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    padding: 1rem 1.5rem;
+    box-shadow: var(--sombra-card);
+}
+.grafico-card h3 {
+    font-family: var(--fonte-display);
+    font-size: 0.96rem;
+    color: var(--usp-azul);
+    margin-bottom: 0.8rem;
+    text-align: center;
+    letter-spacing: -0.01em;
+}
+.chart-wrapper {
+    position: relative;
+    width: 100%;
+    max-height: 350px;
+    border-radius: 16px;
+}
+
+/* Insights */
+.insights {
+    background: var(--surface-emphasis);
+    border-left: 4px solid var(--usp-azul);
+    border-radius: 0 18px 18px 0;
+    padding: 1.1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    box-shadow: var(--sombra-card);
+}
+.insights h3 {
+    font-family: var(--fonte-display);
+    font-size: 0.96rem;
+    color: var(--usp-azul);
+    margin-bottom: 0.5rem;
+}
+.insights ul {
+    margin: 0.2rem 0 0;
+    padding-left: 1.35rem;
+    font-size: 0.95rem;
+    list-style-position: outside;
+    text-align: left;
+}
+.insights li { margin-bottom: 0.35rem; padding-left: 0.15rem; text-align: left; }
+
+/* Breakdown */
+.breakdown { margin-bottom: 1.5rem; }
+.breakdown h3 {
+    font-family: var(--fonte-display);
+    font-size: 1rem;
+    color: var(--usp-azul);
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--usp-azul);
+}
+.breakdown-graficos { display: flex; flex-wrap: wrap; gap: 1rem; }
+.breakdown-grafico { flex: 1; min-width: 300px; }
+
+/* Footer */
+footer {
+    text-align: center;
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 0.9rem;
+    color: var(--texto-sec);
+    border-top: 1px solid var(--footer-border);
+    margin-top: auto;
+}
+footer strong {
+    color: var(--texto);
+    font-family: var(--fonte-display);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+}
+footer .footer-autor {
+    margin-bottom: 0.18rem;
+    font-size: 0.98rem;
+}
+footer .footer-nota {
+    margin-bottom: 0.28rem;
+}
+footer a { color: var(--usp-azul); }
+
+/* Estado vazio */
+.vazio {
+    text-align: center;
+    padding: 3.4rem 2rem;
+    color: var(--texto-sec);
+    font-size: 1rem;
+    background: var(--surface-panel);
+    border: 1px dashed rgba(0, 74, 141, 0.22);
+    border-radius: 18px;
+    box-shadow: var(--sombra-card);
+}
+.vazio::before {
+    content: "";
+    display: block;
+    width: 3.25rem;
+    height: 3.25rem;
+    margin: 0 auto 0.9rem;
+    border-radius: 999px;
+    background:
+        rgba(0, 74, 141, 0.08)
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23004A8D' stroke-linecap='round' stroke-linejoin='round' stroke-width='4'%3E%3Ccircle cx='28' cy='28' r='14'/%3E%3Cpath d='M38 38l12 12'/%3E%3C/g%3E%3C/svg%3E")
+        center/1.6rem 1.6rem no-repeat;
+}
+.vazio p {
+    max-width: 34rem;
+    margin: 0 auto;
+    font-size: 1.02rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+        --usp-azul: #7bbcff;
+        --usp-azul-profundo: #09182a;
+        --usp-azul-claro: rgba(123, 188, 255, 0.14);
+        --bg-top: #07111d;
+        --bg: #040912;
+        --bg-aurora: rgba(77, 148, 255, 0.18);
+        --card: #101823;
+        --surface-panel: linear-gradient(180deg, rgba(19, 28, 41, 0.96), rgba(9, 14, 24, 0.94));
+        --surface-emphasis: linear-gradient(180deg, rgba(12, 28, 48, 0.92), rgba(9, 18, 32, 0.92));
+        --borda: #24364b;
+        --borda-suave: rgba(147, 176, 212, 0.14);
+        --texto: #edf4ff;
+        --texto-sec: #a5b6cc;
+        --sombra-card: 0 24px 56px rgba(0, 0, 0, 0.42);
+        --sombra-flutuante: 0 22px 44px rgba(0, 0, 0, 0.46);
+        --header-sheen: rgba(158, 204, 255, 0.08);
+        --header-bg-start: #06111f;
+        --header-bg-end: #123c70;
+        --header-shadow: 0 18px 38px rgba(0, 0, 0, 0.35);
+        --topbar-text: #f7fbff;
+        --topbar-bg: linear-gradient(180deg, rgba(207, 228, 255, 0.16), rgba(122, 188, 255, 0.08));
+        --topbar-border: rgba(170, 209, 255, 0.42);
+        --topbar-bg-hover: linear-gradient(180deg, rgba(170, 209, 255, 0.24), rgba(123, 188, 255, 0.14));
+        --topbar-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+        --input-bg: #162335;
+        --input-bg-2: #0d1726;
+        --menu-bg: linear-gradient(180deg, rgba(18, 28, 42, 0.98), rgba(10, 16, 27, 0.98));
+        --hover: rgba(123, 188, 255, 0.12);
+        --table-head-bg: linear-gradient(135deg, #0f3d73, #1b67b9);
+        --table-border: rgba(147, 176, 212, 0.12);
+        --footer-border: rgba(147, 176, 212, 0.14);
+        --subtle-button-bg: linear-gradient(180deg, rgba(123, 188, 255, 0.18), rgba(59, 115, 191, 0.12));
+        --subtle-button-bg-hover: linear-gradient(180deg, rgba(146, 203, 255, 0.26), rgba(85, 143, 221, 0.18));
+        --subtle-button-border: rgba(170, 209, 255, 0.26);
+        --subtle-button-border-hover: rgba(170, 209, 255, 0.44);
+        --chart-text: #b8c8dc;
+        --chart-grid: rgba(184, 200, 220, 0.14);
+        --chart-tooltip-bg: rgba(7, 12, 20, 0.94);
+        --chart-tooltip-border: rgba(170, 209, 255, 0.18);
+        --chart-tooltip-text: #edf4ff;
+    }
+
+    header p {
+        opacity: 0.9;
+    }
+    .filtros,
+    .card,
+    .tabela-container,
+    .grafico-card,
+    .vazio {
+        box-shadow: var(--sombra-card);
+        backdrop-filter: blur(22px);
+    }
+    .filtro-grupo input,
+    .filtro-grupo select,
+    .combo-select__trigger {
+        box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.05),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.18);
+    }
+    .combo-select__trigger:disabled {
+        background: linear-gradient(180deg, rgba(23, 33, 46, 0.92), rgba(16, 23, 34, 0.9));
+        color: #7f8ea5;
+    }
+    .chart-wrapper {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0));
+    }
+    .pdf-link {
+        color: #d9ebff;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+    }
+    .pdf-link:hover,
+    .pdf-link:focus {
+        box-shadow: 0 12px 22px rgba(0, 0, 0, 0.3);
+    }
+    .insights {
+        border-left-color: #7bbcff;
+    }
+    .vazio {
+        border-color: rgba(123, 188, 255, 0.2);
+    }
+    footer a {
+        color: #9fd0ff;
+    }
+}
+
+/* Responsivo */
+@media (max-width: 960px) {
+    header {
+        padding: 1.35rem 1.35rem 1.5rem;
+    }
+    header h1 {
+        font-size: 1.48rem;
+    }
+    header p {
+        font-size: 0.94rem;
+    }
+    .container {
+        padding: 1.2rem;
+    }
+    .filtros {
+        grid-template-columns: minmax(0, 1.3fr) repeat(2, minmax(0, 1fr));
+        padding: 1.05rem 1.1rem;
+    }
+    .filtro-grupo--curso {
+        min-width: 0;
+    }
+    .combo-select__menu {
+        width: 100%;
+        min-width: 100%;
+    }
+    .grafico-card {
+        padding: 1rem 1.1rem;
+    }
+    .breakdown-grafico {
+        min-width: 0;
+    }
+}
+
+@media (max-width: 700px) {
+    header {
+        padding: 1.2rem 1rem 1.3rem;
+    }
+    header h1 {
+        font-size: 1.22rem;
+        line-height: 1.15;
+    }
+    header p {
+        font-size: 0.88rem;
+        margin-top: 0.45rem;
+    }
+    .topbar-link {
+        width: 100%;
+        max-width: 18rem;
+        padding: 0.52rem 0.8rem;
+        font-size: 0.84rem;
+    }
+    .container {
+        padding: 1rem 0.9rem 1.15rem;
+    }
+    .filtros {
+        grid-template-columns: 1fr;
+        gap: 0.85rem;
+        padding: 1rem;
+    }
+    .cards { grid-template-columns: 1fr 1fr; }
+    .filtro-grupo label {
+        font-size: 0.74rem;
+    }
+    .filtro-grupo input, .filtro-grupo select, .combo-select__trigger {
+        font-size: 0.98rem;
+        padding: 0.76rem 0.82rem;
+    }
+    .lista-sugestoes, .combo-select__menu {
+        width: 100%;
+        min-width: 100%;
+        max-height: 14rem;
+        border-radius: 14px;
+    }
+    table {
+        min-width: 39rem;
+        font-size: 0.82rem;
+    }
+    th, td {
+        padding: 0.62rem 0.58rem;
+    }
+    .pdf-link {
+        padding: 0.32rem 0.52rem;
+        font-size: 0.68rem;
+    }
+    .grafico-card {
+        padding: 0.95rem 0.85rem;
+        border-radius: 16px;
+    }
+    .grafico-card h3 {
+        font-size: 0.9rem;
+        line-height: 1.25;
+    }
+    .chart-wrapper {
+        max-height: 16rem;
+    }
+    .insights {
+        padding: 1rem 1rem 1rem 1.1rem;
+        border-radius: 0 16px 16px 0;
+    }
+    .insights ul {
+        padding-left: 1.1rem;
+        font-size: 0.92rem;
+    }
+    .breakdown h3 {
+        font-size: 0.92rem;
+        margin-bottom: 0.8rem;
+    }
+    .breakdown-graficos {
+        flex-direction: column;
+    }
+    .vazio {
+        padding: 2.35rem 1rem;
+    }
+    .vazio p {
+        font-size: 0.95rem;
+    }
+    footer {
+        padding: 1rem 0.9rem 1.2rem;
+        font-size: 0.84rem;
+    }
+    footer .footer-autor {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 420px) {
+    header h1 {
+        font-size: 1.08rem;
+    }
+    header p {
+        font-size: 0.84rem;
+    }
+    .topbar-link {
+        font-size: 0.79rem;
+    }
+    table {
+        min-width: 44rem;
+        font-size: 0.78rem;
+    }
+    th, td {
+        padding: 0.56rem 0.5rem;
+    }
+    .pdf-link {
+        padding: 0.28rem 0.46rem;
+        font-size: 0.64rem;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Notas de Corte — Vestibular Tradicional FUVEST</h1>
+    <p>Histórico interativo com dados oficiais da 1ª fase e da convocação para a 2ª fase (2000–2026)</p>
+    <div class="topbar-actions">
+        <a class="topbar-link" href="https://www.fuvest.br/vestibular-da-usp/" target="_blank" rel="noopener">Página oficial da FUVEST</a>
+        <a class="topbar-link" href="https://qedxyzyt-dot.github.io/notas-de-corte-transferencia-usp/">Ver transferência externa</a>
+    </div>
+</header>
+
+<main class="page-main">
+<div class="container">
+    <!-- Filtros -->
+    <div class="filtros">
+        <div class="filtro-grupo filtro-grupo--curso">
+            <label for="busca">Carreira ou Curso</label>
+            <input type="text" id="busca" placeholder="Digite a carreira, curso ou campus desejado..." autocomplete="off">
+            <div id="busca-sugestoes" class="lista-sugestoes" hidden></div>
+        </div>
+        <div class="filtro-grupo">
+            <label for="sel-loc">Campus</label>
+            <select id="sel-loc"><option value="__all__">Todos os campi</option></select>
+        </div>
+        <div class="filtro-grupo">
+            <label for="sel-per">Modalidade</label>
+            <select id="sel-per"><option value="__all__">Todas as modalidades</option></select>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="vazio">
+        <p>Digite ao menos duas letras da carreira ou do curso desejado para visualizar o histórico oficial da FUVEST.</p>
+    </div>
+</div>
+</main>
+
+<footer>
+    <div class="footer-autor">Projeto independente criado e mantido por <strong>QED</strong></div>
+    <div class="footer-nota">Dados extraídos dos relatórios oficiais da FUVEST — anos recentes incluem modalidade de concorrência; parte da série histórica antiga não traz todas as colunas.</div>
+    <a href="https://github.com/qedxyzyt-dot/notas-de-corte-transferencia-usp" target="_blank" rel="noopener">github.com/qedxyzyt-dot/notas-de-corte-transferencia-usp</a>
+</footer>
+
+<script>
+// ==========================================================================
+// Dados e estado global
+// ==========================================================================
+let DADOS = {};
+let ESTADO = { cursoSelecionado: "", resultados: [], atribs: new Map(), filtrados: [], breakdowns: {} };
+let LISTA_CURSOS = [];
+
+const LOC_CONHECIDAS = [
+    "São Paulo Quadrilátero", "São Paulo Leste",
+    "São Paulo Butantã/ Quadrilátero", "São Paulo Butantã",
+    "São Paulo", "São Carlos", "Ribeirão Preto",
+    "Piracicaba", "Pirassununga", "Lorena", "Bauru"
+];
+const LOC_NORMALIZAR = {
+    "São Paulo Butantã": "São Paulo",
+    "São Paulo Butantã/ Quadrilátero": "São Paulo"
+};
+const PERIODOS = ["Integral", "Diurno", "Noturno", "Matutino", "Vespertino"];
+const GRAUS = ["Bacharelado", "Licenciatura", "Bacharelado e Licenciatura", "Licenciatura e Bacharelado"];
+const SEP_RE = /\s*[-\u2212\u2013\u2014]\s*/;
+const STOPWORDS_BUSCA = new Set(["a", "as", "da", "das", "de", "do", "dos", "e", "em", "na", "nas", "no", "nos", "o", "os"]);
+const LOC_PADRAO_IMPLICITA = null;
+const ROTULO_LOC_NAO_INFORMADO = "Campus não explicitado no relatório";
+const PDFS_OFICIAIS = {
+    "2000": "assets/pdfs/vestibular/fuvest_2000_corte.pdf",
+    "2001": "assets/pdfs/vestibular/fuvest_2001_corte.pdf",
+    "2002": "assets/pdfs/vestibular/fuvest_2002_corte.pdf",
+    "2003": "assets/pdfs/vestibular/fuvest_2003_corte.pdf",
+    "2004": "assets/pdfs/vestibular/fuvest_2004_corte.pdf",
+    "2005": "assets/pdfs/vestibular/fuvest_2005_corte.pdf",
+    "2006": "assets/pdfs/vestibular/fuvest_2006_corte.pdf",
+    "2007": "assets/pdfs/vestibular/fuvest_2007_corte.pdf",
+    "2008": "assets/pdfs/vestibular/fuvest_2008_corte.pdf",
+    "2009": "assets/pdfs/vestibular/fuvest_2009_corte.pdf",
+    "2010": "assets/pdfs/vestibular/fuvest_2010_corte.pdf",
+    "2011": "assets/pdfs/vestibular/fuvest_2011_corte.pdf",
+    "2012": "assets/pdfs/vestibular/fuvest_2012_corte.pdf",
+    "2013": "assets/pdfs/vestibular/fuvest_2013_corte.pdf",
+    "2014": "assets/pdfs/vestibular/fuvest_2014_corte.pdf",
+    "2015": "assets/pdfs/vestibular/fuvest_2015_corte.pdf",
+    "2016": "assets/pdfs/vestibular/fuvest_2016_corte.pdf",
+    "2017": "assets/pdfs/vestibular/fuvest_2017_corte.pdf",
+    "2018": "assets/pdfs/vestibular/fuv2018_corte.pdf",
+    "2019": "assets/pdfs/vestibular/fuvest_2019_notas_de_corte.pdf",
+    "2020": "assets/pdfs/vestibular/fuvest_2020_nota_de_corte.pdf",
+    "2021": "assets/pdfs/vestibular/fuvest_2021_notas_primeira_fase.pdf",
+    "2022": "assets/pdfs/vestibular/fuvest_2022_notas_de_corte.pdf",
+    "2023": "assets/pdfs/vestibular/fuvest2023_notas_de_corte.pdf",
+    "2024": "assets/pdfs/vestibular/fuvest_2024_notas_de_corte.pdf",
+    "2025": "assets/pdfs/vestibular/fuvest_2025_notas_de_corte.pdf",
+    "2026": "assets/pdfs/vestibular/fuvest2026_notas_de_corte.pdf"
+};
+
+// ==========================================================================
+// Utilitários
+// ==========================================================================
+function normalizar(t) {
+    return t.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+}
+function tokenizarBusca(texto) {
+    return normalizar(texto)
+        .replace(/[^a-z0-9]+/g, " ")
+        .trim()
+        .split(/\s+/)
+        .filter(tok => tok.length >= 2 && !STOPWORDS_BUSCA.has(tok));
+}
+function chaveBuscaTexto(texto) {
+    return tokenizarBusca(texto).join(" ");
+}
+function fmtBr(v, casas = 2) {
+    return v.toFixed(casas).replace(".", ",");
+}
+function fmtBrFlex(v) {
+    const num = Number(v);
+    if (!Number.isFinite(num)) return String(v);
+    return Number.isInteger(num) ? String(num) : fmtBr(num);
+}
+function calcConvocadosPorVaga(r) {
+    const oficial = Number(r.convocados_por_vaga);
+    if (Number.isFinite(oficial)) return oficial;
+    const vagas = Number(r.vagas || 0);
+    if (vagas <= 0) return 0;
+    return Number(r.convocados_2fase || 0) / vagas;
+}
+function calcPresentes(r) {
+    if (!("inscritos" in r)) return null;
+    return Math.max(0, Number(r.inscritos || 0) - Number(r.ausentes || 0));
+}
+function formatarTooltipNumero(context) {
+    const label = context.dataset?.label ? `${context.dataset.label}: ` : "";
+    const valor = Number(context.raw ?? context.parsed?.y ?? context.parsed);
+    return label + fmtBr(valor);
+}
+function lerVarCss(nome, fallback = "") {
+    const valor = getComputedStyle(document.documentElement).getPropertyValue(nome).trim();
+    return valor || fallback;
+}
+function obterTemaGraficos() {
+    return {
+        texto: lerVarCss("--chart-text", "#5d6878"),
+        grade: lerVarCss("--chart-grid", "rgba(20, 32, 51, 0.1)"),
+        tooltipBg: lerVarCss("--chart-tooltip-bg", "rgba(17, 28, 45, 0.92)"),
+        tooltipBorda: lerVarCss("--chart-tooltip-border", "rgba(0, 74, 141, 0.22)"),
+        tooltipTexto: lerVarCss("--chart-tooltip-text", "#f8fbff")
+    };
+}
+function opcoesChartBase({ yTitle = "", beginAtZero = false, showLegend = true, tooltipLabel = null, yTickCallback = null } = {}) {
+    const tema = obterTemaGraficos();
+    const options = {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                display: showLegend,
+                position: "top",
+                labels: {
+                    color: tema.texto,
+                    usePointStyle: true,
+                    boxWidth: 30,
+                    boxHeight: 10,
+                    padding: 16,
+                    font: { family: "Manrope", size: 12, weight: "700" }
+                }
+            },
+            tooltip: {
+                backgroundColor: tema.tooltipBg,
+                borderColor: tema.tooltipBorda,
+                borderWidth: 1,
+                titleColor: tema.tooltipTexto,
+                bodyColor: tema.tooltipTexto,
+                padding: 12
+            }
+        },
+        scales: {
+            x: {
+                ticks: { color: tema.texto },
+                grid: { color: tema.grade, drawBorder: false }
+            },
+            y: {
+                beginAtZero,
+                ticks: { color: tema.texto },
+                grid: { color: tema.grade, drawBorder: false }
+            }
+        }
+    };
+    if (yTitle) {
+        options.scales.y.title = {
+            display: true,
+            text: yTitle,
+            color: tema.texto,
+            font: { family: "Manrope", weight: "700" }
+        };
+    }
+    if (tooltipLabel) {
+        options.plugins.tooltip.callbacks = { label: tooltipLabel };
+    }
+    if (yTickCallback) {
+        options.scales.y.ticks.callback = yTickCallback;
+    }
+    return options;
+}
+function renderLinkPdfAno(ano) {
+    const href = PDFS_OFICIAIS[String(ano)];
+    if (!href) return "â€”";
+    const titulo = `Abrir listagem oficial da FUVEST de ${ano}`;
+    return `<a class="pdf-link" href="${href}" target="_blank" rel="noopener" title="${titulo}" aria-label="${titulo}">
+        <svg class="pdf-link__icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+            <path d="M10 3.25v7m0 0 2.75-2.75M10 10.25 7.25 7.5M4.25 13v1.5c0 .69.56 1.25 1.25 1.25h9c.69 0 1.25-.56 1.25-1.25V13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>PDF</span>
+    </a>`;
+}
+
+function segmentarNomeCurso(nome) {
+    return nome
+        .replace(/\(([^)]*)\)/g, " — $1 ")
+        .split(SEP_RE)
+        .map(parte => parte.replace(/\s+/g, " ").trim())
+        .filter(Boolean);
+}
+
+function normalizarSegmento(seg) {
+    return normalizar(seg).replace(/\.+$/g, "").trim();
+}
+
+function identificarLocSegmento(seg) {
+    const segNorm = normalizarSegmento(seg);
+    if (!segNorm) return null;
+    if (segNorm.includes("usp leste")) return "São Paulo Leste";
+    for (const loc of LOC_CONHECIDAS) {
+        const locNorm = normalizar(loc);
+        if (segNorm === locNorm || segNorm.startsWith(locNorm)) return loc;
+    }
+    for (const loc of LOC_CONHECIDAS) {
+        const locNorm = normalizar(loc);
+        if (segNorm.length >= 6 && locNorm.startsWith(segNorm)) return loc;
+    }
+    return null;
+}
+
+function ehPeriodoSegmento(seg) {
+    const segNorm = normalizarSegmento(seg);
+    return PERIODOS.some(p => {
+        const pNorm = normalizar(p);
+        return segNorm === pNorm || segNorm.startsWith(pNorm);
+    });
+}
+
+function ehSemestreSegmento(seg) {
+    return /^\d+[ºo°]\s*sem/i.test(normalizarSegmento(seg));
+}
+
+function ehGrauSegmento(seg) {
+    const segNorm = normalizarSegmento(seg).replace(/[\/\s]+$/g, "");
+    return GRAUS.some(g => {
+        const gNorm = normalizar(g);
+        return segNorm === gNorm;
+    });
+}
+
+function padronizarSegmento(seg) {
+    let s = seg.replace(/\s+/g, " ").trim().replace(/\.+$/g, "");
+    const segNorm = normalizar(s);
+    if (segNorm.startsWith("enfase:")) {
+        return "Ênfase em " + s.split(":").slice(1).join(":").trim();
+    }
+    if (segNorm.startsWith("enfase em ")) {
+        return "Ênfase em " + s.replace(/^Ênfase\s+em\s+/i, "").trim();
+    }
+    return s;
+}
+
+function limparParentesesAuxiliares(seg) {
+    return seg
+        .replace(/\(([^)]*)\)/g, (_, conteudo) => {
+            const valor = padronizarSegmento(conteudo);
+            if (!valor) return "";
+            if (identificarLocSegmento(valor)) return "";
+            if (ehPeriodoSegmento(valor)) return "";
+            if (ehSemestreSegmento(valor)) return "";
+            if (ehGrauSegmento(valor)) return "";
+            return `(${valor})`;
+        })
+        .replace(/\s+/g, " ")
+        .trim();
+}
+
+function ehFragmentoInvalidoBase(seg) {
+    const segNorm = normalizarSegmento(seg);
+    if (!segNorm) return true;
+    if (/^\d+[ºo°]?(?:\s*sem(?:estre)?)?$/.test(segNorm)) return true;
+    return false;
+}
+
+function limparRotuloBase(rotulo) {
+    let res = rotulo.replace(/\s+/g, " ").trim().replace(/\.+$/g, "");
+    res = res.replace(/\*/g, "").trim();
+    res = res.replace(/\bÊnfase:\s*/i, "Ênfase em ");
+    res = res.replace(/^(?:Bacharelado\s*e\s*Licenciatura\s*em\s*|Licenciatura\s*e\s*Bacharelado\s*em\s*|Bacharelado\s*em\s*|Licenciatura\s*em\s*|Curso\s+de\s+Graduação\s+em\s*)/i, "");
+    res = res.replace(/\s*[—\-\u2013\u2014\u2212]\s*(?:Bacharelado|Licenciatura|Bacharelado\s+e\s+Licenciatura|Licenciatura\s+e\s+Bacharelado)\s*$/i, "");
+    res = res.replace(/\s*(?:\/\s*)?(?:Bacharelado|Licenciatura)\s*$/i, "");
+    res = res.replace(/\s*[—\-\u2013\u2014\u2212]\s*(?:Integral|Diurno|Noturno|Matutino|Vespertino)\s*$/i, "");
+    res = res.replace(/\s*[—\-\u2013\u2014\u2212]\s*\d+[ºo°]?(?:\s*sem(?:estre)?)?\s*$/i, "");
+    res = res.replace(/\s*[—\-\u2013\u2014\u2212]\s*$/g, "");
+    return res.trim().replace(/[\/\s]+$/g, "").trim();
+}
+
+function ehQualificadorBusca(seg) {
+    const segNorm = normalizarSegmento(seg);
+    return segNorm.startsWith("enfase em") || segNorm.startsWith("habilitacao em") || segNorm.startsWith("habilitacao:");
+}
+
+function extrairRotuloBusca(nome) {
+    const uteis = [];
+    for (const parteOriginal of segmentarNomeCurso(nome)) {
+        const parte = limparRotuloBase(limparParentesesAuxiliares(padronizarSegmento(parteOriginal)));
+        if (!parte) continue;
+        if (identificarLocSegmento(parte)) continue;
+        if (ehPeriodoSegmento(parte)) continue;
+        if (ehSemestreSegmento(parte)) continue;
+        if (ehGrauSegmento(parte)) continue;
+        if (ehFragmentoInvalidoBase(parte)) continue;
+        uteis.push(parte);
+    }
+    if (!uteis.length) return "";
+
+    const [titulo, ...extras] = uteis;
+    const rotulo = [
+        limparRotuloBase(titulo),
+        ...extras.filter(ehQualificadorBusca).map(limparRotuloBase)
+    ]
+        .filter(Boolean)
+        .join(" — ");
+
+    return limparRotuloBase(rotulo);
+}
+
+function ordenarBases(nomes) {
+    return nomes.sort((a, b) => a.localeCompare(b, "pt-BR", { sensitivity: "base" }));
+}
+
+// ---------- Extração de atributos ----------
+function extrairLocRaw(nome) {
+    for (const parte of segmentarNomeCurso(nome)) {
+        const loc = identificarLocSegmento(parte);
+        if (loc) return loc;
+    }
+    return null;
+}
+function extrairLoc(nome) {
+    const raw = extrairLocRaw(nome);
+    if (!raw) return LOC_PADRAO_IMPLICITA;
+    return LOC_NORMALIZAR[raw] || raw;
+}
+function extrairPeriodo(nome) {
+    return null;
+}
+function extrairBase(nome) {
+    const uteis = [];
+    for (const parteOriginal of segmentarNomeCurso(nome)) {
+        const parte = limparParentesesAuxiliares(padronizarSegmento(parteOriginal));
+        if (!parte) continue;
+        if (identificarLocSegmento(parte)) continue;
+        if (ehPeriodoSegmento(parte)) continue;
+        if (ehSemestreSegmento(parte)) continue;
+        if (ehGrauSegmento(parte)) continue;
+        if (ehFragmentoInvalidoBase(parte)) continue;
+        uteis.push(parte);
+    }
+
+    if (!uteis.length) {
+        const fallback = limparRotuloBase(nome);
+        return ehFragmentoInvalidoBase(fallback) ? "" : fallback;
+    }
+
+    const [titulo, ...extras] = uteis;
+    const base = [
+        limparRotuloBase(titulo),
+        ...extras
+            .map(limparRotuloBase)
+            .filter(extra => extra && !ehFragmentoInvalidoBase(extra))
+    ]
+        .filter(Boolean)
+        .join(" — ");
+
+    const limpa = limparRotuloBase(base);
+    return ehFragmentoInvalidoBase(limpa) ? "" : limpa;
+}
+
+// ---------- Inferência de atributos ----------
+function inferirAtributos(resultados) {
+    const porBase = {};
+    for (const [ano, r] of resultados) {
+        const base = extrairBase(r.curso);
+        (porBase[base] ||= []).push([ano, r]);
+    }
+    const atribs = new Map();
+    for (const [base, regs] of Object.entries(porBase)) {
+        const locsC = new Set(), persC = new Set();
+        for (const [, r] of regs) {
+            const l = extrairLoc(r.curso);
+            const p = r.modalidade || null;
+            if (l) locsC.add(l);
+            if (p) persC.add(p);
+        }
+        const locPad = locsC.size === 1 ? [...locsC][0] : null;
+        const perPad = persC.size === 1 ? [...persC][0] : null;
+        for (const [, r] of regs) {
+            atribs.set(r, {
+                loc: extrairLoc(r.curso) || locPad,
+                per: r.modalidade || perPad
+            });
+        }
+    }
+    return atribs;
+}
+
+// ---------- Busca e consolidação ----------
+function buscarCursosPorRotulo(dados, rotuloBusca) {
+    const tn = normalizar(rotuloBusca);
+    const res = [];
+    for (const ano of Object.keys(dados).sort()) {
+        for (const r of dados[ano]) {
+            if (normalizar(extrairRotuloBusca(r.curso)) === tn) res.push([ano, r]);
+        }
+    }
+    return res;
+}
+function agregarRegistrosAno(registrosAno) {
+    const dadosAno = registrosAno.map(([, r]) => r);
+    if (!dadosAno.length) return null;
+
+    const completos = dadosAno.filter(r => "vagas" in r);
+    if (!completos.length) {
+        const pontosMin = dadosAno.map(r => r.pontos_minimo).filter(v => v !== null && v !== undefined);
+        const pontosMax = dadosAno.map(r => r.pontos_maximo).filter(v => v !== null && v !== undefined);
+        const relacoes = dadosAno.map(r => r.convocados_por_vaga).filter(v => v !== null && v !== undefined);
+        const pontosPossiveis = dadosAno.map(r => r.pontos_possiveis_2fase).filter(v => v !== null && v !== undefined);
+        return {
+            ...dadosAno[0],
+            modalidade: null,
+            convocados_2fase: dadosAno.reduce((acc, r) => acc + Number(r.convocados_2fase || 0), 0),
+            convocados_por_vaga: relacoes.length ? relacoes.reduce((acc, v) => acc + Number(v), 0) / relacoes.length : null,
+            pontos_minimo: pontosMin.length ? Math.min(...pontosMin) : null,
+            pontos_maximo: pontosMax.length ? Math.max(...pontosMax) : null,
+            pontos_possiveis_2fase: pontosPossiveis.length ? Math.max(...pontosPossiveis) : null,
+            registros_agregados: dadosAno.length
+        };
+    }
+
+    const pontosMin = completos.map(r => r.pontos_minimo).filter(v => v !== null && v !== undefined);
+    const pontosMax = completos.map(r => r.pontos_maximo).filter(v => v !== null && v !== undefined);
+    const vagasTotais = completos.reduce((acc, r) => acc + Number(r.vagas || 0), 0);
+    const convocadosTotais = completos.reduce((acc, r) => acc + Number(r.convocados_2fase || 0), 0);
+
+    return {
+        ...completos[0],
+        modalidade: null,
+        vagas: vagasTotais,
+        inscritos: completos.reduce((acc, r) => acc + Number(r.inscritos || 0), 0),
+        ausentes: completos.reduce((acc, r) => acc + Number(r.ausentes || 0), 0),
+        convocados_2fase: convocadosTotais,
+        convocados_por_vaga: vagasTotais > 0 ? convocadosTotais / vagasTotais : null,
+        pontos_minimo: pontosMin.length ? Math.min(...pontosMin) : null,
+        pontos_maximo: pontosMax.length ? Math.max(...pontosMax) : null,
+        registros_agregados: dadosAno.length
+    };
+}
+
+function consolidar(registros) {
+    const porAno = {};
+    for (const [ano, r] of registros) {
+        const a = parseInt(ano);
+        (porAno[a] ||= []).push([ano, r]);
+    }
+
+    return Object.fromEntries(
+        Object.entries(porAno)
+            .map(([ano, regs]) => [ano, agregarRegistrosAno(regs)])
+            .sort(([a],[b]) => a - b)
+    );
+}
+
+function preencherSelect(selectEl, opcoes, valorSelecionado = null) {
+    selectEl.innerHTML = "";
+    for (const { value, label } of opcoes) {
+        const opt = document.createElement("option");
+        opt.value = value;
+        opt.textContent = label;
+        selectEl.appendChild(opt);
+    }
+    if (valorSelecionado !== null && [...selectEl.options].some(opt => opt.value === valorSelecionado)) {
+        selectEl.value = valorSelecionado;
+    }
+}
+
+function atualizarTituloSelect(selectEl) {
+    const selecionada = selectEl.options[selectEl.selectedIndex];
+    selectEl.title = selecionada ? selecionada.textContent : "";
+}
+
+function fecharSugestoesBusca() {
+    document.getElementById("busca-sugestoes").hidden = true;
+}
+
+function ordenarSugestoesBusca(sugestoes, termoNorm) {
+    return [...sugestoes].sort((a, b) => {
+        const tokens = tokenizarBusca(termoNorm);
+        const aNorm = normalizar(a);
+        const bNorm = normalizar(b);
+        const aKey = chaveBuscaTexto(a);
+        const bKey = chaveBuscaTexto(b);
+        const termoKey = chaveBuscaTexto(termoNorm);
+
+        const aExato = aKey === termoKey ? 0 : 1;
+        const bExato = bKey === termoKey ? 0 : 1;
+        if (aExato !== bExato) return aExato - bExato;
+
+        const aFrase = termoKey && aKey.includes(termoKey) ? 0 : 1;
+        const bFrase = termoKey && bKey.includes(termoKey) ? 0 : 1;
+        if (aFrase !== bFrase) return aFrase - bFrase;
+
+        const aInicio = tokens.length && aNorm.startsWith(tokens[0]) ? 0 : 1;
+        const bInicio = tokens.length && bNorm.startsWith(tokens[0]) ? 0 : 1;
+        if (aInicio !== bInicio) return aInicio - bInicio;
+
+        const aPos = tokens.reduce((acc, token) => acc + Math.max(aNorm.indexOf(token), 0), 0);
+        const bPos = tokens.reduce((acc, token) => acc + Math.max(bNorm.indexOf(token), 0), 0);
+        if (aPos !== bPos) return aPos - bPos;
+
+        if (a.length !== b.length) return a.length - b.length;
+        return a.localeCompare(b, "pt-BR", { sensitivity: "base" });
+    });
+}
+
+function obterSugestoesBusca(termo = "") {
+    const termoLimpo = termo.trim();
+    if (termoLimpo.length < 2) return [];
+    const tokens = tokenizarBusca(termoLimpo);
+    if (!tokens.length) return [];
+    const sugestoes = LISTA_CURSOS.filter(nome => {
+        const nomeNorm = normalizar(nome);
+        return tokens.every(token => nomeNorm.includes(token));
+    });
+    return ordenarSugestoesBusca(sugestoes, termoLimpo);
+}
+
+function resolverBuscaCurso(termo = "") {
+    const termoLimpo = termo.trim();
+    if (termoLimpo.length < 2) return { status: "vazio", sugestoes: [] };
+
+    const termoChave = chaveBuscaTexto(termoLimpo);
+    const cursoExato = LISTA_CURSOS.find(nome => chaveBuscaTexto(nome) === termoChave);
+    if (cursoExato) return { status: "ok", curso: cursoExato, sugestoes: [cursoExato] };
+
+    const sugestoes = obterSugestoesBusca(termoLimpo);
+    if (sugestoes.length === 1) return { status: "ok", curso: sugestoes[0], sugestoes };
+    if (!sugestoes.length) return { status: "nenhum", sugestoes: [] };
+    return { status: "refinar", sugestoes };
+}
+
+function renderizarSugestoesBusca(termo = "") {
+    const painel = document.getElementById("busca-sugestoes");
+    const input = document.getElementById("busca");
+    if (!LISTA_CURSOS.length) {
+        painel.hidden = true;
+        return;
+    }
+
+    const sugestoes = obterSugestoesBusca(termo);
+
+    if (!sugestoes.length) {
+        painel.hidden = true;
+        return;
+    }
+
+    painel.innerHTML = "";
+    for (const nome of sugestoes) {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "sugestao-btn";
+        btn.textContent = nome;
+        btn.title = nome;
+        btn.addEventListener("mousedown", e => e.preventDefault());
+        btn.addEventListener("click", () => {
+            input.value = nome;
+            fecharSugestoesBusca();
+            atualizarFiltros();
+            input.focus();
+        });
+        painel.appendChild(btn);
+    }
+    painel.hidden = false;
+}
+
+// ==========================================================================
+// Renderização do dashboard
+// ==========================================================================
+let charts = {};
+function destruirCharts() {
+    Object.values(charts).forEach(c => c.destroy());
+    charts = {};
+}
+
+function mostrarEstadoDashboard(html) {
+    const container = document.getElementById("dashboard");
+    container.classList.add("vazio");
+    container.innerHTML = html;
+}
+
+function renderDashboard(nomeCurso, dados, filtroTexto, breakdowns) {
+    destruirCharts();
+    const container = document.getElementById("dashboard");
+    container.classList.remove("vazio");
+
+    const anos = Object.keys(dados).map(Number).sort((a,b) => a - b);
+    const temCompleto = Object.values(dados).some(r => "vagas" in r);
+    let html = "";
+
+    if (filtroTexto) {
+        html += `<div class="insights"><h3>Filtro aplicado</h3><ul><li>${filtroTexto}</li></ul></div>`;
+    }
+
+    html += `<div class="tabela-container"><table>
+        <thead><tr><th>Ano</th><th>Vagas</th><th>Inscritos</th><th>Ausentes</th><th>Convocados 2ª fase</th><th>Conv./vaga</th><th>Nota mín.</th><th>Nota máx.</th><th class="col-edital">Listagem oficial</th></tr></thead>
+        <tbody>`;
+    for (const [ano, r] of Object.entries(dados)) {
+        const linkPdf = renderLinkPdfAno(ano);
+        const mn = r.pontos_minimo ?? "—";
+        const mx = r.pontos_maximo ?? "—";
+        const rel = Number.isFinite(calcConvocadosPorVaga(r)) && calcConvocadosPorVaga(r) > 0 ? fmtBr(calcConvocadosPorVaga(r)) : "—";
+        html += `<tr><td>${ano}</td><td>${r.vagas ?? "—"}</td><td>${r.inscritos ?? "—"}</td><td>${r.ausentes ?? "—"}</td><td>${r.convocados_2fase ?? "—"}</td><td>${rel}</td><td>${mn}</td><td>${mx}</td><td class="col-edital">${linkPdf}</td></tr>`;
+    }
+    html += `</tbody></table></div>`;
+
+    html += `<div class="graficos">
+        <div class="grafico-card"><h3>Evolução das Notas de Corte</h3><div class="chart-wrapper"><canvas id="chart-notas"></canvas></div></div>`;
+    if (Object.values(dados).some(r => Number.isFinite(calcConvocadosPorVaga(r)) && calcConvocadosPorVaga(r) > 0)) {
+        html += `<div class="grafico-card"><h3>Convocados por Vaga</h3><div class="chart-wrapper"><canvas id="chart-conc"></canvas></div></div>`;
+    }
+    if (temCompleto) {
+        html += `<div class="grafico-card"><h3>Vagas Ofertadas vs Inscritos</h3><div class="chart-wrapper"><canvas id="chart-vi"></canvas></div></div>`;
+    }
+    html += `</div>`;
+
+    const insights = gerarInsights(nomeCurso, dados);
+    if (insights.length > 0) {
+        html += `<div class="insights"><h3>Análise dos dados</h3><ul>${insights.map(i => `<li>${i}</li>`).join("")}</ul></div>`;
+    }
+
+    if (breakdowns && Object.keys(breakdowns).length > 0) {
+        for (const [cat, subcats] of Object.entries(breakdowns)) {
+            html += renderBreakdown(cat, nomeCurso, subcats);
+        }
+    }
+
+    container.innerHTML = html;
+
+    buildChartNotas(anos, dados);
+    if (Object.values(dados).some(r => Number.isFinite(calcConvocadosPorVaga(r)) && calcConvocadosPorVaga(r) > 0)) {
+        buildChartConc(anos, dados);
+    }
+    if (temCompleto) {
+        buildChartVI(anos, dados);
+    }
+}
+
+// ---------- Gráficos ----------
+function buildChartNotas(anos, dados) {
+    const ctx = document.getElementById("chart-notas");
+    if (!ctx) return;
+    const notasMin = anos.map(a => {
+        const r = dados[a]; return r.pontos_minimo ?? null;
+    });
+    const notasMax = anos.map(a => {
+        const r = dados[a]; return r.pontos_maximo ?? null;
+    });
+    charts.notas = new Chart(ctx, {
+        type: "line",
+        data: {
+            labels: anos,
+            datasets: [
+                { label: "Nota mínima (convocado)", data: notasMin, borderColor: "#c0392b", backgroundColor: "rgba(192,57,43,0.1)", pointRadius: 5, pointBackgroundColor: "#c0392b", tension: 0.2, fill: false },
+                { label: "Nota máxima (convocado)", data: notasMax, borderColor: "#27ae60", backgroundColor: "rgba(39,174,96,0.1)", pointRadius: 5, pointBackgroundColor: "#27ae60", pointStyle: "rectRot", tension: 0.2, fill: false }
+            ]
+        },
+        options: opcoesChartBase({ yTitle: "Pontos" })
+    });
+}
+function buildChartConc(anos, dados) {
+    const ctx = document.getElementById("chart-conc");
+    if (!ctx) return;
+    const vals = anos.map(a => {
+        const valor = calcConvocadosPorVaga(dados[a]);
+        return valor > 0 ? valor : null;
+    });
+    charts.conc = new Chart(ctx, {
+        type: "bar",
+        data: { labels: anos, datasets: [{ label: "Convocados/vaga", data: vals, backgroundColor: "rgba(230,126,34,0.7)", borderColor: "#e67e22", borderWidth: 1 }] },
+        options: opcoesChartBase({
+            yTitle: "Conv./vaga",
+            beginAtZero: true,
+            showLegend: false,
+            tooltipLabel: formatarTooltipNumero,
+            yTickCallback: value => fmtBrFlex(value)
+        })
+    });
+}
+function buildChartVI(anos, dados) {
+    const ctx = document.getElementById("chart-vi");
+    if (!ctx) return;
+    const vagas = anos.map(a => dados[a].vagas ?? null);
+    const insc = anos.map(a => dados[a].inscritos ?? null);
+    charts.vi = new Chart(ctx, {
+        type: "bar",
+        data: {
+            labels: anos,
+            datasets: [
+                { label: "Vagas", data: vagas, backgroundColor: "rgba(39,174,96,0.6)", borderColor: "#27ae60", borderWidth: 1 },
+                { label: "Inscritos", data: insc, backgroundColor: "rgba(192,57,43,0.6)", borderColor: "#c0392b", borderWidth: 1 }
+            ]
+        },
+        options: opcoesChartBase({ yTitle: "Quantidade", beginAtZero: true })
+    });
+}
+
+// ---------- Insights ----------
+function gerarInsights(nome, dados) {
+    const anos = Object.keys(dados).map(Number).sort((a,b) => a - b);
+    const ins = [];
+    const notasMin = {}, notasMax = {}, relacoes = {}, vagasD = {}, inscD = {}, convocadosD = {};
+    for (const ano of anos) {
+        const r = dados[ano];
+        const mn = r.pontos_minimo ?? null;
+        const mx = r.pontos_maximo ?? null;
+        if (mn !== null) notasMin[ano] = mn;
+        if (mx !== null) notasMax[ano] = mx;
+        const rel = calcConvocadosPorVaga(r);
+        if (rel > 0) relacoes[ano] = rel;
+        if ("vagas" in r) {
+            vagasD[ano] = r.vagas;
+            inscD[ano] = r.inscritos;
+        }
+        if (r.convocados_2fase !== null && r.convocados_2fase !== undefined) {
+            convocadosD[ano] = r.convocados_2fase;
+        }
+    }
+    const mAnos = Object.keys(notasMin).map(Number).sort((a,b) => a - b);
+    if (mAnos.length >= 2) {
+        const p = notasMin[mAnos[0]], u = notasMin[mAnos.at(-1)], d = u - p;
+        if (d > 0) ins.push(`A nota mínima apresentou tendência de <b>alta</b>, de ${p} (${mAnos[0]}) para ${u} (${mAnos.at(-1)}) (+${d} pontos).`);
+        else if (d < 0) ins.push(`A nota mínima apresentou tendência de <b>queda</b>, de ${p} (${mAnos[0]}) para ${u} (${mAnos.at(-1)}) (${d} pontos).`);
+        else ins.push(`A nota mínima manteve-se <b>estável</b> em ${u} pontos entre ${mAnos[0]} e ${mAnos.at(-1)}.`);
+    }
+    const rAnos = Object.keys(relacoes).map(Number);
+    if (rAnos.length) {
+        const maxA = rAnos.reduce((a,b) => relacoes[a] > relacoes[b] ? a : b);
+        const minA = rAnos.reduce((a,b) => relacoes[a] < relacoes[b] ? a : b);
+        const med = Object.values(relacoes).reduce((a,b) => a+b, 0) / rAnos.length;
+        ins.push(`Maior relação de convocados por vaga: <b>${fmtBr(relacoes[maxA])}</b> em ${maxA}. Menor: <b>${fmtBr(relacoes[minA])}</b> em ${minA}. Média histórica: ${fmtBr(med)}.`);
+    }
+    const vAnos = Object.keys(vagasD).map(Number).sort((a,b) => a - b);
+    if (vAnos.length >= 2) {
+        const tv = Object.values(vagasD).reduce((a,b) => a+b, 0);
+        const ti = Object.values(inscD).reduce((a,b) => a+b, 0);
+        const ua = vAnos.at(-1);
+        ins.push(`Total histórico: <b>${tv}</b> vagas e <b>${ti}</b> inscrições. Em ${ua}: ${vagasD[ua]} vagas para ${inscD[ua]} inscritos.`);
+    }
+    const xAnos = Object.keys(notasMax).map(Number);
+    if (xAnos.length) {
+        const ra = xAnos.reduce((a,b) => notasMax[a] > notasMax[b] ? a : b);
+        ins.push(`Maior nota registrada: <b>${notasMax[ra]}</b> pontos em ${ra}.`);
+    }
+    const cAnos = Object.keys(convocadosD).map(Number);
+    if (cAnos.length) {
+        const ra = cAnos.reduce((a,b) => convocadosD[a] > convocadosD[b] ? a : b);
+        ins.push(`Maior volume de convocados para a 2ª fase: <b>${convocadosD[ra]}</b> em ${ra}.`);
+    }
+    if (Object.values(dados).some(r => (r.registros_agregados || 0) > 1)) {
+        ins.push(`Quando não há filtro por modalidade, os anos com cotas são agregados a partir das modalidades oficiais da FUVEST.`);
+    }
+    if (Object.values(dados).some(r => !("vagas" in r))) {
+        ins.push(`Parte da série histórica não informa vagas, inscritos ou ausentes no próprio PDF; nesses casos o painel preserva apenas os campos oficialmente publicados.`);
+    }
+    return ins;
+}
+
+// ---------- Breakdown ----------
+function renderBreakdown(categoria, nomeCurso, subcats) {
+    let html = `<div class="breakdown"><h3>Detalhamento por ${categoria} — ${nomeCurso}</h3>`;
+    html += `<div class="tabela-container"><table>
+        <thead><tr><th>${categoria}</th><th>Anos</th><th>Vagas</th><th>Inscritos</th><th>Conv./vaga médio</th><th>Nota mín.</th><th>Nota máx.</th></tr></thead>
+        <tbody>`;
+    const subDados = {};
+    for (const [subNome, regs] of Object.entries(subcats).sort(([a],[b]) => a.localeCompare(b))) {
+        const cons = consolidar(regs);
+        let tv = 0, ti = 0, cList = [], nmins = [], nmaxs = [];
+        for (const r of Object.values(cons)) {
+            if ("vagas" in r) {
+                tv += r.vagas;
+                ti += r.inscritos;
+            }
+            const c = calcConvocadosPorVaga(r);
+            if (c > 0) cList.push(c);
+            const mn = r.pontos_minimo ?? null;
+            const mx = r.pontos_maximo ?? null;
+            if (mn != null) nmins.push(mn); if (mx != null) nmaxs.push(mx);
+        }
+        const mc = cList.length ? cList.reduce((a,b)=>a+b,0)/cList.length : 0;
+        const nAnos = Object.keys(cons).length;
+        html += `<tr><td style="text-align:left;font-weight:600">${subNome}</td><td>${nAnos}</td><td>${tv}</td><td>${ti}</td><td>${cList.length ? fmtBr(mc) : "—"}</td><td>${nmins.length ? Math.min(...nmins) : "—"}</td><td>${nmaxs.length ? Math.max(...nmaxs) : "—"}</td></tr>`;
+        subDados[subNome] = { cons, mc: cList.length ? mc : null, tv, ti };
+    }
+    html += `</tbody></table></div>`;
+
+    const bdId = "bd-" + normalizar(categoria).replace(/\s/g, "");
+    html += `<div class="breakdown-graficos">`;
+    html += `<div class="grafico-card breakdown-grafico"><h3>Convocados por vaga por ${categoria}</h3><div class="chart-wrapper"><canvas id="${bdId}-conc"></canvas></div></div>`;
+    html += `<div class="grafico-card breakdown-grafico"><h3>Evolução da nota mínima por ${categoria}</h3><div class="chart-wrapper"><canvas id="${bdId}-notas"></canvas></div></div>`;
+    html += `</div></div>`;
+
+    requestAnimationFrame(() => {
+        const cores = ["#c0392b", "#2980b9", "#27ae60", "#e67e22", "#8e44ad", "#16a085"];
+        const ctxC = document.getElementById(`${bdId}-conc`);
+        if (ctxC) {
+            const labels = Object.keys(subDados).sort();
+            const vals = labels.map(k => subDados[k].mc);
+            charts[`${bdId}-conc`] = new Chart(ctxC, {
+                type: "bar",
+                data: { labels, datasets: [{ label: "Convocados/vaga", data: vals, backgroundColor: labels.map((_,i) => cores[i % cores.length] + "99"), borderColor: labels.map((_,i) => cores[i % cores.length]), borderWidth: 1 }] },
+                options: opcoesChartBase({
+                    beginAtZero: true,
+                    showLegend: false,
+                    tooltipLabel: formatarTooltipNumero,
+                    yTickCallback: value => fmtBrFlex(value)
+                })
+            });
+        }
+        const ctxN = document.getElementById(`${bdId}-notas`);
+        if (ctxN) {
+            const allAnos = new Set();
+            const series = {};
+            for (const [nome, info] of Object.entries(subDados).sort(([a],[b])=>a.localeCompare(b))) {
+                series[nome] = {};
+                for (const [ano, r] of Object.entries(info.cons)) {
+                    const mn = r.pontos_minimo ?? null;
+                    if (mn !== null) { series[nome][ano] = mn; allAnos.add(parseInt(ano)); }
+                }
+            }
+            const anos = [...allAnos].sort((a,b) => a - b);
+            const datasets = Object.entries(series).sort(([a],[b])=>a.localeCompare(b)).map(([nome, data], i) => ({
+                label: nome,
+                data: anos.map(a => data[a] ?? null),
+                borderColor: cores[i % cores.length],
+                pointBackgroundColor: cores[i % cores.length],
+                pointRadius: 4,
+                tension: 0.2,
+                spanGaps: true,
+                fill: false
+            }));
+            charts[`${bdId}-notas`] = new Chart(ctxN, {
+                type: "line",
+                data: { labels: anos, datasets },
+                options: opcoesChartBase({ yTitle: "Pontos" })
+            });
+        }
+    });
+
+    return html;
+}
+
+// ==========================================================================
+// Lógica de filtros e interação
+// ==========================================================================
+function resetFiltrosSecundarios() {
+    preencherSelect(document.getElementById("sel-loc"), [{ value: "__all__", label: "Todos os campi" }], "__all__");
+    preencherSelect(document.getElementById("sel-per"), [{ value: "__all__", label: "Todas as modalidades" }], "__all__");
+    atualizarTituloSelect(document.getElementById("sel-loc"));
+    atualizarTituloSelect(document.getElementById("sel-per"));
+}
+
+function atualizarFiltros() {
+    const termo = document.getElementById("busca").value.trim();
+    if (termo.length < 2) {
+        ESTADO.cursoSelecionado = "";
+        ESTADO.resultados = [];
+        ESTADO.atribs = new Map();
+        ESTADO.filtrados = [];
+        mostrarEstadoDashboard(`<p>Digite ao menos duas letras da carreira ou do curso desejado para visualizar os dados.</p>`);
+        destruirCharts();
+        resetFiltrosSecundarios();
+        return;
+    }
+
+    const resolucao = resolverBuscaCurso(termo);
+    if (resolucao.status === "nenhum") {
+        ESTADO.cursoSelecionado = "";
+        ESTADO.resultados = [];
+        ESTADO.atribs = new Map();
+        ESTADO.filtrados = [];
+        const termoSafe = termo.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+        mostrarEstadoDashboard(`<p>Nenhuma carreira encontrada para "${termoSafe}".</p>`);
+        destruirCharts();
+        resetFiltrosSecundarios();
+        return;
+    }
+
+    if (resolucao.status === "refinar") {
+        ESTADO.cursoSelecionado = "";
+        ESTADO.resultados = [];
+        ESTADO.atribs = new Map();
+        ESTADO.filtrados = [];
+        mostrarEstadoDashboard(`<p>Refine a busca ou escolha uma sugestão da lista para selecionar uma única carreira.</p>`);
+        destruirCharts();
+        resetFiltrosSecundarios();
+        return;
+    }
+
+    ESTADO.cursoSelecionado = resolucao.curso;
+    ESTADO.resultados = buscarCursosPorRotulo(DADOS, resolucao.curso);
+    ESTADO.atribs = inferirAtributos(ESTADO.resultados);
+    aplicarFiltrosEDashboard();
+}
+
+function aplicarFiltrosEDashboard() {
+    const locSel = document.getElementById("sel-loc").value;
+    const perSel = document.getElementById("sel-per").value;
+
+    let filtrados = ESTADO.resultados;
+
+    const locsSet = {};
+    for (const [, r] of filtrados) {
+        const loc = ESTADO.atribs.get(r)?.loc;
+        if (loc) locsSet[normalizar(loc)] = loc;
+    }
+    const selLoc = document.getElementById("sel-loc");
+    const prevLoc = selLoc.value;
+    preencherSelect(selLoc, [
+        { value: "__all__", label: `Todos os campi (${Object.keys(locsSet).length})` },
+        ...Object.values(locsSet).sort().map(l => ({ value: l, label: l }))
+    ], [...selLoc.options].some(o => o.value === prevLoc) ? prevLoc : "__all__");
+    atualizarTituloSelect(selLoc);
+
+    if (selLoc.value !== "__all__") {
+        filtrados = filtrados.filter(([, r]) => {
+            const loc = ESTADO.atribs.get(r)?.loc;
+            return loc === selLoc.value;
+        });
+    }
+
+    const persSet = {};
+    for (const [, r] of filtrados) {
+        const per = ESTADO.atribs.get(r)?.per;
+        if (per) persSet[normalizar(per)] = per;
+    }
+    const selPer = document.getElementById("sel-per");
+    const prevPer = selPer.value;
+    preencherSelect(selPer, [
+        { value: "__all__", label: `Todas as modalidades (${Object.keys(persSet).length})` },
+        ...Object.values(persSet).sort().map(p => ({ value: p, label: p }))
+    ], [...selPer.options].some(o => o.value === prevPer) ? prevPer : "__all__");
+    atualizarTituloSelect(selPer);
+
+    if (selPer.value !== "__all__") {
+        filtrados = filtrados.filter(([, r]) => {
+            const per = ESTADO.atribs.get(r)?.per;
+            return per === selPer.value;
+        });
+    }
+
+    ESTADO.filtrados = filtrados;
+
+    if (!filtrados.length) {
+        mostrarEstadoDashboard(`<p>Nenhum registro com os filtros selecionados.</p>`);
+        destruirCharts();
+        return;
+    }
+
+    const dados = consolidar(filtrados);
+
+    const nomeCurso = ESTADO.cursoSelecionado || (() => {
+        const nomes = new Set(filtrados.map(([, r]) => extrairRotuloBusca(r.curso)).filter(Boolean));
+        return nomes.size <= 2 ? [...nomes].join(" / ") : [...nomes][0];
+    })();
+
+    const partes = [];
+    if (selLoc.value !== "__all__") partes.push("Campus: " + selLoc.value);
+    if (selPer.value !== "__all__") partes.push("Modalidade: " + selPer.value);
+    const filtroTexto = partes.join(" | ");
+
+    const breakdowns = {};
+    if (selLoc.value === "__all__" && Object.keys(locsSet).length > 1) {
+        const bd = {};
+        for (const [ano, r] of filtrados) {
+            const loc = ESTADO.atribs.get(r)?.loc;
+            if (loc) (bd[loc] ||= []).push([ano, r]);
+        }
+        if (Object.keys(bd).length > 1) breakdowns["Campus"] = bd;
+    }
+    if (selPer.value === "__all__" && Object.keys(persSet).length > 1) {
+        const bd = {};
+        for (const [ano, r] of filtrados) {
+            const per = ESTADO.atribs.get(r)?.per;
+            if (per) (bd[per] ||= []).push([ano, r]);
+        }
+        if (Object.keys(bd).length > 1) breakdowns["Modalidade"] = bd;
+    }
+
+    renderDashboard(nomeCurso, dados, filtroTexto, breakdowns);
+}
+
+// ==========================================================================
+// Inicialização
+// ==========================================================================
+let debounceTimer;
+document.getElementById("busca").addEventListener("input", () => {
+    renderizarSugestoesBusca(document.getElementById("busca").value);
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(atualizarFiltros, 400);
+});
+document.getElementById("busca").addEventListener("focus", () => {
+    renderizarSugestoesBusca(document.getElementById("busca").value);
+});
+document.getElementById("busca").addEventListener("blur", () => {
+    setTimeout(fecharSugestoesBusca, 120);
+});
+document.getElementById("busca").addEventListener("keydown", e => {
+    if (e.key === "Escape") fecharSugestoesBusca();
+});
+document.getElementById("sel-loc").addEventListener("change", () => {
+    atualizarTituloSelect(document.getElementById("sel-loc"));
+    aplicarFiltrosEDashboard();
+});
+document.getElementById("sel-per").addEventListener("change", () => {
+    atualizarTituloSelect(document.getElementById("sel-per"));
+    aplicarFiltrosEDashboard();
+});
+document.addEventListener("click", e => {
+    if (!document.getElementById("busca").closest(".filtro-grupo").contains(e.target)) fecharSugestoesBusca();
+});
+
+const MEDIA_DARK_MODE = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+function reaplicarTemaSeNecessario() {
+    if (ESTADO.resultados && ESTADO.resultados.length) {
+        aplicarFiltrosEDashboard();
+    }
+}
+if (MEDIA_DARK_MODE) {
+    if (typeof MEDIA_DARK_MODE.addEventListener === "function") {
+        MEDIA_DARK_MODE.addEventListener("change", reaplicarTemaSeNecessario);
+    } else if (typeof MEDIA_DARK_MODE.addListener === "function") {
+        MEDIA_DARK_MODE.addListener(reaplicarTemaSeNecessario);
+    }
+}
+
+fetch("dados_vestibular.json")
+    .then(r => r.json())
+    .then(d => {
+        DADOS = d;
+        const basesMap = new Map();
+        for (const regs of Object.values(d)) {
+            for (const r of regs) {
+                const base = extrairRotuloBusca(r.curso);
+                if (!base || base.length < 3) continue;
+                const chave = chaveBuscaTexto(base) || normalizar(base);
+                const preferencia = r.curso_truncado ? 1 : 0;
+                const existente = basesMap.get(chave);
+                if (!existente || preferencia < existente.preferencia || (preferencia === existente.preferencia && base.length < existente.base.length)) {
+                    basesMap.set(chave, { base, preferencia });
+                }
+            }
+        }
+        LISTA_CURSOS = ordenarBases([...basesMap.values()].map(item => item.base));
+        atualizarTituloSelect(document.getElementById("sel-loc"));
+        atualizarTituloSelect(document.getElementById("sel-per"));
+        const hash = decodeURIComponent(location.hash.slice(1));
+        if (hash) {
+            document.getElementById("busca").value = hash;
+            atualizarFiltros();
+        }
+    })
+    .catch(e => {
+        const msg = String(e.message).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+        mostrarEstadoDashboard(`<p style="color:#c0392b">Erro ao carregar dados_vestibular.json: ${msg}</p>`);
+    });
+</script>
+</body>
+</html>
