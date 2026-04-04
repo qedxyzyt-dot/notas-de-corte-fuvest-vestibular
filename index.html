@@ -1364,6 +1364,7 @@ function obterCampusRegistro(registro) {
     return extrairLoc(registro?.curso || "");
 }
 function obterRotulosBuscaRegistro(registro) {
+    if (registro?.ocultar_busca) return [];
     const rotuloExplicito = typeof registro?.curso_busca === "string"
         ? formatarNomeOficial(registro.curso_busca)
         : "";
