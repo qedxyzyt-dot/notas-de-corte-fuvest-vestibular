@@ -1763,6 +1763,56 @@ function renderBlocoLista(titulo, itens) {
     if (!itens.length) return "";
     return `<div class="insights"><h3>${escaparHtml(titulo)}</h3><ul>${itens.map(item => `<li>${item}</li>`).join("")}</ul></div>`;
 }
+function coletarObservacoesEscopo(registros) {
+    const mapa = new Map();
+    for (const [ano, registro] of registros) {
+        if (!registro?.registro_sintetico) continue;
+        const chave = [
+            registro.curso || "",
+            registro.campus || "",
+            registro.carreira_oficial || "",
+            registro.escopo_nota || "",
+            registro.escopo_vagas || "",
+            registro.escopo_inscritos || ""
+        ].join("|");
+        const existente = mapa.get(chave) || {
+            curso: registro.curso || "",
+            campus: registro.campus || "",
+            carreiraOficial: registro.carreira_oficial || "",
+            escopoNota: registro.escopo_nota || "",
+            escopoVagas: registro.escopo_vagas || "",
+            escopoInscritos: registro.escopo_inscritos || "",
+            fonteRotulo: registro.fonte_localizacao_rotulo || "",
+            fonteUrl: registro.fonte_localizacao_url || "",
+            anos: new Set()
+        };
+        existente.anos.add(Number(ano));
+        mapa.set(chave, existente);
+    }
+
+    return [...mapa.values()]
+        .map(info => {
+            const anos = [...info.anos].sort((a, b) => a - b);
+            const anosTexto = resumirIntervalosAnos(anos);
+            const origem = info.fonteUrl
+                ? `<a href="${escaparHtml(info.fonteUrl)}" target="_blank" rel="noopener noreferrer">${escaparHtml(info.fonteRotulo || "fonte oficial")}</a>`
+                : escaparHtml(info.fonteRotulo || "fonte oficial");
+            const partes = [
+                `<strong>${escaparHtml(info.curso)}</strong> (${escaparHtml(anosTexto)}):`,
+                info.escopoVagas === "curso"
+                    ? `vagas localizadas por campus a partir de ${origem};`
+                    : "vagas no escopo da carreira;",
+                info.escopoInscritos === "curso"
+                    ? "inscritos localizados por campus nesta série;"
+                    : "inscritos localizados indisponíveis nesta visualização;",
+                info.escopoNota === "carreira" && info.carreiraOficial
+                    ? `nota mínima, nota máxima, convocados para a 2ª fase e conv./vaga no escopo da carreira oficial <strong>${escaparHtml(info.carreiraOficial)}</strong>.`
+                    : "demais indicadores no escopo do curso."
+            ];
+            return partes.join(" ");
+        })
+        .sort((a, b) => a.localeCompare(b, "pt-BR", { sensitivity: "base" }));
+}
 function renderCardsResumo(dados, nomesOficiais) {
     const anos = Object.keys(dados).map(Number).sort((a, b) => a - b);
     const notasMin = Object.values(dados).map(r => r.pontos_minimo).filter(v => v !== null && v !== undefined);
@@ -1786,6 +1836,7 @@ function renderDashboard(grupoSelecionado, dados, contexto = {}) {
     const anos = Object.keys(dados).map(Number).sort((a,b) => a - b);
     const temCompleto = Object.values(dados).some(r => "vagas" in r);
     const nomesOficiais = coletarNomesOficiais(registrosFiltrados);
+    const observacoesEscopo = coletarObservacoesEscopo(registrosFiltrados);
     let html = "";
 
     if (filtroLinhas.length) {
@@ -1801,6 +1852,8 @@ function renderDashboard(grupoSelecionado, dados, contexto = {}) {
             return `<strong>${escaparHtml(info.nome)}</strong>: ${escaparHtml(info.anosTexto)}.${notaTruncamento}`;
         })
     );
+
+    html += renderBlocoLista("Escopo oficial dos indicadores", observacoesEscopo);
 
     html += `<div class="tabela-container"><table>
         <thead><tr><th>Ano</th><th>Vagas</th><th>Inscritos</th><th>Ausentes</th><th>Convocados 2ª fase</th><th>Conv./vaga</th><th>Nota mín.</th><th>Nota máx.</th><th class="col-edital">Listagem oficial</th></tr></thead>
