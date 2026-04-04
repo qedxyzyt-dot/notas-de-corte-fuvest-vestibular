@@ -1960,30 +1960,22 @@ function buildChartVI(anos, dados) {
     const insc = anos.map(a => dados[a].inscritos ?? null);
     const optionsVagas = opcoesChartBase({
         beginAtZero: true,
+        showLegend: false,
         tooltipLabel: formatarTooltipNumero
     });
     optionsVagas.scales.y.ticks.color = "#27ae60";
-    optionsVagas.scales.y.title = {
-        display: true,
-        text: "Vagas",
-        color: "#27ae60",
-        font: { family: "Manrope", weight: "700" }
-    };
+    optionsVagas.scales.y.title.display = false;
     optionsVagas.scales.y.ticks.callback = value => fmtInt(value);
     optionsVagas.scales.x.ticks.color = obterTemaGraficos().texto;
     optionsVagas.scales.x.grid.display = false;
 
     const optionsInsc = opcoesChartBase({
         beginAtZero: true,
+        showLegend: false,
         tooltipLabel: formatarTooltipNumero
     });
     optionsInsc.scales.y.ticks.color = "#c0392b";
-    optionsInsc.scales.y.title = {
-        display: true,
-        text: "Inscritos",
-        color: "#c0392b",
-        font: { family: "Manrope", weight: "700" }
-    };
+    optionsInsc.scales.y.title.display = false;
     optionsInsc.scales.y.ticks.callback = value => fmtInt(value);
     optionsInsc.scales.x.ticks.color = obterTemaGraficos().texto;
 
