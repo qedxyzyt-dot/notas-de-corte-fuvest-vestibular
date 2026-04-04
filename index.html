@@ -1331,6 +1331,18 @@ function extrairLoc(nome) {
     if (!raw) return LOC_PADRAO_IMPLICITA;
     return LOC_NORMALIZAR[raw] || raw;
 }
+function obterCampusRegistro(registro) {
+    const campusExplicito = typeof registro?.campus === "string" ? registro.campus.trim() : "";
+    if (campusExplicito) return campusExplicito;
+    return extrairLoc(registro?.curso || "");
+}
+function obterRotulosBuscaRegistro(registro) {
+    const rotuloExplicito = typeof registro?.curso_busca === "string"
+        ? formatarNomeOficial(registro.curso_busca)
+        : "";
+    if (rotuloExplicito) return [rotuloExplicito];
+    return extrairRotulosBusca(registro?.curso || "");
+}
 function extrairPeriodo(nome) {
     return null;
 }
@@ -1377,7 +1389,7 @@ function inferirAtributos(resultados) {
     for (const [base, regs] of Object.entries(porBase)) {
         const locsC = new Set(), persC = new Set();
         for (const [, r] of regs) {
-            const l = extrairLoc(r.curso);
+            const l = obterCampusRegistro(r);
             const p = r.modalidade || null;
             if (l) locsC.add(l);
             if (p) persC.add(p);
@@ -1386,7 +1398,7 @@ function inferirAtributos(resultados) {
         const perPad = persC.size === 1 ? [...persC][0] : null;
         for (const [, r] of regs) {
             atribs.set(r, {
-                loc: extrairLoc(r.curso) || locPad,
+                loc: obterCampusRegistro(r) || locPad,
                 per: r.modalidade || perPad
             });
         }
@@ -1522,7 +1534,7 @@ function construirCatalogoBusca(dados, anoInicio = null, anoFim = null) {
         }
 
         for (const r of registros) {
-            const rotulosBusca = extrairRotulosBusca(r.curso);
+            const rotulosBusca = obterRotulosBuscaRegistro(r);
             if (!rotulosBusca.length) continue;
 
             for (const rotuloBusca of rotulosBusca) {
@@ -1548,7 +1560,7 @@ function construirCatalogoBusca(dados, anoInicio = null, anoFim = null) {
                 nomeInfo.truncado = nomeInfo.truncado && !!r.curso_truncado;
                 grupo.nomesMap.set(nomeOficial, nomeInfo);
 
-                const loc = extrairLoc(r.curso);
+                const loc = obterCampusRegistro(r);
                 if (loc) grupo.campi.add(loc);
                 if (r.modalidade) grupo.modalidades.add(r.modalidade);
 

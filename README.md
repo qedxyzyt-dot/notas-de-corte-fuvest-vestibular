@@ -11,13 +11,14 @@ Site público com o histórico oficial das notas de corte da 1ª fase do vestibu
 - Série histórica de 2000 a 2026
 - Busca por carreira ou curso com recorte de período
 - Filtros por campus e modalidade
+- Desambiguação de carreiras repetidas por código nos anos recentes
 - Gráficos de evolução das notas de corte e da demanda
 - Tabela histórica com link direto para os PDFs oficiais
 - Resumo das nomenclaturas oficiais e das mudanças históricas relacionadas
 
 ## Fonte dos dados
 
-Os dados exibidos neste site foram extraídos dos relatórios oficiais da própria FUVEST. Em caso de divergência, o PDF oficial do respectivo ano deve ser considerado a referência final.
+Os dados exibidos neste site foram extraídos dos relatórios oficiais da própria FUVEST. Nos anos recentes, a diferenciação entre carreiras repetidas por código também foi conferida com os guias e listagens oficiais da FUVEST. Em caso de divergência, o PDF oficial do respectivo ano deve ser considerado a referência final.
 
 ## Publicação no GitHub Pages
 

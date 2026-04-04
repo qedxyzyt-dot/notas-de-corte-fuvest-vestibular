@@ -39468,7 +39468,7 @@
     },
     {
       "codigo": "105",
-      "curso": "Arquitetura",
+      "curso": "Arquitetura (São Paulo Butantã)",
       "modalidade": "Ampla Concorrência",
       "vagas": 66,
       "inscritos": 1524,
@@ -39476,11 +39476,15 @@
       "convocados_2fase": 261,
       "convocados_por_vaga": 3.95,
       "pontos_maximo": 86,
-      "pontos_minimo": 62
+      "pontos_minimo": 62,
+      "curso_pdf": "Arquitetura",
+      "curso_desambiguado": true,
+      "curso_busca": "Arquitetura (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "105",
-      "curso": "Arquitetura",
+      "curso": "Arquitetura (São Paulo Butantã)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 27,
       "inscritos": 480,
@@ -39488,11 +39492,15 @@
       "convocados_2fase": 125,
       "convocados_por_vaga": 4.63,
       "pontos_maximo": 76,
-      "pontos_minimo": 49
+      "pontos_minimo": 49,
+      "curso_pdf": "Arquitetura",
+      "curso_desambiguado": true,
+      "curso_busca": "Arquitetura (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "105",
-      "curso": "Arquitetura",
+      "curso": "Arquitetura (São Paulo Butantã)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 16,
       "inscritos": 207,
@@ -39500,11 +39508,15 @@
       "convocados_2fase": 94,
       "convocados_por_vaga": 5.88,
       "pontos_maximo": 64,
-      "pontos_minimo": 37
+      "pontos_minimo": 37,
+      "curso_pdf": "Arquitetura",
+      "curso_desambiguado": true,
+      "curso_busca": "Arquitetura (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "106",
-      "curso": "Arquitetura",
+      "curso": "Arquitetura (São Carlos)",
       "modalidade": "Ampla Concorrência",
       "vagas": 20,
       "inscritos": 357,
@@ -39512,11 +39524,15 @@
       "convocados_2fase": 69,
       "convocados_por_vaga": 3.45,
       "pontos_maximo": 74,
-      "pontos_minimo": 58
+      "pontos_minimo": 58,
+      "curso_pdf": "Arquitetura",
+      "curso_desambiguado": true,
+      "curso_busca": "Arquitetura (São Carlos)",
+      "campus": "São Carlos"
     },
     {
       "codigo": "106",
-      "curso": "Arquitetura",
+      "curso": "Arquitetura (São Carlos)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 8,
       "inscritos": 114,
@@ -39524,11 +39540,15 @@
       "convocados_2fase": 46,
       "convocados_por_vaga": 5.75,
       "pontos_maximo": 69,
-      "pontos_minimo": 43
+      "pontos_minimo": 43,
+      "curso_pdf": "Arquitetura",
+      "curso_desambiguado": true,
+      "curso_busca": "Arquitetura (São Carlos)",
+      "campus": "São Carlos"
     },
     {
       "codigo": "106",
-      "curso": "Arquitetura",
+      "curso": "Arquitetura (São Carlos)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 5,
       "inscritos": 25,
@@ -39536,7 +39556,11 @@
       "convocados_2fase": 19,
       "convocados_por_vaga": 3.8,
       "pontos_maximo": 68,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Arquitetura",
+      "curso_desambiguado": true,
+      "curso_busca": "Arquitetura (São Carlos)",
+      "campus": "São Carlos"
     },
     {
       "codigo": "110",
@@ -39612,7 +39636,7 @@
     },
     {
       "codigo": "120",
-      "curso": "Biblioteconomia e Ciência da Informação",
+      "curso": "Biblioteconomia e Ciência da Informação (São Paulo Butantã)",
       "modalidade": "Ampla Concorrência",
       "vagas": 18,
       "inscritos": 66,
@@ -39620,11 +39644,15 @@
       "convocados_2fase": 47,
       "convocados_por_vaga": 2.61,
       "pontos_maximo": 66,
-      "pontos_minimo": 40
+      "pontos_minimo": 40,
+      "curso_pdf": "Biblioteconomia e Ciência da Informação",
+      "curso_desambiguado": true,
+      "curso_busca": "Biblioteconomia e Ciência da Informação (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "120",
-      "curso": "Biblioteconomia e Ciência da Informação",
+      "curso": "Biblioteconomia e Ciência da Informação (São Paulo Butantã)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 8,
       "inscritos": 35,
@@ -39632,11 +39660,15 @@
       "convocados_2fase": 31,
       "convocados_por_vaga": 3.88,
       "pontos_maximo": 69,
-      "pontos_minimo": 28
+      "pontos_minimo": 28,
+      "curso_pdf": "Biblioteconomia e Ciência da Informação",
+      "curso_desambiguado": true,
+      "curso_busca": "Biblioteconomia e Ciência da Informação (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "120",
-      "curso": "Biblioteconomia e Ciência da Informação",
+      "curso": "Biblioteconomia e Ciência da Informação (São Paulo Butantã)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 4,
       "inscritos": 7,
@@ -39644,11 +39676,15 @@
       "convocados_2fase": 7,
       "convocados_por_vaga": 1.75,
       "pontos_maximo": 47,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Biblioteconomia e Ciência da Informação",
+      "curso_desambiguado": true,
+      "curso_busca": "Biblioteconomia e Ciência da Informação (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "121",
-      "curso": "Biblioteconomia e Ciência da Informação",
+      "curso": "Biblioteconomia e Ciência da Informação (Ribeirão Preto)",
       "modalidade": "Ampla Concorrência",
       "vagas": 18,
       "inscritos": 55,
@@ -39656,11 +39692,15 @@
       "convocados_2fase": 49,
       "convocados_por_vaga": 2.72,
       "pontos_maximo": 64,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Biblioteconomia e Ciência da Informação",
+      "curso_desambiguado": true,
+      "curso_busca": "Biblioteconomia e Ciência da Informação (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "121",
-      "curso": "Biblioteconomia e Ciência da Informação",
+      "curso": "Biblioteconomia e Ciência da Informação (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 8,
       "inscritos": 13,
@@ -39668,11 +39708,15 @@
       "convocados_2fase": 10,
       "convocados_por_vaga": 1.25,
       "pontos_maximo": 57,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Biblioteconomia e Ciência da Informação",
+      "curso_desambiguado": true,
+      "curso_busca": "Biblioteconomia e Ciência da Informação (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "121",
-      "curso": "Biblioteconomia e Ciência da Informação",
+      "curso": "Biblioteconomia e Ciência da Informação (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 4,
       "inscritos": 4,
@@ -39680,7 +39724,11 @@
       "convocados_2fase": 3,
       "convocados_por_vaga": 0.75,
       "pontos_maximo": 37,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Biblioteconomia e Ciência da Informação",
+      "curso_desambiguado": true,
+      "curso_busca": "Biblioteconomia e Ciência da Informação (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "125",
@@ -40296,7 +40344,7 @@
     },
     {
       "codigo": "205",
-      "curso": "Música",
+      "curso": "Música (São Paulo Butantã)",
       "modalidade": "Ampla Concorrência",
       "vagas": 25,
       "inscritos": 172,
@@ -40304,11 +40352,15 @@
       "convocados_2fase": 75,
       "convocados_por_vaga": 3.0,
       "pontos_maximo": 74,
-      "pontos_minimo": 46
+      "pontos_minimo": 46,
+      "curso_pdf": "Música",
+      "curso_desambiguado": true,
+      "curso_busca": "Música (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "205",
-      "curso": "Música",
+      "curso": "Música (São Paulo Butantã)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 15,
       "inscritos": 92,
@@ -40316,11 +40368,15 @@
       "convocados_2fase": 66,
       "convocados_por_vaga": 4.4,
       "pontos_maximo": 67,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Música",
+      "curso_desambiguado": true,
+      "curso_busca": "Música (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "205",
-      "curso": "Música",
+      "curso": "Música (São Paulo Butantã)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 10,
       "inscritos": 41,
@@ -40328,11 +40384,15 @@
       "convocados_2fase": 25,
       "convocados_por_vaga": 2.5,
       "pontos_maximo": 60,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Música",
+      "curso_desambiguado": true,
+      "curso_busca": "Música (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "206",
-      "curso": "Música",
+      "curso": "Música (Ribeirão Preto)",
       "modalidade": "Ampla Concorrência",
       "vagas": 15,
       "inscritos": 27,
@@ -40340,11 +40400,15 @@
       "convocados_2fase": 25,
       "convocados_por_vaga": 1.67,
       "pontos_maximo": 64,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Música",
+      "curso_desambiguado": true,
+      "curso_busca": "Música (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "206",
-      "curso": "Música",
+      "curso": "Música (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 9,
       "inscritos": 23,
@@ -40352,11 +40416,15 @@
       "convocados_2fase": 16,
       "convocados_por_vaga": 1.78,
       "pontos_maximo": 57,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Música",
+      "curso_desambiguado": true,
+      "curso_busca": "Música (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "206",
-      "curso": "Música",
+      "curso": "Música (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 6,
       "inscritos": 13,
@@ -40364,11 +40432,15 @@
       "convocados_2fase": 9,
       "convocados_por_vaga": 1.5,
       "pontos_maximo": 63,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Música",
+      "curso_desambiguado": true,
+      "curso_busca": "Música (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "210",
-      "curso": "Pedagogia",
+      "curso": "Pedagogia (São Paulo Butantã)",
       "modalidade": "Ampla Concorrência",
       "vagas": 78,
       "inscritos": 394,
@@ -40376,11 +40448,15 @@
       "convocados_2fase": 221,
       "convocados_por_vaga": 2.83,
       "pontos_maximo": 82,
-      "pontos_minimo": 39
+      "pontos_minimo": 39,
+      "curso_pdf": "Pedagogia",
+      "curso_desambiguado": true,
+      "curso_busca": "Pedagogia (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "210",
-      "curso": "Pedagogia",
+      "curso": "Pedagogia (São Paulo Butantã)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 33,
       "inscritos": 191,
@@ -40388,11 +40464,15 @@
       "convocados_2fase": 133,
       "convocados_por_vaga": 4.03,
       "pontos_maximo": 72,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Pedagogia",
+      "curso_desambiguado": true,
+      "curso_busca": "Pedagogia (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "210",
-      "curso": "Pedagogia",
+      "curso": "Pedagogia (São Paulo Butantã)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 21,
       "inscritos": 100,
@@ -40400,11 +40480,15 @@
       "convocados_2fase": 63,
       "convocados_por_vaga": 3.0,
       "pontos_maximo": 56,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Pedagogia",
+      "curso_desambiguado": true,
+      "curso_busca": "Pedagogia (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "211",
-      "curso": "Pedagogia",
+      "curso": "Pedagogia (Ribeirão Preto)",
       "modalidade": "Ampla Concorrência",
       "vagas": 22,
       "inscritos": 84,
@@ -40412,11 +40496,15 @@
       "convocados_2fase": 60,
       "convocados_por_vaga": 2.73,
       "pontos_maximo": 63,
-      "pontos_minimo": 32
+      "pontos_minimo": 32,
+      "curso_pdf": "Pedagogia",
+      "curso_desambiguado": true,
+      "curso_busca": "Pedagogia (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "211",
-      "curso": "Pedagogia",
+      "curso": "Pedagogia (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 10,
       "inscritos": 38,
@@ -40424,11 +40512,15 @@
       "convocados_2fase": 24,
       "convocados_por_vaga": 2.4,
       "pontos_maximo": 51,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Pedagogia",
+      "curso_desambiguado": true,
+      "curso_busca": "Pedagogia (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "211",
-      "curso": "Pedagogia",
+      "curso": "Pedagogia (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 5,
       "inscritos": 17,
@@ -40436,7 +40528,11 @@
       "convocados_2fase": 12,
       "convocados_por_vaga": 2.4,
       "pontos_maximo": 51,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Pedagogia",
+      "curso_desambiguado": true,
+      "curso_busca": "Pedagogia (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "215",
@@ -40980,7 +41076,7 @@
     },
     {
       "codigo": "445",
-      "curso": "Fisioterapia",
+      "curso": "Fisioterapia (São Paulo Butantã/Quadrilátero)",
       "modalidade": "Ampla Concorrência",
       "vagas": 11,
       "inscritos": 238,
@@ -40988,11 +41084,15 @@
       "convocados_2fase": 43,
       "convocados_por_vaga": 3.91,
       "pontos_maximo": 82,
-      "pontos_minimo": 55
+      "pontos_minimo": 55,
+      "curso_pdf": "Fisioterapia",
+      "curso_desambiguado": true,
+      "curso_busca": "Fisioterapia (São Paulo Butantã/Quadrilátero)",
+      "campus": "São Paulo Butantã/Quadrilátero"
     },
     {
       "codigo": "445",
-      "curso": "Fisioterapia",
+      "curso": "Fisioterapia (São Paulo Butantã/Quadrilátero)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 5,
       "inscritos": 82,
@@ -41000,11 +41100,15 @@
       "convocados_2fase": 19,
       "convocados_por_vaga": 3.8,
       "pontos_maximo": 58,
-      "pontos_minimo": 46
+      "pontos_minimo": 46,
+      "curso_pdf": "Fisioterapia",
+      "curso_desambiguado": true,
+      "curso_busca": "Fisioterapia (São Paulo Butantã/Quadrilátero)",
+      "campus": "São Paulo Butantã/Quadrilátero"
     },
     {
       "codigo": "445",
-      "curso": "Fisioterapia",
+      "curso": "Fisioterapia (São Paulo Butantã/Quadrilátero)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 3,
       "inscritos": 44,
@@ -41012,11 +41116,15 @@
       "convocados_2fase": 22,
       "convocados_por_vaga": 7.33,
       "pontos_maximo": 62,
-      "pontos_minimo": 34
+      "pontos_minimo": 34,
+      "curso_pdf": "Fisioterapia",
+      "curso_desambiguado": true,
+      "curso_busca": "Fisioterapia (São Paulo Butantã/Quadrilátero)",
+      "campus": "São Paulo Butantã/Quadrilátero"
     },
     {
       "codigo": "446",
-      "curso": "Fisioterapia",
+      "curso": "Fisioterapia (Ribeirão Preto)",
       "modalidade": "Ampla Concorrência",
       "vagas": 18,
       "inscritos": 334,
@@ -41024,11 +41132,15 @@
       "convocados_2fase": 74,
       "convocados_por_vaga": 4.11,
       "pontos_maximo": 76,
-      "pontos_minimo": 55
+      "pontos_minimo": 55,
+      "curso_pdf": "Fisioterapia",
+      "curso_desambiguado": true,
+      "curso_busca": "Fisioterapia (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "446",
-      "curso": "Fisioterapia",
+      "curso": "Fisioterapia (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 7,
       "inscritos": 73,
@@ -41036,11 +41148,15 @@
       "convocados_2fase": 26,
       "convocados_por_vaga": 3.71,
       "pontos_maximo": 57,
-      "pontos_minimo": 37
+      "pontos_minimo": 37,
+      "curso_pdf": "Fisioterapia",
+      "curso_desambiguado": true,
+      "curso_busca": "Fisioterapia (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "446",
-      "curso": "Fisioterapia",
+      "curso": "Fisioterapia (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 4,
       "inscritos": 26,
@@ -41048,11 +41164,15 @@
       "convocados_2fase": 16,
       "convocados_por_vaga": 4.0,
       "pontos_maximo": 53,
-      "pontos_minimo": 30
+      "pontos_minimo": 30,
+      "curso_pdf": "Fisioterapia",
+      "curso_desambiguado": true,
+      "curso_busca": "Fisioterapia (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "450",
-      "curso": "Fonoaudiologia",
+      "curso": "Fonoaudiologia (São Paulo Butantã/Quadrilátero)",
       "modalidade": "Ampla Concorrência",
       "vagas": 11,
       "inscritos": 75,
@@ -41060,11 +41180,15 @@
       "convocados_2fase": 33,
       "convocados_por_vaga": 3.0,
       "pontos_maximo": 66,
-      "pontos_minimo": 46
+      "pontos_minimo": 46,
+      "curso_pdf": "Fonoaudiologia",
+      "curso_desambiguado": true,
+      "curso_busca": "Fonoaudiologia (São Paulo Butantã/Quadrilátero)",
+      "campus": "São Paulo Butantã/Quadrilátero"
     },
     {
       "codigo": "450",
-      "curso": "Fonoaudiologia",
+      "curso": "Fonoaudiologia (São Paulo Butantã/Quadrilátero)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 5,
       "inscritos": 45,
@@ -41072,11 +41196,15 @@
       "convocados_2fase": 29,
       "convocados_por_vaga": 5.8,
       "pontos_maximo": 58,
-      "pontos_minimo": 36
+      "pontos_minimo": 36,
+      "curso_pdf": "Fonoaudiologia",
+      "curso_desambiguado": true,
+      "curso_busca": "Fonoaudiologia (São Paulo Butantã/Quadrilátero)",
+      "campus": "São Paulo Butantã/Quadrilátero"
     },
     {
       "codigo": "450",
-      "curso": "Fonoaudiologia",
+      "curso": "Fonoaudiologia (São Paulo Butantã/Quadrilátero)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 3,
       "inscritos": 10,
@@ -41084,11 +41212,15 @@
       "convocados_2fase": 9,
       "convocados_por_vaga": 3.0,
       "pontos_maximo": 50,
-      "pontos_minimo": 28
+      "pontos_minimo": 28,
+      "curso_pdf": "Fonoaudiologia",
+      "curso_desambiguado": true,
+      "curso_busca": "Fonoaudiologia (São Paulo Butantã/Quadrilátero)",
+      "campus": "São Paulo Butantã/Quadrilátero"
     },
     {
       "codigo": "451",
-      "curso": "Fonoaudiologia",
+      "curso": "Fonoaudiologia (Bauru e Ribeirão Preto)",
       "modalidade": "Ampla Concorrência",
       "vagas": 31,
       "inscritos": 344,
@@ -41096,11 +41228,15 @@
       "convocados_2fase": 118,
       "convocados_por_vaga": 3.81,
       "pontos_maximo": 73,
-      "pontos_minimo": 48
+      "pontos_minimo": 48,
+      "curso_pdf": "Fonoaudiologia",
+      "curso_desambiguado": true,
+      "curso_busca": "Fonoaudiologia (Bauru e Ribeirão Preto)",
+      "campus": "Bauru e Ribeirão Preto"
     },
     {
       "codigo": "451",
-      "curso": "Fonoaudiologia",
+      "curso": "Fonoaudiologia (Bauru e Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 13,
       "inscritos": 60,
@@ -41108,11 +41244,15 @@
       "convocados_2fase": 47,
       "convocados_por_vaga": 3.62,
       "pontos_maximo": 56,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Fonoaudiologia",
+      "curso_desambiguado": true,
+      "curso_busca": "Fonoaudiologia (Bauru e Ribeirão Preto)",
+      "campus": "Bauru e Ribeirão Preto"
     },
     {
       "codigo": "451",
-      "curso": "Fonoaudiologia",
+      "curso": "Fonoaudiologia (Bauru e Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 7,
       "inscritos": 11,
@@ -41120,7 +41260,11 @@
       "convocados_2fase": 7,
       "convocados_por_vaga": 1.0,
       "pontos_maximo": 43,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Fonoaudiologia",
+      "curso_desambiguado": true,
+      "curso_busca": "Fonoaudiologia (Bauru e Ribeirão Preto)",
+      "campus": "Bauru e Ribeirão Preto"
     },
     {
       "codigo": "455",
@@ -41160,7 +41304,7 @@
     },
     {
       "codigo": "460",
-      "curso": "Medicina",
+      "curso": "Medicina (São Paulo Quadrilátero)",
       "modalidade": "Ampla Concorrência",
       "vagas": 77,
       "inscritos": 3485,
@@ -41168,11 +41312,15 @@
       "convocados_2fase": 336,
       "convocados_por_vaga": 4.36,
       "pontos_maximo": 88,
-      "pontos_minimo": 79
+      "pontos_minimo": 79,
+      "curso_pdf": "Medicina",
+      "curso_desambiguado": true,
+      "curso_busca": "Medicina (São Paulo Quadrilátero)",
+      "campus": "São Paulo Quadrilátero"
     },
     {
       "codigo": "460",
-      "curso": "Medicina",
+      "curso": "Medicina (São Paulo Quadrilátero)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 32,
       "inscritos": 3485,
@@ -41180,11 +41328,15 @@
       "convocados_2fase": 165,
       "convocados_por_vaga": 5.16,
       "pontos_maximo": 88,
-      "pontos_minimo": 73
+      "pontos_minimo": 73,
+      "curso_pdf": "Medicina",
+      "curso_desambiguado": true,
+      "curso_busca": "Medicina (São Paulo Quadrilátero)",
+      "campus": "São Paulo Quadrilátero"
     },
     {
       "codigo": "460",
-      "curso": "Medicina",
+      "curso": "Medicina (São Paulo Quadrilátero)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 19,
       "inscritos": 1503,
@@ -41192,11 +41344,15 @@
       "convocados_2fase": 91,
       "convocados_por_vaga": 4.79,
       "pontos_maximo": 83,
-      "pontos_minimo": 64
+      "pontos_minimo": 64,
+      "curso_pdf": "Medicina",
+      "curso_desambiguado": true,
+      "curso_busca": "Medicina (São Paulo Quadrilátero)",
+      "campus": "São Paulo Quadrilátero"
     },
     {
       "codigo": "461",
-      "curso": "Medicina",
+      "curso": "Medicina (Bauru)",
       "modalidade": "Ampla Concorrência",
       "vagas": 26,
       "inscritos": 2418,
@@ -41204,11 +41360,15 @@
       "convocados_2fase": 122,
       "convocados_por_vaga": 4.69,
       "pontos_maximo": 86,
-      "pontos_minimo": 77
+      "pontos_minimo": 77,
+      "curso_pdf": "Medicina",
+      "curso_desambiguado": true,
+      "curso_busca": "Medicina (Bauru)",
+      "campus": "Bauru"
     },
     {
       "codigo": "461",
-      "curso": "Medicina",
+      "curso": "Medicina (Bauru)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 11,
       "inscritos": 710,
@@ -41216,11 +41376,15 @@
       "convocados_2fase": 58,
       "convocados_por_vaga": 5.27,
       "pontos_maximo": 82,
-      "pontos_minimo": 72
+      "pontos_minimo": 72,
+      "curso_pdf": "Medicina",
+      "curso_desambiguado": true,
+      "curso_busca": "Medicina (Bauru)",
+      "campus": "Bauru"
     },
     {
       "codigo": "461",
-      "curso": "Medicina",
+      "curso": "Medicina (Bauru)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 6,
       "inscritos": 234,
@@ -41228,11 +41392,15 @@
       "convocados_2fase": 26,
       "convocados_por_vaga": 4.33,
       "pontos_maximo": 74,
-      "pontos_minimo": 63
+      "pontos_minimo": 63,
+      "curso_pdf": "Medicina",
+      "curso_desambiguado": true,
+      "curso_busca": "Medicina (Bauru)",
+      "campus": "Bauru"
     },
     {
       "codigo": "462",
-      "curso": "Medicina",
+      "curso": "Medicina (Ribeirão Preto)",
       "modalidade": "Ampla Concorrência",
       "vagas": 44,
       "inscritos": 4795,
@@ -41240,11 +41408,15 @@
       "convocados_2fase": 166,
       "convocados_por_vaga": 3.77,
       "pontos_maximo": 88,
-      "pontos_minimo": 79
+      "pontos_minimo": 79,
+      "curso_pdf": "Medicina",
+      "curso_desambiguado": true,
+      "curso_busca": "Medicina (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "462",
-      "curso": "Medicina",
+      "curso": "Medicina (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 18,
       "inscritos": 1210,
@@ -41252,11 +41424,15 @@
       "convocados_2fase": 100,
       "convocados_por_vaga": 5.56,
       "pontos_maximo": 85,
-      "pontos_minimo": 72
+      "pontos_minimo": 72,
+      "curso_pdf": "Medicina",
+      "curso_desambiguado": true,
+      "curso_busca": "Medicina (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "462",
-      "curso": "Medicina",
+      "curso": "Medicina (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 11,
       "inscritos": 319,
@@ -41264,11 +41440,15 @@
       "convocados_2fase": 51,
       "convocados_por_vaga": 4.64,
       "pontos_maximo": 73,
-      "pontos_minimo": 58
+      "pontos_minimo": 58,
+      "curso_pdf": "Medicina",
+      "curso_desambiguado": true,
+      "curso_busca": "Medicina (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "465",
-      "curso": "Medicina Veterinária",
+      "curso": "Medicina Veterinária (Pirassununga)",
       "modalidade": "Ampla Concorrência",
       "vagas": 35,
       "inscritos": 1159,
@@ -41276,11 +41456,15 @@
       "convocados_2fase": 135,
       "convocados_por_vaga": 3.86,
       "pontos_maximo": 80,
-      "pontos_minimo": 61
+      "pontos_minimo": 61,
+      "curso_pdf": "Medicina Veterinária",
+      "curso_desambiguado": true,
+      "curso_busca": "Medicina Veterinária (Pirassununga)",
+      "campus": "Pirassununga"
     },
     {
       "codigo": "465",
-      "curso": "Medicina Veterinária",
+      "curso": "Medicina Veterinária (Pirassununga)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 15,
       "inscritos": 467,
@@ -41288,11 +41472,15 @@
       "convocados_2fase": 67,
       "convocados_por_vaga": 4.47,
       "pontos_maximo": 72,
-      "pontos_minimo": 50
+      "pontos_minimo": 50,
+      "curso_pdf": "Medicina Veterinária",
+      "curso_desambiguado": true,
+      "curso_busca": "Medicina Veterinária (Pirassununga)",
+      "campus": "Pirassununga"
     },
     {
       "codigo": "465",
-      "curso": "Medicina Veterinária",
+      "curso": "Medicina Veterinária (Pirassununga)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 9,
       "inscritos": 174,
@@ -41300,11 +41488,15 @@
       "convocados_2fase": 47,
       "convocados_por_vaga": 5.22,
       "pontos_maximo": 65,
-      "pontos_minimo": 38
+      "pontos_minimo": 38,
+      "curso_pdf": "Medicina Veterinária",
+      "curso_desambiguado": true,
+      "curso_busca": "Medicina Veterinária (Pirassununga)",
+      "campus": "Pirassununga"
     },
     {
       "codigo": "466",
-      "curso": "Medicina Veterinária",
+      "curso": "Medicina Veterinária (São Paulo Butantã)",
       "modalidade": "Ampla Concorrência",
       "vagas": 26,
       "inscritos": 425,
@@ -41312,11 +41504,15 @@
       "convocados_2fase": 99,
       "convocados_por_vaga": 3.81,
       "pontos_maximo": 77,
-      "pontos_minimo": 58
+      "pontos_minimo": 58,
+      "curso_pdf": "Medicina Veterinária",
+      "curso_desambiguado": true,
+      "curso_busca": "Medicina Veterinária (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "466",
-      "curso": "Medicina Veterinária",
+      "curso": "Medicina Veterinária (São Paulo Butantã)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 11,
       "inscritos": 161,
@@ -41324,11 +41520,15 @@
       "convocados_2fase": 47,
       "convocados_por_vaga": 4.27,
       "pontos_maximo": 64,
-      "pontos_minimo": 48
+      "pontos_minimo": 48,
+      "curso_pdf": "Medicina Veterinária",
+      "curso_desambiguado": true,
+      "curso_busca": "Medicina Veterinária (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "466",
-      "curso": "Medicina Veterinária",
+      "curso": "Medicina Veterinária (São Paulo Butantã)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 6,
       "inscritos": 45,
@@ -41336,7 +41536,11 @@
       "convocados_2fase": 30,
       "convocados_por_vaga": 5.0,
       "pontos_maximo": 59,
-      "pontos_minimo": 31
+      "pontos_minimo": 31,
+      "curso_pdf": "Medicina Veterinária",
+      "curso_desambiguado": true,
+      "curso_busca": "Medicina Veterinária (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "470",
@@ -41448,7 +41652,7 @@
     },
     {
       "codigo": "485",
-      "curso": "Psicologia",
+      "curso": "Psicologia (São Paulo Butantã)",
       "modalidade": "Ampla Concorrência",
       "vagas": 31,
       "inscritos": 2114,
@@ -41456,11 +41660,15 @@
       "convocados_2fase": 123,
       "convocados_por_vaga": 3.97,
       "pontos_maximo": 82,
-      "pontos_minimo": 69
+      "pontos_minimo": 69,
+      "curso_pdf": "Psicologia",
+      "curso_desambiguado": true,
+      "curso_busca": "Psicologia (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "485",
-      "curso": "Psicologia",
+      "curso": "Psicologia (São Paulo Butantã)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 13,
       "inscritos": 733,
@@ -41468,11 +41676,15 @@
       "convocados_2fase": 55,
       "convocados_por_vaga": 4.23,
       "pontos_maximo": 80,
-      "pontos_minimo": 59
+      "pontos_minimo": 59,
+      "curso_pdf": "Psicologia",
+      "curso_desambiguado": true,
+      "curso_busca": "Psicologia (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "485",
-      "curso": "Psicologia",
+      "curso": "Psicologia (São Paulo Butantã)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 7,
       "inscritos": 344,
@@ -41480,11 +41692,15 @@
       "convocados_2fase": 35,
       "convocados_por_vaga": 5.0,
       "pontos_maximo": 63,
-      "pontos_minimo": 48
+      "pontos_minimo": 48,
+      "curso_pdf": "Psicologia",
+      "curso_desambiguado": true,
+      "curso_busca": "Psicologia (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "486",
-      "curso": "Psicologia",
+      "curso": "Psicologia (Ribeirão Preto)",
       "modalidade": "Ampla Concorrência",
       "vagas": 18,
       "inscritos": 829,
@@ -41492,11 +41708,15 @@
       "convocados_2fase": 77,
       "convocados_por_vaga": 4.28,
       "pontos_maximo": 83,
-      "pontos_minimo": 66
+      "pontos_minimo": 66,
+      "curso_pdf": "Psicologia",
+      "curso_desambiguado": true,
+      "curso_busca": "Psicologia (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "486",
-      "curso": "Psicologia",
+      "curso": "Psicologia (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 8,
       "inscritos": 239,
@@ -41504,11 +41724,15 @@
       "convocados_2fase": 33,
       "convocados_por_vaga": 4.13,
       "pontos_maximo": 68,
-      "pontos_minimo": 56
+      "pontos_minimo": 56,
+      "curso_pdf": "Psicologia",
+      "curso_desambiguado": true,
+      "curso_busca": "Psicologia (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "486",
-      "curso": "Psicologia",
+      "curso": "Psicologia (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 4,
       "inscritos": 66,
@@ -41516,7 +41740,11 @@
       "convocados_2fase": 19,
       "convocados_por_vaga": 4.75,
       "pontos_maximo": 63,
-      "pontos_minimo": 41
+      "pontos_minimo": 41,
+      "curso_pdf": "Psicologia",
+      "curso_desambiguado": true,
+      "curso_busca": "Psicologia (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "490",
@@ -41556,7 +41784,7 @@
     },
     {
       "codigo": "495",
-      "curso": "Terapia Ocupacional",
+      "curso": "Terapia Ocupacional (São Paulo Butantã/Quadrilátero)",
       "modalidade": "Ampla Concorrência",
       "vagas": 11,
       "inscritos": 93,
@@ -41564,11 +41792,15 @@
       "convocados_2fase": 27,
       "convocados_por_vaga": 2.45,
       "pontos_maximo": 69,
-      "pontos_minimo": 49
+      "pontos_minimo": 49,
+      "curso_pdf": "Terapia Ocupacional",
+      "curso_desambiguado": true,
+      "curso_busca": "Terapia Ocupacional (São Paulo Butantã/Quadrilátero)",
+      "campus": "São Paulo Butantã/Quadrilátero"
     },
     {
       "codigo": "495",
-      "curso": "Terapia Ocupacional",
+      "curso": "Terapia Ocupacional (São Paulo Butantã/Quadrilátero)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 5,
       "inscritos": 61,
@@ -41576,11 +41808,15 @@
       "convocados_2fase": 31,
       "convocados_por_vaga": 6.2,
       "pontos_maximo": 66,
-      "pontos_minimo": 39
+      "pontos_minimo": 39,
+      "curso_pdf": "Terapia Ocupacional",
+      "curso_desambiguado": true,
+      "curso_busca": "Terapia Ocupacional (São Paulo Butantã/Quadrilátero)",
+      "campus": "São Paulo Butantã/Quadrilátero"
     },
     {
       "codigo": "495",
-      "curso": "Terapia Ocupacional",
+      "curso": "Terapia Ocupacional (São Paulo Butantã/Quadrilátero)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 3,
       "inscritos": 30,
@@ -41588,11 +41824,15 @@
       "convocados_2fase": 23,
       "convocados_por_vaga": 7.67,
       "pontos_maximo": 61,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Terapia Ocupacional",
+      "curso_desambiguado": true,
+      "curso_busca": "Terapia Ocupacional (São Paulo Butantã/Quadrilátero)",
+      "campus": "São Paulo Butantã/Quadrilátero"
     },
     {
       "codigo": "496",
-      "curso": "Terapia Ocupacional",
+      "curso": "Terapia Ocupacional (Ribeirão Preto)",
       "modalidade": "Ampla Concorrência",
       "vagas": 9,
       "inscritos": 89,
@@ -41600,11 +41840,15 @@
       "convocados_2fase": 33,
       "convocados_por_vaga": 3.67,
       "pontos_maximo": 76,
-      "pontos_minimo": 49
+      "pontos_minimo": 49,
+      "curso_pdf": "Terapia Ocupacional",
+      "curso_desambiguado": true,
+      "curso_busca": "Terapia Ocupacional (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "496",
-      "curso": "Terapia Ocupacional",
+      "curso": "Terapia Ocupacional (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 4,
       "inscritos": 26,
@@ -41612,11 +41856,15 @@
       "convocados_2fase": 17,
       "convocados_por_vaga": 4.25,
       "pontos_maximo": 57,
-      "pontos_minimo": 33
+      "pontos_minimo": 33,
+      "curso_pdf": "Terapia Ocupacional",
+      "curso_desambiguado": true,
+      "curso_busca": "Terapia Ocupacional (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "496",
-      "curso": "Terapia Ocupacional",
+      "curso": "Terapia Ocupacional (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 2,
       "inscritos": 4,
@@ -41624,7 +41872,11 @@
       "convocados_2fase": 2,
       "convocados_por_vaga": 1.0,
       "pontos_maximo": 46,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Terapia Ocupacional",
+      "curso_desambiguado": true,
+      "curso_busca": "Terapia Ocupacional (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "500",
@@ -42462,7 +42714,7 @@
     },
     {
       "codigo": "800",
-      "curso": "Química",
+      "curso": "Química (São Paulo Butantã e Ribeirão Preto)",
       "modalidade": "Ampla Concorrência",
       "vagas": 78,
       "inscritos": 459,
@@ -42470,11 +42722,15 @@
       "convocados_2fase": 252,
       "convocados_por_vaga": 3.23,
       "pontos_maximo": 86,
-      "pontos_minimo": 50
+      "pontos_minimo": 50,
+      "curso_pdf": "Química",
+      "curso_desambiguado": true,
+      "curso_busca": "Química (São Paulo Butantã e Ribeirão Preto)",
+      "campus": "São Paulo Butantã e Ribeirão Preto"
     },
     {
       "codigo": "800",
-      "curso": "Química",
+      "curso": "Química (São Paulo Butantã e Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 33,
       "inscritos": 217,
@@ -42482,11 +42738,15 @@
       "convocados_2fase": 160,
       "convocados_por_vaga": 4.85,
       "pontos_maximo": 83,
-      "pontos_minimo": 33
+      "pontos_minimo": 33,
+      "curso_pdf": "Química",
+      "curso_desambiguado": true,
+      "curso_busca": "Química (São Paulo Butantã e Ribeirão Preto)",
+      "campus": "São Paulo Butantã e Ribeirão Preto"
     },
     {
       "codigo": "800",
-      "curso": "Química",
+      "curso": "Química (São Paulo Butantã e Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 18,
       "inscritos": 68,
@@ -42494,11 +42754,15 @@
       "convocados_2fase": 53,
       "convocados_por_vaga": 2.94,
       "pontos_maximo": 74,
-      "pontos_minimo": 28
+      "pontos_minimo": 28,
+      "curso_pdf": "Química",
+      "curso_desambiguado": true,
+      "curso_busca": "Química (São Paulo Butantã e Ribeirão Preto)",
+      "campus": "São Paulo Butantã e Ribeirão Preto"
     },
     {
       "codigo": "801",
-      "curso": "Química",
+      "curso": "Química (Ribeirão Preto)",
       "modalidade": "Ampla Concorrência",
       "vagas": 44,
       "inscritos": 160,
@@ -42506,11 +42770,15 @@
       "convocados_2fase": 121,
       "convocados_por_vaga": 2.75,
       "pontos_maximo": 77,
-      "pontos_minimo": 36
+      "pontos_minimo": 36,
+      "curso_pdf": "Química",
+      "curso_desambiguado": true,
+      "curso_busca": "Química (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "801",
-      "curso": "Química",
+      "curso": "Química (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 19,
       "inscritos": 73,
@@ -42518,11 +42786,15 @@
       "convocados_2fase": 63,
       "convocados_por_vaga": 3.32,
       "pontos_maximo": 66,
-      "pontos_minimo": 28
+      "pontos_minimo": 28,
+      "curso_pdf": "Química",
+      "curso_desambiguado": true,
+      "curso_busca": "Química (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "801",
-      "curso": "Química",
+      "curso": "Química (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 10,
       "inscritos": 17,
@@ -42530,7 +42802,11 @@
       "convocados_2fase": 12,
       "convocados_por_vaga": 1.2,
       "pontos_maximo": 66,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Química",
+      "curso_desambiguado": true,
+      "curso_busca": "Química (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "999",
@@ -43112,7 +43388,7 @@
     },
     {
       "codigo": "116",
-      "curso": "Psicologia",
+      "curso": "Psicologia (Ribeirão Preto)",
       "modalidade": "Ampla Concorrência",
       "vagas": 18,
       "inscritos": 770,
@@ -43120,11 +43396,15 @@
       "convocados_2fase": 69,
       "convocados_por_vaga": 3.83,
       "pontos_maximo": 83,
-      "pontos_minimo": 65
+      "pontos_minimo": 65,
+      "curso_pdf": "Psicologia",
+      "curso_desambiguado": true,
+      "curso_busca": "Psicologia (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "116",
-      "curso": "Psicologia",
+      "curso": "Psicologia (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 8,
       "inscritos": 223,
@@ -43132,11 +43412,15 @@
       "convocados_2fase": 37,
       "convocados_por_vaga": 4.63,
       "pontos_maximo": 67,
-      "pontos_minimo": 52
+      "pontos_minimo": 52,
+      "curso_pdf": "Psicologia",
+      "curso_desambiguado": true,
+      "curso_busca": "Psicologia (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "116",
-      "curso": "Psicologia",
+      "curso": "Psicologia (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 4,
       "inscritos": 66,
@@ -43144,11 +43428,15 @@
       "convocados_2fase": 19,
       "convocados_por_vaga": 4.75,
       "pontos_maximo": 56,
-      "pontos_minimo": 43
+      "pontos_minimo": 43,
+      "curso_pdf": "Psicologia",
+      "curso_desambiguado": true,
+      "curso_busca": "Psicologia (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "117",
-      "curso": "Psicologia",
+      "curso": "Psicologia (São Paulo Butantã)",
       "modalidade": "Ampla Concorrência",
       "vagas": 31,
       "inscritos": 1845,
@@ -43156,11 +43444,15 @@
       "convocados_2fase": 125,
       "convocados_por_vaga": 4.03,
       "pontos_maximo": 84,
-      "pontos_minimo": 66
+      "pontos_minimo": 66,
+      "curso_pdf": "Psicologia",
+      "curso_desambiguado": true,
+      "curso_busca": "Psicologia (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "117",
-      "curso": "Psicologia",
+      "curso": "Psicologia (São Paulo Butantã)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 13,
       "inscritos": 676,
@@ -43168,11 +43460,15 @@
       "convocados_2fase": 62,
       "convocados_por_vaga": 4.77,
       "pontos_maximo": 78,
-      "pontos_minimo": 56
+      "pontos_minimo": 56,
+      "curso_pdf": "Psicologia",
+      "curso_desambiguado": true,
+      "curso_busca": "Psicologia (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "117",
-      "curso": "Psicologia",
+      "curso": "Psicologia (São Paulo Butantã)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 7,
       "inscritos": 313,
@@ -43180,7 +43476,11 @@
       "convocados_2fase": 36,
       "convocados_por_vaga": 5.14,
       "pontos_maximo": 64,
-      "pontos_minimo": 48
+      "pontos_minimo": 48,
+      "curso_pdf": "Psicologia",
+      "curso_desambiguado": true,
+      "curso_busca": "Psicologia (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "118",
@@ -44054,7 +44354,7 @@
     },
     {
       "codigo": "320",
-      "curso": "Química",
+      "curso": "Química (Ribeirão Preto)",
       "modalidade": "Ampla Concorrência",
       "vagas": 44,
       "inscritos": 176,
@@ -44062,11 +44362,15 @@
       "convocados_2fase": 132,
       "convocados_por_vaga": 3.0,
       "pontos_maximo": 79,
-      "pontos_minimo": 39
+      "pontos_minimo": 39,
+      "curso_pdf": "Química",
+      "curso_desambiguado": true,
+      "curso_busca": "Química (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "320",
-      "curso": "Química",
+      "curso": "Química (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 19,
       "inscritos": 65,
@@ -44074,11 +44378,15 @@
       "convocados_2fase": 56,
       "convocados_por_vaga": 2.95,
       "pontos_maximo": 62,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Química",
+      "curso_desambiguado": true,
+      "curso_busca": "Química (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "320",
-      "curso": "Química",
+      "curso": "Química (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 10,
       "inscritos": 19,
@@ -44086,11 +44394,15 @@
       "convocados_2fase": 16,
       "convocados_por_vaga": 1.6,
       "pontos_maximo": 62,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Química",
+      "curso_desambiguado": true,
+      "curso_busca": "Química (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "321",
-      "curso": "Química",
+      "curso": "Química (São Paulo Butantã e São Carlos)",
       "modalidade": "Ampla Concorrência",
       "vagas": 78,
       "inscritos": 431,
@@ -44098,11 +44410,15 @@
       "convocados_2fase": 245,
       "convocados_por_vaga": 3.14,
       "pontos_maximo": 83,
-      "pontos_minimo": 48
+      "pontos_minimo": 48,
+      "curso_pdf": "Química",
+      "curso_desambiguado": true,
+      "curso_busca": "Química (São Paulo Butantã e São Carlos)",
+      "campus": "São Paulo Butantã e São Carlos"
     },
     {
       "codigo": "321",
-      "curso": "Química",
+      "curso": "Química (São Paulo Butantã e São Carlos)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 33,
       "inscritos": 189,
@@ -44110,11 +44426,15 @@
       "convocados_2fase": 155,
       "convocados_por_vaga": 4.7,
       "pontos_maximo": 72,
-      "pontos_minimo": 31
+      "pontos_minimo": 31,
+      "curso_pdf": "Química",
+      "curso_desambiguado": true,
+      "curso_busca": "Química (São Paulo Butantã e São Carlos)",
+      "campus": "São Paulo Butantã e São Carlos"
     },
     {
       "codigo": "321",
-      "curso": "Química",
+      "curso": "Química (São Paulo Butantã e São Carlos)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 18,
       "inscritos": 81,
@@ -44122,7 +44442,11 @@
       "convocados_2fase": 72,
       "convocados_por_vaga": 4.0,
       "pontos_maximo": 77,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Química",
+      "curso_desambiguado": true,
+      "curso_busca": "Química (São Paulo Butantã e São Carlos)",
+      "campus": "São Paulo Butantã e São Carlos"
     },
     {
       "codigo": "322",
@@ -44309,7 +44633,7 @@
     },
     {
       "codigo": "504",
-      "curso": "Arquitetura",
+      "curso": "Arquitetura (São Paulo Butantã)",
       "modalidade": "Ampla Concorrência",
       "vagas": 66,
       "inscritos": 1481,
@@ -44317,11 +44641,15 @@
       "convocados_2fase": 250,
       "convocados_por_vaga": 3.79,
       "pontos_maximo": 83,
-      "pontos_minimo": 61
+      "pontos_minimo": 61,
+      "curso_pdf": "Arquitetura",
+      "curso_desambiguado": true,
+      "curso_busca": "Arquitetura (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "504",
-      "curso": "Arquitetura",
+      "curso": "Arquitetura (São Paulo Butantã)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 27,
       "inscritos": 422,
@@ -44329,11 +44657,15 @@
       "convocados_2fase": 118,
       "convocados_por_vaga": 4.37,
       "pontos_maximo": 76,
-      "pontos_minimo": 49
+      "pontos_minimo": 49,
+      "curso_pdf": "Arquitetura",
+      "curso_desambiguado": true,
+      "curso_busca": "Arquitetura (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "504",
-      "curso": "Arquitetura",
+      "curso": "Arquitetura (São Paulo Butantã)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 16,
       "inscritos": 180,
@@ -44341,11 +44673,15 @@
       "convocados_2fase": 92,
       "convocados_por_vaga": 5.75,
       "pontos_maximo": 60,
-      "pontos_minimo": 38
+      "pontos_minimo": 38,
+      "curso_pdf": "Arquitetura",
+      "curso_desambiguado": true,
+      "curso_busca": "Arquitetura (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "505",
-      "curso": "Arquitetura",
+      "curso": "Arquitetura (São Carlos)",
       "modalidade": "Ampla Concorrência",
       "vagas": 20,
       "inscritos": 374,
@@ -44353,11 +44689,15 @@
       "convocados_2fase": 74,
       "convocados_por_vaga": 3.7,
       "pontos_maximo": 79,
-      "pontos_minimo": 60
+      "pontos_minimo": 60,
+      "curso_pdf": "Arquitetura",
+      "curso_desambiguado": true,
+      "curso_busca": "Arquitetura (São Carlos)",
+      "campus": "São Carlos"
     },
     {
       "codigo": "505",
-      "curso": "Arquitetura",
+      "curso": "Arquitetura (São Carlos)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 8,
       "inscritos": 104,
@@ -44365,11 +44705,15 @@
       "convocados_2fase": 36,
       "convocados_por_vaga": 4.5,
       "pontos_maximo": 72,
-      "pontos_minimo": 47
+      "pontos_minimo": 47,
+      "curso_pdf": "Arquitetura",
+      "curso_desambiguado": true,
+      "curso_busca": "Arquitetura (São Carlos)",
+      "campus": "São Carlos"
     },
     {
       "codigo": "505",
-      "curso": "Arquitetura",
+      "curso": "Arquitetura (São Carlos)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 5,
       "inscritos": 19,
@@ -44377,7 +44721,11 @@
       "convocados_2fase": 16,
       "convocados_por_vaga": 3.2,
       "pontos_maximo": 55,
-      "pontos_minimo": 28
+      "pontos_minimo": 28,
+      "curso_pdf": "Arquitetura",
+      "curso_desambiguado": true,
+      "curso_busca": "Arquitetura (São Carlos)",
+      "campus": "São Carlos"
     },
     {
       "codigo": "506",
@@ -44489,7 +44837,7 @@
     },
     {
       "codigo": "509",
-      "curso": "Biblioteconomia e Ciência da Informação",
+      "curso": "Biblioteconomia e Ciência da Informação (São Paulo Butantã)",
       "modalidade": "Ampla Concorrência",
       "vagas": 18,
       "inscritos": 193,
@@ -44497,11 +44845,15 @@
       "convocados_2fase": 67,
       "convocados_por_vaga": 3.72,
       "pontos_maximo": 72,
-      "pontos_minimo": 49
+      "pontos_minimo": 49,
+      "curso_pdf": "Biblioteconomia e Ciência da Informação",
+      "curso_desambiguado": true,
+      "curso_busca": "Biblioteconomia e Ciência da Informação (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "509",
-      "curso": "Biblioteconomia e Ciência da Informação",
+      "curso": "Biblioteconomia e Ciência da Informação (São Paulo Butantã)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 8,
       "inscritos": 52,
@@ -44509,11 +44861,15 @@
       "convocados_2fase": 33,
       "convocados_por_vaga": 4.13,
       "pontos_maximo": 59,
-      "pontos_minimo": 35
+      "pontos_minimo": 35,
+      "curso_pdf": "Biblioteconomia e Ciência da Informação",
+      "curso_desambiguado": true,
+      "curso_busca": "Biblioteconomia e Ciência da Informação (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "509",
-      "curso": "Biblioteconomia e Ciência da Informação",
+      "curso": "Biblioteconomia e Ciência da Informação (São Paulo Butantã)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 4,
       "inscritos": 15,
@@ -44521,11 +44877,15 @@
       "convocados_2fase": 11,
       "convocados_por_vaga": 2.75,
       "pontos_maximo": 48,
-      "pontos_minimo": 33
+      "pontos_minimo": 33,
+      "curso_pdf": "Biblioteconomia e Ciência da Informação",
+      "curso_desambiguado": true,
+      "curso_busca": "Biblioteconomia e Ciência da Informação (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "510",
-      "curso": "Biblioteconomia e Ciência da Informação",
+      "curso": "Biblioteconomia e Ciência da Informação (Ribeirão Preto)",
       "modalidade": "Ampla Concorrência",
       "vagas": 18,
       "inscritos": 208,
@@ -44533,11 +44893,15 @@
       "convocados_2fase": 73,
       "convocados_por_vaga": 4.06,
       "pontos_maximo": 68,
-      "pontos_minimo": 49
+      "pontos_minimo": 49,
+      "curso_pdf": "Biblioteconomia e Ciência da Informação",
+      "curso_desambiguado": true,
+      "curso_busca": "Biblioteconomia e Ciência da Informação (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "510",
-      "curso": "Biblioteconomia e Ciência da Informação",
+      "curso": "Biblioteconomia e Ciência da Informação (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 8,
       "inscritos": 9,
@@ -44545,11 +44909,15 @@
       "convocados_2fase": 8,
       "convocados_por_vaga": 1.0,
       "pontos_maximo": 52,
-      "pontos_minimo": 30
+      "pontos_minimo": 30,
+      "curso_pdf": "Biblioteconomia e Ciência da Informação",
+      "curso_desambiguado": true,
+      "curso_busca": "Biblioteconomia e Ciência da Informação (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "510",
-      "curso": "Biblioteconomia e Ciência da Informação",
+      "curso": "Biblioteconomia e Ciência da Informação (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 4,
       "inscritos": 4,
@@ -44557,7 +44925,11 @@
       "convocados_2fase": 3,
       "convocados_por_vaga": 0.75,
       "pontos_maximo": 41,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Biblioteconomia e Ciência da Informação",
+      "curso_desambiguado": true,
+      "curso_busca": "Biblioteconomia e Ciência da Informação (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "511",
@@ -45029,7 +45401,7 @@
     },
     {
       "codigo": "524",
-      "curso": "Música",
+      "curso": "Música (São Paulo Butantã)",
       "modalidade": "Ampla Concorrência",
       "vagas": 25,
       "inscritos": 133,
@@ -45037,11 +45409,15 @@
       "convocados_2fase": 62,
       "convocados_por_vaga": 2.48,
       "pontos_maximo": 71,
-      "pontos_minimo": 44
+      "pontos_minimo": 44,
+      "curso_pdf": "Música",
+      "curso_desambiguado": true,
+      "curso_busca": "Música (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "524",
-      "curso": "Música",
+      "curso": "Música (São Paulo Butantã)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 15,
       "inscritos": 77,
@@ -45049,11 +45425,15 @@
       "convocados_2fase": 64,
       "convocados_por_vaga": 4.27,
       "pontos_maximo": 57,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Música",
+      "curso_desambiguado": true,
+      "curso_busca": "Música (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "524",
-      "curso": "Música",
+      "curso": "Música (São Paulo Butantã)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 10,
       "inscritos": 40,
@@ -45061,11 +45441,15 @@
       "convocados_2fase": 27,
       "convocados_por_vaga": 2.7,
       "pontos_maximo": 52,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Música",
+      "curso_desambiguado": true,
+      "curso_busca": "Música (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "525",
-      "curso": "Música",
+      "curso": "Música (Ribeirão Preto)",
       "modalidade": "Ampla Concorrência",
       "vagas": 15,
       "inscritos": 46,
@@ -45073,11 +45457,15 @@
       "convocados_2fase": 37,
       "convocados_por_vaga": 2.47,
       "pontos_maximo": 69,
-      "pontos_minimo": 31
+      "pontos_minimo": 31,
+      "curso_pdf": "Música",
+      "curso_desambiguado": true,
+      "curso_busca": "Música (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "525",
-      "curso": "Música",
+      "curso": "Música (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 9,
       "inscritos": 22,
@@ -45085,11 +45473,15 @@
       "convocados_2fase": 18,
       "convocados_por_vaga": 2.0,
       "pontos_maximo": 56,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Música",
+      "curso_desambiguado": true,
+      "curso_busca": "Música (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "525",
-      "curso": "Música",
+      "curso": "Música (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 6,
       "inscritos": 12,
@@ -45097,11 +45489,15 @@
       "convocados_2fase": 9,
       "convocados_por_vaga": 1.5,
       "pontos_maximo": 51,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Música",
+      "curso_desambiguado": true,
+      "curso_busca": "Música (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "526",
-      "curso": "Pedagogia",
+      "curso": "Pedagogia (São Paulo Butantã)",
       "modalidade": "Ampla Concorrência",
       "vagas": 78,
       "inscritos": 409,
@@ -45109,11 +45505,15 @@
       "convocados_2fase": 235,
       "convocados_por_vaga": 3.01,
       "pontos_maximo": 75,
-      "pontos_minimo": 42
+      "pontos_minimo": 42,
+      "curso_pdf": "Pedagogia",
+      "curso_desambiguado": true,
+      "curso_busca": "Pedagogia (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "526",
-      "curso": "Pedagogia",
+      "curso": "Pedagogia (São Paulo Butantã)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 33,
       "inscritos": 171,
@@ -45121,11 +45521,15 @@
       "convocados_2fase": 127,
       "convocados_por_vaga": 3.85,
       "pontos_maximo": 67,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Pedagogia",
+      "curso_desambiguado": true,
+      "curso_busca": "Pedagogia (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "526",
-      "curso": "Pedagogia",
+      "curso": "Pedagogia (São Paulo Butantã)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 21,
       "inscritos": 84,
@@ -45133,11 +45537,15 @@
       "convocados_2fase": 64,
       "convocados_por_vaga": 3.05,
       "pontos_maximo": 53,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Pedagogia",
+      "curso_desambiguado": true,
+      "curso_busca": "Pedagogia (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "527",
-      "curso": "Pedagogia",
+      "curso": "Pedagogia (Ribeirão Preto)",
       "modalidade": "Ampla Concorrência",
       "vagas": 22,
       "inscritos": 107,
@@ -45145,11 +45553,15 @@
       "convocados_2fase": 73,
       "convocados_por_vaga": 3.32,
       "pontos_maximo": 66,
-      "pontos_minimo": 39
+      "pontos_minimo": 39,
+      "curso_pdf": "Pedagogia",
+      "curso_desambiguado": true,
+      "curso_busca": "Pedagogia (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "527",
-      "curso": "Pedagogia",
+      "curso": "Pedagogia (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 10,
       "inscritos": 43,
@@ -45157,11 +45569,15 @@
       "convocados_2fase": 30,
       "convocados_por_vaga": 3.0,
       "pontos_maximo": 64,
-      "pontos_minimo": 28
+      "pontos_minimo": 28,
+      "curso_pdf": "Pedagogia",
+      "curso_desambiguado": true,
+      "curso_busca": "Pedagogia (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "527",
-      "curso": "Pedagogia",
+      "curso": "Pedagogia (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 5,
       "inscritos": 16,
@@ -45169,7 +45585,11 @@
       "convocados_2fase": 10,
       "convocados_por_vaga": 2.0,
       "pontos_maximo": 45,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Pedagogia",
+      "curso_desambiguado": true,
+      "curso_busca": "Pedagogia (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "528",
@@ -45931,7 +46351,7 @@
     },
     {
       "codigo": "116",
-      "curso": "Psicologia",
+      "curso": "Psicologia (Ribeirão Preto)",
       "modalidade": "Ampla Concorrência",
       "vagas": 18,
       "inscritos": 852,
@@ -45939,11 +46359,15 @@
       "convocados_2fase": 71,
       "convocados_por_vaga": 3.94,
       "pontos_maximo": 81,
-      "pontos_minimo": 67
+      "pontos_minimo": 67,
+      "curso_pdf": "Psicologia",
+      "curso_desambiguado": true,
+      "curso_busca": "Psicologia (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "116",
-      "curso": "Psicologia",
+      "curso": "Psicologia (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 8,
       "inscritos": 265,
@@ -45951,11 +46375,15 @@
       "convocados_2fase": 41,
       "convocados_por_vaga": 5.13,
       "pontos_maximo": 72,
-      "pontos_minimo": 57
+      "pontos_minimo": 57,
+      "curso_pdf": "Psicologia",
+      "curso_desambiguado": true,
+      "curso_busca": "Psicologia (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "116",
-      "curso": "Psicologia",
+      "curso": "Psicologia (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 4,
       "inscritos": 76,
@@ -45963,11 +46391,15 @@
       "convocados_2fase": 21,
       "convocados_por_vaga": 5.25,
       "pontos_maximo": 59,
-      "pontos_minimo": 48
+      "pontos_minimo": 48,
+      "curso_pdf": "Psicologia",
+      "curso_desambiguado": true,
+      "curso_busca": "Psicologia (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "117",
-      "curso": "Psicologia",
+      "curso": "Psicologia (São Paulo Butantã)",
       "modalidade": "Ampla Concorrência",
       "vagas": 31,
       "inscritos": 1935,
@@ -45975,11 +46407,15 @@
       "convocados_2fase": 131,
       "convocados_por_vaga": 4.23,
       "pontos_maximo": 85,
-      "pontos_minimo": 69
+      "pontos_minimo": 69,
+      "curso_pdf": "Psicologia",
+      "curso_desambiguado": true,
+      "curso_busca": "Psicologia (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "117",
-      "curso": "Psicologia",
+      "curso": "Psicologia (São Paulo Butantã)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 13,
       "inscritos": 736,
@@ -45987,11 +46423,15 @@
       "convocados_2fase": 55,
       "convocados_por_vaga": 4.23,
       "pontos_maximo": 75,
-      "pontos_minimo": 58
+      "pontos_minimo": 58,
+      "curso_pdf": "Psicologia",
+      "curso_desambiguado": true,
+      "curso_busca": "Psicologia (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "117",
-      "curso": "Psicologia",
+      "curso": "Psicologia (São Paulo Butantã)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 7,
       "inscritos": 317,
@@ -45999,7 +46439,11 @@
       "convocados_2fase": 45,
       "convocados_por_vaga": 6.43,
       "pontos_maximo": 67,
-      "pontos_minimo": 49
+      "pontos_minimo": 49,
+      "curso_pdf": "Psicologia",
+      "curso_desambiguado": true,
+      "curso_busca": "Psicologia (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "118",
@@ -46870,7 +47314,7 @@
     },
     {
       "codigo": "320",
-      "curso": "Química",
+      "curso": "Química (Ribeirão Preto)",
       "modalidade": "Ampla Concorrência",
       "vagas": 44,
       "inscritos": 166,
@@ -46878,11 +47322,15 @@
       "convocados_2fase": 126,
       "convocados_por_vaga": 2.86,
       "pontos_maximo": 78,
-      "pontos_minimo": 39
+      "pontos_minimo": 39,
+      "curso_pdf": "Química",
+      "curso_desambiguado": true,
+      "curso_busca": "Química (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "320",
-      "curso": "Química",
+      "curso": "Química (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 19,
       "inscritos": 62,
@@ -46890,11 +47338,15 @@
       "convocados_2fase": 46,
       "convocados_por_vaga": 2.42,
       "pontos_maximo": 73,
-      "pontos_minimo": 28
+      "pontos_minimo": 28,
+      "curso_pdf": "Química",
+      "curso_desambiguado": true,
+      "curso_busca": "Química (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "320",
-      "curso": "Química",
+      "curso": "Química (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 10,
       "inscritos": 29,
@@ -46902,11 +47354,15 @@
       "convocados_2fase": 24,
       "convocados_por_vaga": 2.4,
       "pontos_maximo": 71,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Química",
+      "curso_desambiguado": true,
+      "curso_busca": "Química (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "321",
-      "curso": "Química",
+      "curso": "Química (São Paulo Butantã e São Carlos)",
       "modalidade": "Ampla Concorrência",
       "vagas": 78,
       "inscritos": 384,
@@ -46914,11 +47370,15 @@
       "convocados_2fase": 209,
       "convocados_por_vaga": 2.68,
       "pontos_maximo": 84,
-      "pontos_minimo": 50
+      "pontos_minimo": 50,
+      "curso_pdf": "Química",
+      "curso_desambiguado": true,
+      "curso_busca": "Química (São Paulo Butantã e São Carlos)",
+      "campus": "São Paulo Butantã e São Carlos"
     },
     {
       "codigo": "321",
-      "curso": "Química",
+      "curso": "Química (São Paulo Butantã e São Carlos)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 33,
       "inscritos": 230,
@@ -46926,11 +47386,15 @@
       "convocados_2fase": 182,
       "convocados_por_vaga": 5.52,
       "pontos_maximo": 74,
-      "pontos_minimo": 34
+      "pontos_minimo": 34,
+      "curso_pdf": "Química",
+      "curso_desambiguado": true,
+      "curso_busca": "Química (São Paulo Butantã e São Carlos)",
+      "campus": "São Paulo Butantã e São Carlos"
     },
     {
       "codigo": "321",
-      "curso": "Química",
+      "curso": "Química (São Paulo Butantã e São Carlos)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 18,
       "inscritos": 84,
@@ -46938,7 +47402,11 @@
       "convocados_2fase": 65,
       "convocados_por_vaga": 3.61,
       "pontos_maximo": 67,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Química",
+      "curso_desambiguado": true,
+      "curso_busca": "Química (São Paulo Butantã e São Carlos)",
+      "campus": "São Paulo Butantã e São Carlos"
     },
     {
       "codigo": "322",
@@ -47128,7 +47596,7 @@
     },
     {
       "codigo": "504",
-      "curso": "Arquitetura",
+      "curso": "Arquitetura (São Paulo Butantã)",
       "modalidade": "Ampla Concorrência",
       "vagas": 66,
       "inscritos": 1367,
@@ -47136,11 +47604,15 @@
       "convocados_2fase": 246,
       "convocados_por_vaga": 3.73,
       "pontos_maximo": 84,
-      "pontos_minimo": 63
+      "pontos_minimo": 63,
+      "curso_pdf": "Arquitetura",
+      "curso_desambiguado": true,
+      "curso_busca": "Arquitetura (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "504",
-      "curso": "Arquitetura",
+      "curso": "Arquitetura (São Paulo Butantã)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 27,
       "inscritos": 454,
@@ -47148,11 +47620,15 @@
       "convocados_2fase": 131,
       "convocados_por_vaga": 4.85,
       "pontos_maximo": 76,
-      "pontos_minimo": 51
+      "pontos_minimo": 51,
+      "curso_pdf": "Arquitetura",
+      "curso_desambiguado": true,
+      "curso_busca": "Arquitetura (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "504",
-      "curso": "Arquitetura",
+      "curso": "Arquitetura (São Paulo Butantã)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 16,
       "inscritos": 173,
@@ -47160,11 +47636,15 @@
       "convocados_2fase": 92,
       "convocados_por_vaga": 5.75,
       "pontos_maximo": 69,
-      "pontos_minimo": 38
+      "pontos_minimo": 38,
+      "curso_pdf": "Arquitetura",
+      "curso_desambiguado": true,
+      "curso_busca": "Arquitetura (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "505",
-      "curso": "Arquitetura",
+      "curso": "Arquitetura (São Carlos)",
       "modalidade": "Ampla Concorrência",
       "vagas": 20,
       "inscritos": 327,
@@ -47172,11 +47652,15 @@
       "convocados_2fase": 83,
       "convocados_por_vaga": 4.15,
       "pontos_maximo": 78,
-      "pontos_minimo": 60
+      "pontos_minimo": 60,
+      "curso_pdf": "Arquitetura",
+      "curso_desambiguado": true,
+      "curso_busca": "Arquitetura (São Carlos)",
+      "campus": "São Carlos"
     },
     {
       "codigo": "505",
-      "curso": "Arquitetura",
+      "curso": "Arquitetura (São Carlos)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 8,
       "inscritos": 83,
@@ -47184,11 +47668,15 @@
       "convocados_2fase": 31,
       "convocados_por_vaga": 3.88,
       "pontos_maximo": 69,
-      "pontos_minimo": 48
+      "pontos_minimo": 48,
+      "curso_pdf": "Arquitetura",
+      "curso_desambiguado": true,
+      "curso_busca": "Arquitetura (São Carlos)",
+      "campus": "São Carlos"
     },
     {
       "codigo": "505",
-      "curso": "Arquitetura",
+      "curso": "Arquitetura (São Carlos)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 5,
       "inscritos": 32,
@@ -47196,7 +47684,11 @@
       "convocados_2fase": 26,
       "convocados_por_vaga": 5.2,
       "pontos_maximo": 56,
-      "pontos_minimo": 30
+      "pontos_minimo": 30,
+      "curso_pdf": "Arquitetura",
+      "curso_desambiguado": true,
+      "curso_busca": "Arquitetura (São Carlos)",
+      "campus": "São Carlos"
     },
     {
       "codigo": "506",
@@ -47812,7 +48304,7 @@
     },
     {
       "codigo": "523",
-      "curso": "Música",
+      "curso": "Música (São Paulo Butantã)",
       "modalidade": "Ampla Concorrência",
       "vagas": 25,
       "inscritos": 142,
@@ -47820,11 +48312,15 @@
       "convocados_2fase": 68,
       "convocados_por_vaga": 2.72,
       "pontos_maximo": 86,
-      "pontos_minimo": 47
+      "pontos_minimo": 47,
+      "curso_pdf": "Música",
+      "curso_desambiguado": true,
+      "curso_busca": "Música (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "523",
-      "curso": "Música",
+      "curso": "Música (São Paulo Butantã)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 15,
       "inscritos": 92,
@@ -47832,11 +48328,15 @@
       "convocados_2fase": 67,
       "convocados_por_vaga": 4.47,
       "pontos_maximo": 70,
-      "pontos_minimo": 32
+      "pontos_minimo": 32,
+      "curso_pdf": "Música",
+      "curso_desambiguado": true,
+      "curso_busca": "Música (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "523",
-      "curso": "Música",
+      "curso": "Música (São Paulo Butantã)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 10,
       "inscritos": 42,
@@ -47844,11 +48344,15 @@
       "convocados_2fase": 35,
       "convocados_por_vaga": 3.5,
       "pontos_maximo": 65,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Música",
+      "curso_desambiguado": true,
+      "curso_busca": "Música (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "524",
-      "curso": "Música",
+      "curso": "Música (Ribeirão Preto)",
       "modalidade": "Ampla Concorrência",
       "vagas": 15,
       "inscritos": 44,
@@ -47856,11 +48360,15 @@
       "convocados_2fase": 31,
       "convocados_por_vaga": 2.07,
       "pontos_maximo": 64,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Música",
+      "curso_desambiguado": true,
+      "curso_busca": "Música (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "524",
-      "curso": "Música",
+      "curso": "Música (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 9,
       "inscritos": 28,
@@ -47868,11 +48376,15 @@
       "convocados_2fase": 18,
       "convocados_por_vaga": 2.0,
       "pontos_maximo": 53,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Música",
+      "curso_desambiguado": true,
+      "curso_busca": "Música (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "524",
-      "curso": "Música",
+      "curso": "Música (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 6,
       "inscritos": 10,
@@ -47880,11 +48392,15 @@
       "convocados_2fase": 6,
       "convocados_por_vaga": 1.0,
       "pontos_maximo": 50,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Música",
+      "curso_desambiguado": true,
+      "curso_busca": "Música (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "525",
-      "curso": "Pedagogia",
+      "curso": "Pedagogia (São Paulo Butantã)",
       "modalidade": "Ampla Concorrência",
       "vagas": 78,
       "inscritos": 335,
@@ -47892,11 +48408,15 @@
       "convocados_2fase": 198,
       "convocados_por_vaga": 2.54,
       "pontos_maximo": 78,
-      "pontos_minimo": 41
+      "pontos_minimo": 41,
+      "curso_pdf": "Pedagogia",
+      "curso_desambiguado": true,
+      "curso_busca": "Pedagogia (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "525",
-      "curso": "Pedagogia",
+      "curso": "Pedagogia (São Paulo Butantã)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 33,
       "inscritos": 210,
@@ -47904,11 +48424,15 @@
       "convocados_2fase": 167,
       "convocados_por_vaga": 5.06,
       "pontos_maximo": 66,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Pedagogia",
+      "curso_desambiguado": true,
+      "curso_busca": "Pedagogia (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "525",
-      "curso": "Pedagogia",
+      "curso": "Pedagogia (São Paulo Butantã)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 21,
       "inscritos": 97,
@@ -47916,11 +48440,15 @@
       "convocados_2fase": 65,
       "convocados_por_vaga": 3.1,
       "pontos_maximo": 63,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Pedagogia",
+      "curso_desambiguado": true,
+      "curso_busca": "Pedagogia (São Paulo Butantã)",
+      "campus": "São Paulo Butantã"
     },
     {
       "codigo": "526",
-      "curso": "Pedagogia",
+      "curso": "Pedagogia (Ribeirão Preto)",
       "modalidade": "Ampla Concorrência",
       "vagas": 22,
       "inscritos": 70,
@@ -47928,11 +48456,15 @@
       "convocados_2fase": 46,
       "convocados_por_vaga": 2.09,
       "pontos_maximo": 78,
-      "pontos_minimo": 38
+      "pontos_minimo": 38,
+      "curso_pdf": "Pedagogia",
+      "curso_desambiguado": true,
+      "curso_busca": "Pedagogia (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "526",
-      "curso": "Pedagogia",
+      "curso": "Pedagogia (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública",
       "vagas": 10,
       "inscritos": 54,
@@ -47940,11 +48472,15 @@
       "convocados_2fase": 45,
       "convocados_por_vaga": 4.5,
       "pontos_maximo": 62,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Pedagogia",
+      "curso_desambiguado": true,
+      "curso_busca": "Pedagogia (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "526",
-      "curso": "Pedagogia",
+      "curso": "Pedagogia (Ribeirão Preto)",
       "modalidade": "Candidatos de Escola Pública − Grupo PPI",
       "vagas": 5,
       "inscritos": 25,
@@ -47952,7 +48488,11 @@
       "convocados_2fase": 18,
       "convocados_por_vaga": 3.6,
       "pontos_maximo": 47,
-      "pontos_minimo": 27
+      "pontos_minimo": 27,
+      "curso_pdf": "Pedagogia",
+      "curso_desambiguado": true,
+      "curso_busca": "Pedagogia (Ribeirão Preto)",
+      "campus": "Ribeirão Preto"
     },
     {
       "codigo": "527",
