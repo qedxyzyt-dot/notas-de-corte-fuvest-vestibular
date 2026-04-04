@@ -1865,16 +1865,74 @@ function buildChartVI(anos, dados) {
     if (!ctx) return;
     const vagas = anos.map(a => dados[a].vagas ?? null);
     const insc = anos.map(a => dados[a].inscritos ?? null);
+    const tema = obterTemaGraficos();
+    const options = opcoesChartBase({
+        beginAtZero: true,
+        tooltipLabel: formatarTooltipNumero
+    });
+    options.scales = {
+        x: options.scales.x,
+        yVagas: {
+            beginAtZero: true,
+            position: "left",
+            ticks: {
+                color: "#27ae60",
+                callback: value => fmtInt(value)
+            },
+            grid: { color: tema.grade, drawBorder: false },
+            title: {
+                display: true,
+                text: "Vagas",
+                color: "#27ae60",
+                font: { family: "Manrope", weight: "700" }
+            }
+        },
+        yInsc: {
+            beginAtZero: true,
+            position: "right",
+            ticks: {
+                color: "#c0392b",
+                callback: value => fmtInt(value)
+            },
+            grid: { drawOnChartArea: false, drawBorder: false },
+            title: {
+                display: true,
+                text: "Inscritos",
+                color: "#c0392b",
+                font: { family: "Manrope", weight: "700" }
+            }
+        }
+    };
     charts.vi = new Chart(ctx, {
         type: "bar",
         data: {
             labels: anos,
             datasets: [
-                { label: "Vagas", data: vagas, backgroundColor: "rgba(39,174,96,0.6)", borderColor: "#27ae60", borderWidth: 1 },
-                { label: "Inscritos", data: insc, backgroundColor: "rgba(192,57,43,0.6)", borderColor: "#c0392b", borderWidth: 1 }
+                {
+                    label: "Vagas",
+                    data: vagas,
+                    yAxisID: "yVagas",
+                    backgroundColor: "rgba(39,174,96,0.72)",
+                    borderColor: "#27ae60",
+                    borderWidth: 1,
+                    borderRadius: 3,
+                    categoryPercentage: 0.72,
+                    barPercentage: 0.88
+                },
+                {
+                    label: "Inscritos",
+                    data: insc,
+                    yAxisID: "yInsc",
+                    backgroundColor: "rgba(192,57,43,0.68)",
+                    borderColor: "#c0392b",
+                    borderWidth: 1,
+                    borderRadius: 3,
+                    categoryPercentage: 0.72,
+                    barPercentage: 0.88
+                }
             ]
         },
-        options: opcoesChartBase({ yTitle: "Quantidade", beginAtZero: true, yTickCallback: value => fmtInt(value) })
+        options
     });
 }
 
