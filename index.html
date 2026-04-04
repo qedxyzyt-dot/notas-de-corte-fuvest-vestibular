@@ -437,6 +437,30 @@ tbody tr:hover { background: var(--hover); }
     max-height: 350px;
     border-radius: 16px;
 }
+.chart-split {
+    display: flex;
+    flex-direction: column;
+    gap: 0.95rem;
+}
+.chart-panel {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(120, 152, 196, 0.14);
+    border-radius: 16px;
+    padding: 0.8rem 0.9rem 0.55rem;
+}
+.chart-panel__title {
+    margin: 0 0 0.55rem;
+    font-family: var(--fonte-display);
+    font-size: 0.84rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-align: left;
+}
+.chart-panel__title--vagas { color: #27ae60; }
+.chart-panel__title--inscritos { color: #c0392b; }
+.chart-wrapper--split {
+    max-height: 210px;
+}
 
 /* Insights */
 .insights {
@@ -729,6 +753,9 @@ footer a { color: var(--usp-azul); }
     }
     .chart-wrapper {
         max-height: 16rem;
+    }
+    .chart-wrapper--split {
+        max-height: 13rem;
     }
     .insights {
         padding: 1rem 1rem 1rem 1.1rem;
@@ -1789,12 +1816,23 @@ function renderDashboard(grupoSelecionado, dados, contexto = {}) {
 
     html += `<div class="graficos">
         <div class="grafico-card"><h3>Evolução das Notas de Corte</h3><div class="chart-wrapper"><canvas id="chart-notas"></canvas></div></div>`;
-    if (Object.values(dados).some(r => Number.isFinite(calcConvocadosPorVaga(r)) && calcConvocadosPorVaga(r) > 0)) {
-        html += `<div class="grafico-card"><h3>Convocados por Vaga</h3><div class="chart-wrapper"><canvas id="chart-conc"></canvas></div></div>`;
-    }
-    if (temCompleto) {
-        html += `<div class="grafico-card"><h3>Vagas Ofertadas vs Inscritos</h3><div class="chart-wrapper"><canvas id="chart-vi"></canvas></div></div>`;
-    }
+      if (Object.values(dados).some(r => Number.isFinite(calcConvocadosPorVaga(r)) && calcConvocadosPorVaga(r) > 0)) {
+          html += `<div class="grafico-card"><h3>Convocados por Vaga</h3><div class="chart-wrapper"><canvas id="chart-conc"></canvas></div></div>`;
+      }
+      if (temCompleto) {
+        html += `<div class="grafico-card"><h3>Vagas Ofertadas e Inscritos</h3>
+            <div class="chart-split">
+                <div class="chart-panel">
+                    <p class="chart-panel__title chart-panel__title--vagas">Vagas ofertadas</p>
+                    <div class="chart-wrapper chart-wrapper--split"><canvas id="chart-vagas"></canvas></div>
+                </div>
+                <div class="chart-panel">
+                    <p class="chart-panel__title chart-panel__title--inscritos">Inscritos</p>
+                    <div class="chart-wrapper chart-wrapper--split"><canvas id="chart-inscritos"></canvas></div>
+                </div>
+            </div>
+        </div>`;
+      }
     html += `</div>`;
 
     const insights = gerarInsights(grupoSelecionado, dados, { nomesOficiais });
@@ -1861,49 +1899,41 @@ function buildChartConc(anos, dados) {
     });
 }
 function buildChartVI(anos, dados) {
-    const ctx = document.getElementById("chart-vi");
-    if (!ctx) return;
+    const ctxVagas = document.getElementById("chart-vagas");
+    const ctxInsc = document.getElementById("chart-inscritos");
+    if (!ctxVagas || !ctxInsc) return;
     const vagas = anos.map(a => dados[a].vagas ?? null);
     const insc = anos.map(a => dados[a].inscritos ?? null);
-    const tema = obterTemaGraficos();
-    const options = opcoesChartBase({
+    const optionsVagas = opcoesChartBase({
         beginAtZero: true,
         tooltipLabel: formatarTooltipNumero
     });
-    options.scales = {
-        x: options.scales.x,
-        yVagas: {
-            beginAtZero: true,
-            position: "left",
-            ticks: {
-                color: "#27ae60",
-                callback: value => fmtInt(value)
-            },
-            grid: { color: tema.grade, drawBorder: false },
-            title: {
-                display: true,
-                text: "Vagas",
-                color: "#27ae60",
-                font: { family: "Manrope", weight: "700" }
-            }
-        },
-        yInsc: {
-            beginAtZero: true,
-            position: "right",
-            ticks: {
-                color: "#c0392b",
-                callback: value => fmtInt(value)
-            },
-            grid: { drawOnChartArea: false, drawBorder: false },
-            title: {
-                display: true,
-                text: "Inscritos",
-                color: "#c0392b",
-                font: { family: "Manrope", weight: "700" }
-            }
-        }
+    optionsVagas.scales.y.ticks.color = "#27ae60";
+    optionsVagas.scales.y.title = {
+        display: true,
+        text: "Vagas",
+        color: "#27ae60",
+        font: { family: "Manrope", weight: "700" }
     };
-    charts.vi = new Chart(ctx, {
+    optionsVagas.scales.y.ticks.callback = value => fmtInt(value);
+    optionsVagas.scales.x.ticks.color = obterTemaGraficos().texto;
+    optionsVagas.scales.x.grid.display = false;
+
+    const optionsInsc = opcoesChartBase({
+        beginAtZero: true,
+        tooltipLabel: formatarTooltipNumero
+    });
+    optionsInsc.scales.y.ticks.color = "#c0392b";
+    optionsInsc.scales.y.title = {
+        display: true,
+        text: "Inscritos",
+        color: "#c0392b",
+        font: { family: "Manrope", weight: "700" }
+    };
+    optionsInsc.scales.y.ticks.callback = value => fmtInt(value);
+    optionsInsc.scales.x.ticks.color = obterTemaGraficos().texto;
+
+    charts.vagas = new Chart(ctxVagas, {
         type: "bar",
         data: {
             labels: anos,
@@ -1911,35 +1941,36 @@ function buildChartVI(anos, dados) {
                 {
                     label: "Vagas",
                     data: vagas,
-                    yAxisID: "yVagas",
                     backgroundColor: "rgba(39,174,96,0.72)",
                     borderColor: "#27ae60",
                     borderWidth: 1,
                     borderRadius: 3,
                     categoryPercentage: 0.72,
                     barPercentage: 0.88
-                },
-                {
-                    type: "line",
-                    label: "Inscritos",
-                    data: insc,
-                    yAxisID: "yInsc",
-                    backgroundColor: "rgba(192,57,43,0.16)",
-                    borderColor: "#c0392b",
-                    borderWidth: 2.5,
-                    pointRadius: 4.5,
-                    pointHoverRadius: 5.5,
-                    pointBackgroundColor: "#c0392b",
-                    pointBorderColor: "#f8fbff",
-                    pointBorderWidth: 1.2,
-                    pointStyle: "circle",
-                    tension: 0.26,
-                    fill: false,
-                    order: 0
                 }
             ]
         },
-        options
+        options: optionsVagas
+    });
+
+    charts.inscritos = new Chart(ctxInsc, {
+        type: "bar",
+        data: {
+            labels: anos,
+            datasets: [
+                {
+                    label: "Inscritos",
+                    data: insc,
+                    backgroundColor: "rgba(192,57,43,0.68)",
+                    borderColor: "#c0392b",
+                    borderWidth: 1,
+                    borderRadius: 3,
+                    categoryPercentage: 0.72,
+                    barPercentage: 0.88
+                }
+            ]
+        },
+        options: optionsInsc
     });
 }
 
