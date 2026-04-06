@@ -2284,6 +2284,7 @@ function obterTituloGrafico(wrapper) {
     return panelTitle || cardTitle || "Gráfico ampliado";
 }
 function redimensionarGraficoWrapper(wrapper) {
+    if (!wrapper?.isConnected) return;
     const canvas = wrapper?.querySelector("canvas");
     const chart = canvas ? Chart.getChart(canvas) : null;
     if (!chart) return;
@@ -2291,6 +2292,20 @@ function redimensionarGraficoWrapper(wrapper) {
         chart.resize();
         setTimeout(() => chart.resize(), 120);
     });
+}
+function estabilizarLayoutGraficos(root = document) {
+    const wrappers = [...root.querySelectorAll(".chart-wrapper")];
+    if (!wrappers.length) return;
+    const redimensionar = () => wrappers.forEach(wrapper => redimensionarGraficoWrapper(wrapper));
+    requestAnimationFrame(() => {
+        redimensionar();
+        setTimeout(redimensionar, 180);
+        setTimeout(redimensionar, 420);
+    });
+    const fontes = document.fonts?.ready;
+    if (fontes && typeof fontes.then === "function") {
+        fontes.then(() => redimensionar()).catch(() => {});
+    }
 }
 function fecharModalGrafico() {
     const { wrapperAtivo, placeholder, gatilho, modal, slot } = estadoModalGrafico;
@@ -2511,6 +2526,7 @@ function renderDashboard(grupoSelecionado, dados, contexto = {}) {
         buildChartVI(anos, dados);
     }
     prepararFocoGraficos(container);
+    estabilizarLayoutGraficos(container);
 }
 
 // ---------- Gráficos ----------
