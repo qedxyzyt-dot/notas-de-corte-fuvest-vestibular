@@ -1256,10 +1256,14 @@ const pluginRotulosLinhas = {
             : value => fmtInt(value);
         const offset = Number.isFinite(config.offset) ? config.offset : 10;
         const stackStep = Number.isFinite(config.stackStep) ? config.stackStep : 10;
+        const maxLevels = Number.isFinite(config.maxLevels) ? config.maxLevels : 4;
+        const shiftStep = Number.isFinite(config.shiftStep) ? config.shiftStep : 12;
         const fontSize = Number.isFinite(config.fontSize) ? config.fontSize : 12;
         const fontWeight = config.fontWeight || "700";
         const outlineColor = config.outlineColor || lerVarCss("--card", "#ffffff");
         const outlineWidth = Number.isFinite(config.outlineWidth) ? config.outlineWidth : 4;
+        const margemColisao = 6;
+        const pontos = [];
 
         ctx.save();
         ctx.textAlign = "center";
@@ -1291,14 +1295,108 @@ const pluginRotulosLinhas = {
                 const y = Number(props?.y);
                 if (!Number.isFinite(x) || !Number.isFinite(y)) return;
 
-                const texto = formatter(valor);
-                const deslocamento = offset + ((datasetIndex % 3) * stackStep);
-                const yRotulo = Math.max(y - deslocamento, chartArea.top + fontSize + 2);
-                ctx.strokeStyle = outlineColor;
-                ctx.lineWidth = outlineWidth;
-                ctx.strokeText(String(texto), x, yRotulo);
-                ctx.fillText(String(texto), x, yRotulo);
+                pontos.push({
+                    id: `${datasetIndex}-${dataIndex}`,
+                    datasetIndex,
+                    dataIndex,
+                    x,
+                    y,
+                    texto: String(formatter(valor)),
+                    cor: corDataset || tema.texto
+                });
             });
+        });
+
+        const gruposPorIndice = new Map();
+        pontos.forEach(ponto => {
+            const grupo = gruposPorIndice.get(ponto.dataIndex) || [];
+            grupo.push(ponto);
+            gruposPorIndice.set(ponto.dataIndex, grupo);
+        });
+        gruposPorIndice.forEach(grupo => {
+            grupo.sort((a, b) => (b.y - a.y) || (a.datasetIndex - b.datasetIndex));
+            const centro = (grupo.length - 1) / 2;
+            grupo.forEach((ponto, indice) => {
+                ponto.baseDx = Math.round((indice - centro) * shiftStep * 1.8);
+                ponto.baseNivel = indice;
+            });
+        });
+
+        pontos.sort((a, b) => (a.dataIndex - b.dataIndex) || (b.y - a.y) || (a.datasetIndex - b.datasetIndex));
+
+        const caixas = [];
+        const deslocamentosX = [0, -shiftStep, shiftStep, -(shiftStep * 2), shiftStep * 2];
+        const intersecta = (a, b) => !(
+            a.right + margemColisao < b.left
+            || a.left - margemColisao > b.right
+            || a.bottom + margemColisao < b.top
+            || a.top - margemColisao > b.bottom
+        );
+        const cobrePonto = (caixa, pontoAtual) => pontos.some(outro => {
+            if (outro.id === pontoAtual.id) return false;
+            return outro.x >= caixa.left - 1
+                && outro.x <= caixa.right + 1
+                && outro.y >= caixa.top - 1
+                && outro.y <= caixa.bottom + 1;
+        });
+
+        pontos.forEach(ponto => {
+            const larguraTexto = Math.ceil(ctx.measureText(ponto.texto).width) + 8;
+            const alturaTexto = fontSize + 6;
+            let posicao = null;
+
+            for (let nivel = 0; nivel <= maxLevels && !posicao; nivel += 1) {
+                for (const dx of deslocamentosX) {
+                    const deslocamentoX = (ponto.baseDx || 0) + dx;
+                    const nivelTotal = (ponto.baseNivel || 0) + nivel;
+                    const xCentro = Math.min(
+                        Math.max(ponto.x + deslocamentoX, chartArea.left + (larguraTexto / 2)),
+                        chartArea.right - (larguraTexto / 2)
+                    );
+                    const yBase = Math.max(
+                        ponto.y - offset - (nivelTotal * stackStep),
+                        chartArea.top + alturaTexto
+                    );
+                    const caixa = {
+                        left: xCentro - (larguraTexto / 2),
+                        right: xCentro + (larguraTexto / 2),
+                        top: yBase - alturaTexto,
+                        bottom: yBase + 2
+                    };
+                    if (caixas.some(caixaExistente => intersecta(caixa, caixaExistente))) continue;
+                    if (cobrePonto(caixa, ponto)) continue;
+                    posicao = { x: xCentro, y: yBase, caixa };
+                    break;
+                }
+            }
+
+            if (!posicao) {
+                const xCentro = Math.min(
+                    Math.max(ponto.x, chartArea.left + (larguraTexto / 2)),
+                    chartArea.right - (larguraTexto / 2)
+                );
+                const yBase = Math.max(
+                    ponto.y - offset - (((ponto.baseNivel || 0) + maxLevels) * stackStep),
+                    chartArea.top + alturaTexto
+                );
+                posicao = {
+                    x: xCentro,
+                    y: yBase,
+                    caixa: {
+                        left: xCentro - (larguraTexto / 2),
+                        right: xCentro + (larguraTexto / 2),
+                        top: yBase - alturaTexto,
+                        bottom: yBase + 2
+                    }
+                };
+            }
+
+            caixas.push(posicao.caixa);
+            ctx.fillStyle = ponto.cor;
+            ctx.strokeStyle = outlineColor;
+            ctx.lineWidth = outlineWidth;
+            ctx.strokeText(ponto.texto, posicao.x, posicao.y);
+            ctx.fillText(ponto.texto, posicao.x, posicao.y);
         });
 
         ctx.restore();
@@ -1318,12 +1416,14 @@ function opcoesChartBase({
     showLineValueLabels = false,
     lineValueFormat = "int",
     lineValueOffset = 10,
-    lineValueStackStep = 10
+    lineValueStackStep = 10,
+    lineValueMaxLevels = 4,
+    lineValueShiftStep = 12
 } = {}) {
     const tema = obterTemaGraficos();
     const topPadding = Math.max(
         showBarValueLabels ? barValueOffset + 18 : 0,
-        showLineValueLabels ? lineValueOffset + (lineValueStackStep * 2) + 12 : 0
+        showLineValueLabels ? lineValueOffset + (lineValueStackStep * (lineValueMaxLevels + 2)) + 20 : 0
     );
     const options = {
         responsive: true,
@@ -1363,7 +1463,9 @@ function opcoesChartBase({
                 display: showLineValueLabels,
                 format: lineValueFormat,
                 offset: lineValueOffset,
-                stackStep: lineValueStackStep
+                stackStep: lineValueStackStep,
+                maxLevels: lineValueMaxLevels,
+                shiftStep: lineValueShiftStep
             }
         },
         scales: {
@@ -1373,7 +1475,7 @@ function opcoesChartBase({
             },
             y: {
                 beginAtZero,
-                grace: showLineValueLabels ? "22%" : (showBarValueLabels ? "12%" : 0),
+                grace: showLineValueLabels ? "30%" : (showBarValueLabels ? "12%" : 0),
                 ticks: { color: tema.texto },
                 grid: { color: tema.grade, drawBorder: false }
             }
