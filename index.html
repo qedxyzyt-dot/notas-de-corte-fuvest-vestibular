@@ -1195,6 +1195,13 @@ const pluginRotulosBarras = {
         const offset = Number.isFinite(config.offset) ? config.offset : 10;
         const fontSize = Number.isFinite(config.fontSize) ? config.fontSize : 11;
         const fontWeight = config.fontWeight || "700";
+        const paddingLayout = chart.options?.layout?.padding;
+        const paddingTopo = typeof paddingLayout === "number"
+            ? paddingLayout
+            : Number.isFinite(paddingLayout?.top)
+                ? Number(paddingLayout.top)
+                : 0;
+        const topoRotulos = chartArea.top - paddingTopo;
 
         ctx.save();
         ctx.fillStyle = config.color || tema.texto;
@@ -1233,7 +1240,7 @@ const pluginRotulosBarras = {
 
                 const yRotulo = Number.isFinite(base) && base < y
                     ? Math.min(y + fontSize + offset, chartArea.bottom - 2)
-                    : Math.max(y - offset, chartArea.top + fontSize + 2);
+                    : Math.max(y - offset, topoRotulos + fontSize + 2);
 
                 ctx.fillText(String(texto), x, yRotulo);
             });
