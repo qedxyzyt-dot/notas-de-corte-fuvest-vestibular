@@ -1413,6 +1413,7 @@ function opcoesChartBase({
     showBarValueLabels = false,
     barValueFormat = "flex",
     barValueOffset = 10,
+    barValueGrace = null,
     showLineValueLabels = false,
     lineValueFormat = "int",
     lineValueOffset = 10,
@@ -1425,6 +1426,7 @@ function opcoesChartBase({
         showBarValueLabels ? barValueOffset + 18 : 0,
         showLineValueLabels ? Math.max(lineValueOffset + lineValueStackStep + 8, 26) : 0
     );
+    const graceBarras = barValueGrace || (barValueOffset >= 20 ? "26%" : "12%");
     const options = {
         responsive: true,
         maintainAspectRatio: false,
@@ -1475,7 +1477,7 @@ function opcoesChartBase({
             },
             y: {
                 beginAtZero,
-                grace: showLineValueLabels ? "18%" : (showBarValueLabels ? "12%" : 0),
+                grace: showLineValueLabels ? "18%" : (showBarValueLabels ? graceBarras : 0),
                 ticks: { color: tema.texto },
                 grid: { color: tema.grade, drawBorder: false }
             }
@@ -2496,7 +2498,8 @@ function renderBreakdown(categoria, nomeCurso, subcats) {
                     yTickCallback: value => fmtBrFlex(value),
                     showBarValueLabels: true,
                     barValueFormat: "flex",
-                    barValueOffset: 20
+                    barValueOffset: 20,
+                    barValueGrace: "30%"
                 })
             });
         }
