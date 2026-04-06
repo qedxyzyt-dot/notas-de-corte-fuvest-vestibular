@@ -1417,13 +1417,13 @@ function opcoesChartBase({
     lineValueFormat = "int",
     lineValueOffset = 10,
     lineValueStackStep = 10,
-    lineValueMaxLevels = 4,
+    lineValueMaxLevels = 2,
     lineValueShiftStep = 12
 } = {}) {
     const tema = obterTemaGraficos();
     const topPadding = Math.max(
         showBarValueLabels ? barValueOffset + 18 : 0,
-        showLineValueLabels ? lineValueOffset + (lineValueStackStep * (lineValueMaxLevels + 2)) + 20 : 0
+        showLineValueLabels ? Math.max(lineValueOffset + lineValueStackStep + 8, 26) : 0
     );
     const options = {
         responsive: true,
@@ -1475,7 +1475,7 @@ function opcoesChartBase({
             },
             y: {
                 beginAtZero,
-                grace: showLineValueLabels ? "30%" : (showBarValueLabels ? "12%" : 0),
+                grace: showLineValueLabels ? "18%" : (showBarValueLabels ? "12%" : 0),
                 ticks: { color: tema.texto },
                 grid: { color: tema.grade, drawBorder: false }
             }
