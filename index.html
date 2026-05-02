@@ -1100,6 +1100,7 @@ footer a { color: var(--usp-azul); }
     color: var(--vermelho);
 }
 .comparacao__slot-campo {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 0.22rem;
@@ -1113,7 +1114,8 @@ footer a { color: var(--usp-azul); }
     letter-spacing: 0.06em;
 }
 .comparacao__slot-campo input,
-.comparacao__slot-campo select {
+.comparacao__slot-campo select,
+.comparacao__select-trigger {
     padding: 0.55rem 0.7rem;
     border: 1px solid var(--borda);
     border-radius: 10px;
@@ -1122,6 +1124,59 @@ footer a { color: var(--usp-azul); }
     color: var(--texto);
     width: 100%;
     line-height: 1.3;
+}
+.comparacao__select {
+    position: relative;
+}
+.comparacao__select-native {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+.comparacao__select-trigger {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.65rem;
+    text-align: left;
+    cursor: pointer;
+}
+.comparacao__select-value {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.comparacao__select-icon {
+    width: 0.9rem;
+    height: 0.9rem;
+    flex: 0 0 auto;
+    color: #566f92;
+    transition: transform 0.18s ease;
+}
+.comparacao__select.is-open .comparacao__select-trigger {
+    border-color: var(--cmp-cor, var(--usp-azul));
+    box-shadow: 0 0 0 3px var(--cmp-cor-foco, rgba(0, 74, 141, 0.14));
+}
+.comparacao__select.is-open .comparacao__select-icon {
+    transform: rotate(180deg);
+}
+.comparacao__dropdown {
+    z-index: 110;
+    max-height: 14rem;
+}
+.comparacao__select-menu {
+    width: 100%;
+}
+.comparacao__select-option {
+    border-radius: 10px;
+}
+.comparacao__select-option.is-selected {
+    background: var(--usp-azul-claro);
+    color: var(--usp-azul);
+    font-weight: 700;
 }
 .comparacao__slot-campo select {
     appearance: none;
@@ -3471,6 +3526,28 @@ function cmpOpcoesFiltro(base, campo, rotuloTodos) {
     ];
 }
 
+function cmpRenderSelect(idx, campo, rotulo, opcoes, valorAtual) {
+    const id = `cmp-${campo}-${idx}`;
+    const selecionada = opcoes.find(o => o.value === valorAtual) || opcoes[0];
+    return `<div class="comparacao__slot-campo">
+        <label for="${id}">${rotulo}</label>
+        <div class="comparacao__select" data-cmp-select-root>
+            <select id="${id}" class="comparacao__select-native" data-cmp-idx="${idx}" data-cmp-field="${campo}" tabindex="-1" aria-hidden="true">
+                ${opcoes.map(o => `<option value="${escaparHtml(o.value)}"${o.value === valorAtual ? " selected" : ""}>${escaparHtml(o.label)}</option>`).join("")}
+            </select>
+            <button type="button" class="comparacao__select-trigger" data-cmp-select-trigger aria-haspopup="listbox" aria-expanded="false" aria-controls="${id}-menu">
+                <span class="comparacao__select-value">${escaparHtml(selecionada?.label || "")}</span>
+                <svg class="comparacao__select-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                    <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </button>
+            <div id="${id}-menu" class="lista-sugestoes comparacao__dropdown comparacao__select-menu" role="listbox" hidden>
+                ${opcoes.map(o => `<button type="button" class="sugestao-btn comparacao__select-option${o.value === valorAtual ? " is-selected" : ""}" data-cmp-select-value="${escaparHtml(o.value)}" role="option" aria-selected="${o.value === valorAtual ? "true" : "false"}">${escaparHtml(o.label)}</button>`).join("")}
+            </div>
+        </div>
+    </div>`;
+}
+
 function cmpRenderSlots() {
     const cont = document.getElementById("comparacao-slots");
     if (!cont) return;
@@ -3512,20 +3589,11 @@ function cmpRenderSlots() {
             </div>
             <div class="comparacao__slot-campo">
                 <label for="cmp-curso-${i}">Carreira ou curso</label>
-                <input id="cmp-curso-${i}" data-cmp-idx="${i}" data-cmp-field="nome" list="comparacao-cursos-datalist" placeholder="Digite a carreira ou o curso..." value="${escaparHtml(slot.nome)}" autocomplete="off">
+                <input id="cmp-curso-${i}" data-cmp-idx="${i}" data-cmp-field="nome" placeholder="Digite a carreira ou o curso..." value="${escaparHtml(slot.nome)}" autocomplete="off" aria-autocomplete="list" aria-controls="cmp-curso-sug-${i}">
+                <div id="cmp-curso-sug-${i}" class="lista-sugestoes comparacao__dropdown comparacao__curso-sugestoes" hidden></div>
             </div>
-            <div class="comparacao__slot-campo">
-                <label for="cmp-loc-${i}">Campus</label>
-                <select id="cmp-loc-${i}" data-cmp-idx="${i}" data-cmp-field="loc">
-                    ${opcoesLoc.map(o => `<option value="${escaparHtml(o.value)}"${o.value === slot.loc ? " selected" : ""}>${escaparHtml(o.label)}</option>`).join("")}
-                </select>
-            </div>
-            <div class="comparacao__slot-campo">
-                <label for="cmp-per-${i}">Modalidade</label>
-                <select id="cmp-per-${i}" data-cmp-idx="${i}" data-cmp-field="per">
-                    ${opcoesPer.map(o => `<option value="${escaparHtml(o.value)}"${o.value === slot.per ? " selected" : ""}>${escaparHtml(o.label)}</option>`).join("")}
-                </select>
-            </div>
+            ${cmpRenderSelect(i, "loc", "Campus", opcoesLoc, slot.loc)}
+            ${cmpRenderSelect(i, "per", "Modalidade", opcoesPer, slot.per)}
             <div class="comparacao__slot-msg">${msg}</div>
         `;
         cont.appendChild(card);
@@ -3533,6 +3601,69 @@ function cmpRenderSlots() {
     const btnAdd = document.getElementById("comparacao-add");
     if (btnAdd) btnAdd.hidden = CMP.visiveis >= CMP_MAX_SLOTS;
     cmpAtacharEventosSlots();
+}
+
+function cmpFecharMenus(except = null) {
+    document.querySelectorAll(".comparacao__dropdown").forEach(menu => {
+        if (except && menu === except) return;
+        menu.hidden = true;
+    });
+    document.querySelectorAll(".comparacao__select.is-open").forEach(root => {
+        if (except && root.contains(except)) return;
+        root.classList.remove("is-open");
+        root.querySelector("[data-cmp-select-trigger]")?.setAttribute("aria-expanded", "false");
+    });
+}
+
+function cmpSelecionarCurso(idx, grupo) {
+    const nome = typeof grupo === "string" ? grupo : grupo?.titulo || "";
+    CMP.slots[idx].nome = nome.trim();
+    CMP.slots[idx].grupoId = typeof grupo === "object" && grupo ? grupo.id : null;
+    CMP.slots[idx].loc = "__all__";
+    CMP.slots[idx].per = "__all__";
+    cmpFecharMenus();
+    cmpRenderSlots();
+    cmpRender();
+    document.getElementById(`cmp-curso-${idx}`)?.focus();
+}
+
+function cmpRenderSugestoesCurso(input) {
+    const idx = Number(input.dataset.cmpIdx);
+    const painel = document.getElementById(`cmp-curso-sug-${idx}`);
+    if (!painel) return;
+    const sugestoes = obterSugestoesBusca(input.value).slice(0, 10);
+    if (!sugestoes.length) {
+        painel.hidden = true;
+        return;
+    }
+
+    painel.innerHTML = "";
+    for (const grupo of sugestoes) {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "sugestao-btn";
+        btn.innerHTML = `
+            <span class="sugestao-titulo">${escaparHtml(grupo.titulo)}</span>
+            <span class="sugestao-meta">${escaparHtml(grupo.meta)}</span>
+            ${grupo.resumoVariacoes ? `<span class="sugestao-meta sugestao-meta--fraca">${escaparHtml(grupo.resumoVariacoes)}</span>` : ""}
+        `;
+        btn.title = [grupo.titulo, grupo.meta, grupo.resumoVariacoes].filter(Boolean).join(" • ");
+        btn.addEventListener("mousedown", e => e.preventDefault());
+        btn.addEventListener("click", () => cmpSelecionarCurso(idx, grupo));
+        painel.appendChild(btn);
+    }
+    cmpFecharMenus(painel);
+    painel.hidden = false;
+}
+
+function cmpAplicarSelect(sel, valor) {
+    const idx = Number(sel.dataset.cmpIdx);
+    const field = sel.dataset.cmpField;
+    sel.value = valor;
+    CMP.slots[idx][field] = valor;
+    cmpFecharMenus();
+    cmpRenderSlots();
+    cmpRender();
 }
 
 function cmpAtacharEventosSlots() {
@@ -3548,16 +3679,42 @@ function cmpAtacharEventosSlots() {
     document.querySelectorAll(".comparacao__slot input[data-cmp-field='nome']").forEach(input => {
         input.addEventListener("change", () => {
             const idx = Number(input.dataset.cmpIdx);
-            CMP.slots[idx].nome = input.value.trim();
-            CMP.slots[idx].grupoId = null;
-            CMP.slots[idx].loc = "__all__";
-            CMP.slots[idx].per = "__all__";
-            cmpRenderSlots();
-            cmpRender();
+            cmpSelecionarCurso(idx, input.value);
         });
         input.addEventListener("input", () => {
             const idx = Number(input.dataset.cmpIdx);
             CMP.slots[idx].nome = input.value.trim();
+            CMP.slots[idx].grupoId = null;
+            cmpRenderSugestoesCurso(input);
+        });
+        input.addEventListener("focus", () => {
+            cmpRenderSugestoesCurso(input);
+        });
+        input.addEventListener("keydown", e => {
+            const painel = document.getElementById(`cmp-curso-sug-${input.dataset.cmpIdx}`);
+            if (e.key === "Escape") cmpFecharMenus();
+            if (e.key === "ArrowDown" && painel && !painel.hidden) {
+                e.preventDefault();
+                painel.querySelector(".sugestao-btn")?.focus();
+            }
+        });
+    });
+    document.querySelectorAll(".comparacao__curso-sugestoes").forEach(menu => {
+        menu.querySelectorAll(".sugestao-btn").forEach((btn, idx, botoes) => {
+            btn.addEventListener("keydown", e => {
+                if (e.key === "Escape") {
+                    cmpFecharMenus();
+                    menu.closest(".comparacao__slot-campo")?.querySelector("input")?.focus();
+                }
+                if (e.key === "ArrowDown") {
+                    e.preventDefault();
+                    botoes[idx + 1]?.focus();
+                }
+                if (e.key === "ArrowUp") {
+                    e.preventDefault();
+                    (botoes[idx - 1] || menu.closest(".comparacao__slot-campo")?.querySelector("input"))?.focus();
+                }
+            });
         });
     });
     document.querySelectorAll(".comparacao__slot select[data-cmp-field]").forEach(sel => {
@@ -3566,6 +3723,47 @@ function cmpAtacharEventosSlots() {
             const field = sel.dataset.cmpField;
             CMP.slots[idx][field] = sel.value;
             cmpRender();
+        });
+    });
+    document.querySelectorAll("[data-cmp-select-trigger]").forEach(trigger => {
+        trigger.addEventListener("click", () => {
+            const root = trigger.closest(".comparacao__select");
+            const menu = root?.querySelector(".comparacao__select-menu");
+            if (!root || !menu) return;
+            const abrindo = menu.hidden;
+            cmpFecharMenus(menu);
+            root.classList.toggle("is-open", abrindo);
+            trigger.setAttribute("aria-expanded", abrindo ? "true" : "false");
+            menu.hidden = !abrindo;
+            if (abrindo) (menu.querySelector(".is-selected") || menu.querySelector(".comparacao__select-option"))?.focus();
+        });
+        trigger.addEventListener("keydown", e => {
+            if (e.key === "Enter" || e.key === " " || e.key === "ArrowDown") {
+                e.preventDefault();
+                trigger.click();
+            }
+            if (e.key === "Escape") cmpFecharMenus();
+        });
+    });
+    document.querySelectorAll(".comparacao__select-option").forEach((btn, idx, botoes) => {
+        btn.addEventListener("click", () => {
+            const root = btn.closest(".comparacao__select");
+            const sel = root?.querySelector("select[data-cmp-field]");
+            if (sel) cmpAplicarSelect(sel, btn.dataset.cmpSelectValue);
+        });
+        btn.addEventListener("keydown", e => {
+            if (e.key === "Escape") {
+                cmpFecharMenus();
+                btn.closest(".comparacao__select")?.querySelector("[data-cmp-select-trigger]")?.focus();
+            }
+            if (e.key === "ArrowDown") {
+                e.preventDefault();
+                botoes[idx + 1]?.focus();
+            }
+            if (e.key === "ArrowUp") {
+                e.preventDefault();
+                (botoes[idx - 1] || btn.closest(".comparacao__select")?.querySelector("[data-cmp-select-trigger]"))?.focus();
+            }
         });
     });
 }
@@ -3655,15 +3853,15 @@ function cmpRenderCard(s) {
         <div class="comparacao__card-meta">${escaparHtml(meta)}</div>
         <div class="comparacao__card-stats">
             <div>
-                <div class="comparacao__card-stat-rotulo">Nota mín. (mín.)</div>
+                <div class="comparacao__card-stat-rotulo">Menor nota mínima</div>
                 <div class="comparacao__card-stat-valor">${nMinMin != null ? fmtInt(nMinMin) : "—"}</div>
             </div>
             <div>
-                <div class="comparacao__card-stat-rotulo">Nota máx. (máx.)</div>
+                <div class="comparacao__card-stat-rotulo">Maior nota máxima</div>
                 <div class="comparacao__card-stat-valor">${nMaxMax != null ? fmtInt(nMaxMax) : "—"}</div>
             </div>
             <div>
-                <div class="comparacao__card-stat-rotulo">Conv./vaga média</div>
+                <div class="comparacao__card-stat-rotulo">Convocados por vaga média</div>
                 <div class="comparacao__card-stat-valor">${convMed != null ? fmtBr(convMed) : "—"}</div>
             </div>
             <div>
@@ -3682,7 +3880,7 @@ function cmpRenderTabela(series, anos) {
                 ${series.map(s => `<th colspan="3" class="cmp-curso-${s.idx + 1}">${escaparHtml(s.nome)}</th>`).join("")}
             </tr>
             <tr>
-                ${series.map(s => `<th class="cmp-curso-${s.idx + 1}">N. mín.</th><th class="cmp-curso-${s.idx + 1}">N. máx.</th><th class="cmp-curso-${s.idx + 1}">Conv./vaga</th>`).join("")}
+                ${series.map(s => `<th class="cmp-curso-${s.idx + 1}">Nota mínima</th><th class="cmp-curso-${s.idx + 1}">Nota máxima</th><th class="cmp-curso-${s.idx + 1}">Convocados por vaga</th>`).join("")}
             </tr>
         </thead>
         <tbody>`;
@@ -3850,6 +4048,7 @@ document.getElementById("sel-ano-fim").addEventListener("change", () => {
 });
 document.addEventListener("click", e => {
     if (!document.getElementById("busca").closest(".filtro-grupo").contains(e.target)) fecharSugestoesBusca();
+    if (!e.target.closest(".comparacao__slot-campo")) cmpFecharMenus();
 });
 
 const MEDIA_DARK_MODE = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
